@@ -14,11 +14,33 @@
 #import "EVAMeViewController.h"
 #import "EVAPublishViewController.h"
 
+#import "UIImage+EVA.h"
+
 @interface EVARootTabBarController ()
 
 @end
 
+/**
+ 图片被渲染 v
+ 标题文字颜色和大小 v
+ 发布按钮
+ */
 @implementation EVARootTabBarController
+
++ (void)initialize {
+    if (self == [EVARootTabBarController class]) {
+        UITabBarItem *item = [UITabBarItem appearanceWhenContainedInInstancesOfClasses:@[self]];
+        NSDictionary<NSAttributedStringKey,id> *textNormalAttrDict = @{
+                                       NSFontAttributeName: [UIFont systemFontOfSize:12]
+                                       };
+        NSDictionary<NSAttributedStringKey,id> *textSelectedAttrDict = @{
+                                                                         NSForegroundColorAttributeName : [UIColor blackColor]
+                                                                       };
+        // 设置字体尺寸:只有设置正常状态下,才会有效果
+        [item setTitleTextAttributes:textNormalAttrDict forState:UIControlStateNormal];
+        [item setTitleTextAttributes:textSelectedAttrDict forState:UIControlStateSelected];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +60,7 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller_Arr[i]];
         nav.tabBarItem.title = title_Arr[i];
         nav.tabBarItem.image = [UIImage imageNamed:image_Arr[i]];
-        nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage_Arr[i]];
+        nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage_Arr[i]].renderOriginalName;
         [self addChildViewController:nav];
     }
 }
