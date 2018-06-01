@@ -8,12 +8,46 @@
 
 #import "EVARootTabBar.h"
 
+@interface EVARootTabBar ()
+
+@property (nonatomic, weak) UIButton *publishBtn;
+@end
+
 @implementation EVARootTabBar
+
+- (UIButton *)publishBtn {
+    if (_publishBtn == nil) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        [button sizeToFit];
+        [self addSubview:button];
+        _publishBtn = button;
+    }
+    return _publishBtn;
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    NSLog(@"EVARootTabBar - %@", self.subviews);
+//    宽度要等分
+    NSInteger count = self.items.count;
+    CGFloat btnW = self.bounds.size.width / (count + 1);
+    CGFloat btnH = self.bounds.size.height;
+    CGFloat btnX = 0;
+    CGFloat btnY = 0;
+    int i = 0;
+    for (UIView *objc in self.subviews) {
+        if ([objc isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+//            空出中间
+            if (i == 2) {
+                i++;
+            }
+            btnX = i * btnW;
+            objc.frame = CGRectMake(btnX, btnY, btnW, btnH);
+            i++;
+        }
+    }
+    self.publishBtn.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
 }
 
 
