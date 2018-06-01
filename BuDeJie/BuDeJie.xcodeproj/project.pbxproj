@@ -19,8 +19,9 @@
 		14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9820C00985000615D4 /* EVAMeViewController.m */; };
 		14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9B20C00998000615D4 /* EVAPublishViewController.m */; };
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
-		14046FA920C02B52000615D4 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA620C02B52000615D4 /* UIImage+EVA.m */; };
 		14046FAA20C02B52000615D4 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA720C02B52000615D4 /* UIView+EVA.m */; };
+		147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147563A620C13D51002E72D6 /* EVARootTabBar.m */; };
+		1493398420C0C37900041D3C /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA620C02B52000615D4 /* UIImage+EVA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		14046FA620C02B52000615D4 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
 		14046FA720C02B52000615D4 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
 		14046FA820C02B52000615D4 /* UIView+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EVA.h"; sourceTree = "<group>"; };
+		147563A520C13D51002E72D6 /* EVARootTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBar.h; sourceTree = "<group>"; };
+		147563A620C13D51002E72D6 /* EVARootTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +368,8 @@
 		14046FA020C02183000615D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				147563A520C13D51002E72D6 /* EVARootTabBar.h */,
+				147563A620C13D51002E72D6 /* EVARootTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,15 +516,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
-				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
-				14046FA920C02B52000615D4 /* UIImage+EVA.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
 				14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */,
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
-				14046F8C20C00501000615D4 /* main.m in Sources */,
 				14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */,
+				1493398420C0C37900041D3C /* UIImage+EVA.m in Sources */,
 				14046FAA20C02B52000615D4 /* UIView+EVA.m in Sources */,
+				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
+				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
+				14046F8C20C00501000615D4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
