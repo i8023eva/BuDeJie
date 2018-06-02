@@ -24,6 +24,7 @@
 		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
 		14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */; };
+		14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08120C2707000CC4284 /* EVARootNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		14F6A07820C237D000CC4284 /* EVAGlobalVar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAGlobalVar.m; sourceTree = "<group>"; };
 		14F6A07D20C268AF00CC4284 /* UIBarButtonItem+EVA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+EVA.h"; sourceTree = "<group>"; };
 		14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+EVA.m"; sourceTree = "<group>"; };
+		14F6A08020C2707000CC4284 /* EVARootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootNavigationController.h; sourceTree = "<group>"; };
+		14F6A08120C2707000CC4284 /* EVARootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 			children = (
 				14046FA120C021A8000615D4 /* EVARootTabBarController.h */,
 				14046FA220C021A8000615D4 /* EVARootTabBarController.m */,
+				14F6A08020C2707000CC4284 /* EVARootNavigationController.h */,
+				14F6A08120C2707000CC4284 /* EVARootNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 			files = (
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
+				14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
 				14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */,
 				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,

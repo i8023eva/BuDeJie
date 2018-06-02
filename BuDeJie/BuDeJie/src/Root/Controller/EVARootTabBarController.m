@@ -13,6 +13,7 @@
 #import "EVAFriendTrendViewController.h"
 #import "EVAMeViewController.h"
 #import "EVAPublishViewController.h"
+#import "EVARootNavigationController.h"
 
 #import "UIImage+EVA.h"
 
@@ -111,7 +112,7 @@
     NSArray<NSString *> *title_Arr = @[@"精华", @"新帖", @"关注", @"我"];
     
     for (int i = 0; i < controller_Arr.count; i++) {
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller_Arr[i]];
+        EVARootNavigationController *nav = [[EVARootNavigationController alloc] initWithRootViewController:controller_Arr[i]];
         nav.tabBarItem.title = title_Arr[i];
         //        if (i == 2) {
         //            nav.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
