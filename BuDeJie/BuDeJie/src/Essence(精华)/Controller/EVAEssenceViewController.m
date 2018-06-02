@@ -17,10 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (@available(iOS 10.0, *)) {
-        self.view.backgroundColor = [UIColor colorWithDisplayP3Red:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
+        self.view.backgroundColor = eva_RandomColor;
     } else {
         // Fallback on earlier versions
     }
+    
+
+}
+
+- (void)setupNavigation {
+    
 }
 
 - (void)didReceiveMemoryWarning {

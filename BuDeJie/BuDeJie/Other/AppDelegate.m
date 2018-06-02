@@ -21,6 +21,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[EVARootTabBarController alloc] init];
     [self.window makeKeyAndVisible];

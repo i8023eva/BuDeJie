@@ -10,11 +10,11 @@
 
 @implementation UIImage (EVA)
 
-- (UIImage *)renderOriginalName {
+- (UIImage *)eva_renderOriginalName {
     return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
-- (UIImage *)stretchableImage {
+- (UIImage *)eva_stretchableImage {
     return [self stretchableImageWithLeftCapWidth:self.size.width * 0.5 topCapHeight:self.size.width * 0.5];
 }
 @end

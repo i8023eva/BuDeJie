@@ -11,9 +11,9 @@
 @interface UIView (EVA)
 
 // 在分类中 @property 只会生成get, set方法,并不会生成下划线的成员属性
-@property (nonatomic, assign) CGFloat x;
-@property (nonatomic, assign) CGFloat y;
-@property (nonatomic, assign) CGFloat width;
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGFloat eva_x;
+@property (nonatomic, assign) CGFloat eva_y;
+@property (nonatomic, assign) CGFloat eva_width;
+@property (nonatomic, assign) CGFloat eva_height;
 
 @end

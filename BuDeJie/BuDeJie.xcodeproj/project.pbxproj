@@ -19,9 +19,10 @@
 		14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9820C00985000615D4 /* EVAMeViewController.m */; };
 		14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9B20C00998000615D4 /* EVAPublishViewController.m */; };
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
-		14046FAA20C02B52000615D4 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA720C02B52000615D4 /* UIView+EVA.m */; };
 		147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147563A620C13D51002E72D6 /* EVARootTabBar.m */; };
-		1493398420C0C37900041D3C /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA620C02B52000615D4 /* UIImage+EVA.m */; };
+		14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07120C2375500CC4284 /* UIView+EVA.m */; };
+		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
+		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +68,15 @@
 		14046F9B20C00998000615D4 /* EVAPublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAPublishViewController.m; sourceTree = "<group>"; };
 		14046FA120C021A8000615D4 /* EVARootTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBarController.h; sourceTree = "<group>"; };
 		14046FA220C021A8000615D4 /* EVARootTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBarController.m; sourceTree = "<group>"; };
-		14046FA520C02B52000615D4 /* UIImage+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EVA.h"; sourceTree = "<group>"; };
-		14046FA620C02B52000615D4 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
-		14046FA720C02B52000615D4 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
-		14046FA820C02B52000615D4 /* UIView+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EVA.h"; sourceTree = "<group>"; };
 		147563A520C13D51002E72D6 /* EVARootTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBar.h; sourceTree = "<group>"; };
 		147563A620C13D51002E72D6 /* EVARootTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBar.m; sourceTree = "<group>"; };
+		147563A820C14F9F002E72D6 /* BuDeJie_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie_Prefix.pch; sourceTree = "<group>"; };
+		14F6A07020C2375500CC4284 /* UIImage+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EVA.h"; sourceTree = "<group>"; };
+		14F6A07120C2375500CC4284 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
+		14F6A07220C2375500CC4284 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
+		14F6A07320C2375500CC4284 /* UIView+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EVA.h"; sourceTree = "<group>"; };
+		14F6A07720C237D000CC4284 /* EVAGlobalVar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAGlobalVar.h; sourceTree = "<group>"; };
+		14F6A07820C237D000CC4284 /* EVAGlobalVar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAGlobalVar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,8 @@
 		14046F4020BFEF10000615D4 /* BuDeJie */ = {
 			isa = PBXGroup;
 			children = (
-				14046FA420C02B44000615D4 /* category */,
+				14F6A06F20C2375500CC4284 /* Category */,
+				14F6A07420C2375500CC4284 /* Tool */,
 				14046F8820C00501000615D4 /* Other */,
 				14046F7320C00501000615D4 /* src */,
 				14046F4A20BFEF11000615D4 /* Assets.xcassets */,
@@ -335,6 +340,7 @@
 				14046F8920C00501000615D4 /* AppDelegate.h */,
 				14046F8B20C00501000615D4 /* AppDelegate.m */,
 				14046F8A20C00501000615D4 /* main.m */,
+				147563A820C14F9F002E72D6 /* BuDeJie_Prefix.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -374,15 +380,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		14046FA420C02B44000615D4 /* category */ = {
+		14F6A06F20C2375500CC4284 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				14046FA520C02B52000615D4 /* UIImage+EVA.h */,
-				14046FA620C02B52000615D4 /* UIImage+EVA.m */,
-				14046FA820C02B52000615D4 /* UIView+EVA.h */,
-				14046FA720C02B52000615D4 /* UIView+EVA.m */,
+				14F6A07020C2375500CC4284 /* UIImage+EVA.h */,
+				14F6A07120C2375500CC4284 /* UIView+EVA.m */,
+				14F6A07220C2375500CC4284 /* UIImage+EVA.m */,
+				14F6A07320C2375500CC4284 /* UIView+EVA.h */,
 			);
-			path = category;
+			path = Category;
+			sourceTree = "<group>";
+		};
+		14F6A07420C2375500CC4284 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				14F6A07720C237D000CC4284 /* EVAGlobalVar.h */,
+				14F6A07820C237D000CC4284 /* EVAGlobalVar.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,14 +533,15 @@
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
+				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,
 				14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */,
+				14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */,
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
 				14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */,
-				1493398420C0C37900041D3C /* UIImage+EVA.m in Sources */,
-				14046FAA20C02B52000615D4 /* UIView+EVA.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
+				14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
+				GCC_PREFIX_HEADER = BuDeJie/Other/BuDeJie_Prefix.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -706,6 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
+				GCC_PREFIX_HEADER = BuDeJie/Other/BuDeJie_Prefix.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (

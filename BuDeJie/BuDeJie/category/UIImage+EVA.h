@@ -10,8 +10,8 @@
 
 @interface UIImage (EVA)
 /**返回不渲染的图片*/
-- (UIImage *)renderOriginalName;
+- (UIImage *)eva_renderOriginalName;
 /**返回拉伸图片*/
-- (UIImage *)stretchableImage;
+- (UIImage *)eva_stretchableImage;
 
 @end

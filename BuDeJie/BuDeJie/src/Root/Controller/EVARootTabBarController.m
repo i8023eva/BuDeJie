@@ -51,6 +51,21 @@
     }
 }
 
+/**
+ 若无交互事件响应时，延迟2秒左右会回调此方法
+ 
+ @return 如果非nil，将使用视图控制器的主指示器自动隐藏。
+ */
+- (UIViewController *)childViewControllerForHomeIndicatorAutoHidden {
+    return self.childViewControllers[0];
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.view.bounds.size.height - eva_TabBarHeight, self.tabBar.frame.size.width, eva_TabBarHeight);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -61,7 +76,7 @@
 //    UISwitch *swic = [UISwitch new];
 //    swic.center = CGPointMake(self.tabBar.bounds.size.width * 0.5, self.tabBar.bounds.size.height * 0.5);
 //    [self.tabBar addSubview:swic];
-    
+
     EVARootTabBar *tabBar = [[EVARootTabBar alloc] init];
     [self setValue:tabBar forKeyPath:@"_tabBar"];
 }
@@ -100,8 +115,8 @@
         //        if (i == 2) {
         //            nav.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
         //        }
-        nav.tabBarItem.image = [UIImage imageNamed:image_Arr[i]].renderOriginalName;
-        nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage_Arr[i]].renderOriginalName;
+        nav.tabBarItem.image = [UIImage imageNamed:image_Arr[i]].eva_renderOriginalName;
+        nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage_Arr[i]].eva_renderOriginalName;
         [self addChildViewController:nav];
     }
 }
