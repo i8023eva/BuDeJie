@@ -19,4 +19,10 @@
                      selectedImage:(UIImage *)selectedImage
                             target:(id)target
                             action:(SEL)action;
+
++ (UIBarButtonItem *)backItemWithImage:(UIImage *)image
+                         highlightedImage:(UIImage *)highlightedImage
+                                target:(id)target
+                                action:(SEL)action
+                                 title:(NSString *)title;
 @end

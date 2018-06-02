@@ -7,6 +7,7 @@
 //
 
 #import "EVARootNavigationController.h"
+#import "UIBarButtonItem+EVA.h"
 
 @interface EVARootNavigationController ()
 
@@ -34,6 +35,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)backClick {
+    [self popViewControllerAnimated:YES];
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    非根控制器
+    if (self.childViewControllers.count > 0) {
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImage:[UIImage imageNamed:@"navigationButtonReturn"]
+                                                                            highlightedImage:[UIImage imageNamed:@"navigationButtonReturnClick"]
+                                                                                      target:self
+                                                                                      action:@selector(backClick)
+                                                                                       title:@"返回"];
+    }
+    [super pushViewController:viewController animated:animated];
 }
 
 - (void)didReceiveMemoryWarning {
