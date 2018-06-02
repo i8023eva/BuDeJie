@@ -25,6 +25,7 @@
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
 		14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */; };
 		14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08120C2707000CC4284 /* EVARootNavigationController.m */; };
+		14F6A08920C2845900CC4284 /* EVASettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+EVA.m"; sourceTree = "<group>"; };
 		14F6A08020C2707000CC4284 /* EVARootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootNavigationController.h; sourceTree = "<group>"; };
 		14F6A08120C2707000CC4284 /* EVARootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootNavigationController.m; sourceTree = "<group>"; };
+		14F6A08720C2845900CC4284 /* EVASettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVASettingTableViewController.h; sourceTree = "<group>"; };
+		14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVASettingTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +280,7 @@
 		14046F8020C00501000615D4 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
+				14F6A08320C2841800CC4284 /* Setting(设置) */,
 				14046F8120C00501000615D4 /* Controller */,
 				14046F8220C00501000615D4 /* Model */,
 				14046F8320C00501000615D4 /* View */,
@@ -408,6 +412,39 @@
 				14F6A07820C237D000CC4284 /* EVAGlobalVar.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		14F6A08320C2841800CC4284 /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				14F6A08420C2841800CC4284 /* Controller */,
+				14F6A08520C2841800CC4284 /* Model */,
+				14F6A08620C2841800CC4284 /* View */,
+			);
+			path = "Setting(设置)";
+			sourceTree = "<group>";
+		};
+		14F6A08420C2841800CC4284 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14F6A08720C2845900CC4284 /* EVASettingTableViewController.h */,
+				14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14F6A08520C2841800CC4284 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14F6A08620C2841800CC4284 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,6 +591,7 @@
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
 				14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */,
+				14F6A08920C2845900CC4284 /* EVASettingTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

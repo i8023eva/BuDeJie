@@ -8,6 +8,7 @@
 
 #import "EVAMeViewController.h"
 #import "UIBarButtonItem+EVA.h"
+#import "EVASettingTableViewController.h"
 
 @interface EVAMeViewController ()
 
@@ -18,12 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = eva_RandomColor;
-    
+
     [self setupNavigationItem];
 }
 
 - (void)settingClick:(UIButton *)button {
-    NSLog(@"%s", __func__);
+    EVASettingTableViewController *vc = [[EVASettingTableViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    // 修改tabBra的frame
+//    CGRect frame = self.tabBarController.tabBar.frame;
+//    frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+//    self.tabBarController.tabBar.frame = frame;
 }
 
 - (void)nightClick:(UIButton *)button {

@@ -11,6 +11,8 @@
 @interface EVARootTabBar ()
 
 @property (nonatomic, weak) UIButton *publishBtn;
+
+@property (nonatomic,assign)UIEdgeInsets oldSafeAreaInsets;
 @end
 
 @implementation EVARootTabBar
@@ -37,7 +39,7 @@
     CGFloat btnX = 0;
     CGFloat btnY = 0;
     int i = 0;
-    for (UIView *objc in self.subviews) {
+    for (__strong UIView *objc in self.subviews) {
         if ([objc isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
 //            空出中间
             if (i == 2) {
@@ -53,6 +55,5 @@
     
 //    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - 10, self.frame.size.width, 49);
 }
-
 
 @end

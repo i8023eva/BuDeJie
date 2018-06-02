@@ -65,13 +65,26 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.view.bounds.size.height - eva_TabBarHeight, self.tabBar.frame.size.width, eva_TabBarHeight);
+    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.view.bounds.size.height - eva_TabBarHeight, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self addChildViewControllers];
+    
+    EVARootTabBar *tabBar = [[EVARootTabBar alloc] init];
+#warning Bug01 push Setting 界面时并没有全部隐藏 \
+         Bug01.1 从 setting pop使用系统的返回  慢动画观察tabbar显示在最上层 -（自定义返回）
+    /*
+     _tabBar 就因为使用了带下划线的属性
+     解决 bug 方法：
+        > 注释 [super layoutSubviews];以下代码 - 没用
+        > 注释 layoutSubviews - 没用
+        > 注释 setValue:forKeyPath - 恢复系统默认
+     */
+    [self setValue:tabBar forKeyPath:@"tabBar"];
+    [self.tabBar setBackgroundColor:[UIColor whiteColor]];
+    [self.tabBar setBackgroundImage:[UIImage new]];
     
 //    NSLog(@"%@", self.tabBar.subviews); 空
     
@@ -79,8 +92,7 @@
 //    swic.center = CGPointMake(self.tabBar.bounds.size.width * 0.5, self.tabBar.bounds.size.height * 0.5);
 //    [self.tabBar addSubview:swic];
 
-    EVARootTabBar *tabBar = [[EVARootTabBar alloc] init];
-    [self setValue:tabBar forKeyPath:@"_tabBar"];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
