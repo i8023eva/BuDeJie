@@ -7,6 +7,7 @@
 //
 
 #import "EVAMeViewController.h"
+#import "UIBarButtonItem+EVA.h"
 
 @interface EVAMeViewController ()
 
@@ -17,6 +18,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = eva_RandomColor;
+    
+    [self setupNavigationItem];
+}
+
+- (void)settingClick:(UIButton *)button {
+    NSLog(@"%s", __func__);
+}
+
+- (void)nightClick:(UIButton *)button {
+    button.selected = !button.isSelected;
+}
+
+- (void)setupNavigationItem {
+    // 设置
+    UIBarButtonItem *settingItem =  [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-setting-icon"]
+                                                  highlightedImage:[UIImage imageNamed:@"mine-setting-icon-click"]
+                                                            target:self
+                                                            action:@selector(settingClick:)];
+    // 夜间
+    UIBarButtonItem *nightItem =  [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-moon-icon"]
+                                                   selectedImage:[UIImage imageNamed:@"mine-moon-icon-click"]
+                                                          target:self
+                                                          action:@selector(nightClick:)];
+    self.navigationItem.rightBarButtonItems = @[settingItem, nightItem];
+    self.navigationItem.title = @"我的";
 }
 
 - (void)didReceiveMemoryWarning {

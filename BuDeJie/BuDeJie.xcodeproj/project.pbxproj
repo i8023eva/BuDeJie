@@ -23,6 +23,7 @@
 		14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07120C2375500CC4284 /* UIView+EVA.m */; };
 		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
+		14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		14F6A07320C2375500CC4284 /* UIView+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EVA.h"; sourceTree = "<group>"; };
 		14F6A07720C237D000CC4284 /* EVAGlobalVar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAGlobalVar.h; sourceTree = "<group>"; };
 		14F6A07820C237D000CC4284 /* EVAGlobalVar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAGlobalVar.m; sourceTree = "<group>"; };
+		14F6A07D20C268AF00CC4284 /* UIBarButtonItem+EVA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+EVA.h"; sourceTree = "<group>"; };
+		14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+EVA.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,9 +387,11 @@
 			isa = PBXGroup;
 			children = (
 				14F6A07020C2375500CC4284 /* UIImage+EVA.h */,
-				14F6A07120C2375500CC4284 /* UIView+EVA.m */,
 				14F6A07220C2375500CC4284 /* UIImage+EVA.m */,
 				14F6A07320C2375500CC4284 /* UIView+EVA.h */,
+				14F6A07120C2375500CC4284 /* UIView+EVA.m */,
+				14F6A07D20C268AF00CC4284 /* UIBarButtonItem+EVA.h */,
+				14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
+				14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */,
 				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,
 				14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */,
 				14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */,

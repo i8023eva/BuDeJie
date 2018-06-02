@@ -7,6 +7,7 @@
 //
 
 #import "EVANewViewController.h"
+#import "UIBarButtonItem+EVA.h"
 
 @interface EVANewViewController ()
 
@@ -17,6 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = eva_RandomColor;
+    [self setupNavigationItem];
+}
+
+- (void)mainTagClick:(UIButton *)button {
+    NSLog(@"%s", __func__);
+}
+
+- (void)setupNavigationItem {
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"MainTagSubIcon"]
+                                                          highlightedImage:[UIImage imageNamed:@"MainTagSubIconClick"]
+                                                                    target:self
+                                                                    action:@selector(mainTagClick:)];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
 }
 
 - (void)didReceiveMemoryWarning {

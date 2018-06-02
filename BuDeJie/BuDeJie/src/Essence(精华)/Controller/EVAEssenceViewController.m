@@ -7,6 +7,7 @@
 //
 
 #import "EVAEssenceViewController.h"
+#import "UIBarButtonItem+EVA.h"
 
 @interface EVAEssenceViewController ()
 
@@ -21,13 +22,35 @@
     } else {
         // Fallback on earlier versions
     }
-    
-
+    [self setupNavigationItem];
 }
 
-- (void)setupNavigation {
-    
+- (BOOL)prefersHomeIndicatorAutoHidden {
+    return YES;
 }
+
+- (void)gameClick:(UIButton *)button {
+    NSLog(@"%s", __func__);
+}
+
+- (void)setupNavigationItem {
+    /*
+     系统不能设置高亮状态图片
+     把UIButton包装成UIBarButtonItem.不会导致按钮点击区域扩大
+     */
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"nav_item_game_icon"]
+                                                          highlightedImage:[UIImage imageNamed:@"nav_item_game_click_icon"]
+                                                                    target:self
+                                                                    action:@selector(gameClick:)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationButtonRandom"]
+                                                           highlightedImage:[UIImage imageNamed:@"navigationButtonRandomClick"]
+                                                                     target:nil
+                                                                     action:nil];
+    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

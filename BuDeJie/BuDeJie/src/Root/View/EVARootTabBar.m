@@ -33,7 +33,7 @@
     NSInteger count = self.items.count;
     CGFloat btnW = self.eva_width / (count + 1);
     CGFloat btnH = 49;
-    NSLog(@"eva_height - %f", self.eva_height);
+//    NSLog(@"eva_height - %f", self.eva_height);
     CGFloat btnX = 0;
     CGFloat btnY = 0;
     int i = 0;

@@ -53,6 +53,7 @@
 
 /**
  若无交互事件响应时，延迟2秒左右会回调此方法
+ 返回的子控制器实现prefersHomeIndicatorAutoHidden YES
  
  @return 如果非nil，将使用视图控制器的主指示器自动隐藏。
  */

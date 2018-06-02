@@ -7,6 +7,7 @@
 //
 
 #import "EVAFriendTrendViewController.h"
+#import "UIBarButtonItem+EVA.h"
 
 @interface EVAFriendTrendViewController ()
 
@@ -17,6 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = eva_RandomColor;
+    [self setupNavigationItem];
+}
+
+- (void)friendsRecommentClick:(UIButton *)button {
+    NSLog(@"%s", __func__);
+}
+
+- (void)setupNavigationItem {
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"friendsRecommentIcon"]
+                                                          highlightedImage:[UIImage imageNamed:@"friendsRecommentIcon-click"]
+                                                                    target:self
+                                                                    action:@selector(friendsRecommentClick:)];
+    self.navigationItem.title = @"我的关注";
 }
 
 - (void)didReceiveMemoryWarning {
