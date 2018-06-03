@@ -25,7 +25,6 @@
 
 - (void)settingClick:(UIButton *)button {
     EVASettingTableViewController *vc = [[EVASettingTableViewController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     // 修改tabBra的frame
 //    CGRect frame = self.tabBarController.tabBar.frame;

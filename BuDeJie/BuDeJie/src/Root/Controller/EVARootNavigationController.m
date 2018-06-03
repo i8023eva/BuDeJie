@@ -9,7 +9,7 @@
 #import "EVARootNavigationController.h"
 #import "UIBarButtonItem+EVA.h"
 
-@interface EVARootNavigationController ()
+@interface EVARootNavigationController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -35,7 +35,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    <_UINavigationInteractiveTransition: 0x7fbb53b329c0>
+//    NSLog(@"delegate - %@", self.interactivePopGestureRecognizer.delegate);
+    //    假死状态:程序还在运行,但是界面死了.  -  非根控制器才需要触发手势
+//    self.interactivePopGestureRecognizer.delegate = self;  边缘滑动
+    [self setupGesture];
 }
+
+#pragma mark - UIGestureRecognizerDelegate
+
+/**
+ <#Description#>
+
+ @return 是否触发手势
+ */
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(nonnull UITouch *)touch {
+    return self.childViewControllers.count > 1;
+}
+
+/**
+ 全屏滑动
+ */
+- (void)setupGesture {
+    SEL action = sel_registerName("handleNavigationTransition:");
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self.interactivePopGestureRecognizer.delegate
+                                                                          action:action];
+    [self.view addGestureRecognizer:pan];
+    pan.delegate = self;
+//    禁用系统手势
+    self.interactivePopGestureRecognizer.enabled = NO;
+}
+#pragma mark -
 
 - (void)backClick {
     [self popViewControllerAnimated:YES];
@@ -44,6 +74,7 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
 //    非根控制器
     if (self.childViewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithImage:[UIImage imageNamed:@"navigationButtonReturn"]
                                                                             highlightedImage:[UIImage imageNamed:@"navigationButtonReturnClick"]
                                                                                       target:self
@@ -51,6 +82,10 @@
                                                                                        title:@"返回"];
     }
     [super pushViewController:viewController animated:animated];
+    /*
+     <UIScreenEdgePanGestureRecognizer: 0x7fc7db540cd0; state = Possible; delaysTouchesBegan = YES; view = <UILayoutContainerView 0x7fc7db52fef0>; target= <(action=handleNavigationTransition:, target=<_UINavigationInteractiveTransition 0x7fc7db540710>)>>
+     */
+//    NSLog(@"Gesture - %@", self.interactivePopGestureRecognizer);
 }
 
 - (void)didReceiveMemoryWarning {
