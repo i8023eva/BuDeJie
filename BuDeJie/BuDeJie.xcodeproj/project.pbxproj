@@ -20,6 +20,13 @@
 		14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9B20C00998000615D4 /* EVAPublishViewController.m */; };
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
 		147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147563A620C13D51002E72D6 /* EVARootTabBar.m */; };
+		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
+		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
+		14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */; };
+		14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84420C38EE60018D2F1 /* Default@2x.png */; };
+		14E6B84B20C38EE60018D2F1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84520C38EE60018D2F1 /* Default-568h@2x.png */; };
+		14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84620C38EE60018D2F1 /* Default-Portrait-2436h@3x.png */; };
+		14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84720C38EE60018D2F1 /* Default-667h@2x.png */; };
 		14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07120C2375500CC4284 /* UIView+EVA.m */; };
 		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
@@ -74,6 +81,14 @@
 		147563A520C13D51002E72D6 /* EVARootTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBar.h; sourceTree = "<group>"; };
 		147563A620C13D51002E72D6 /* EVARootTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBar.m; sourceTree = "<group>"; };
 		147563A820C14F9F002E72D6 /* BuDeJie_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie_Prefix.pch; sourceTree = "<group>"; };
+		14E6B83D20C387390018D2F1 /* EVAADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADViewController.h; sourceTree = "<group>"; };
+		14E6B83E20C387390018D2F1 /* EVAADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADViewController.m; sourceTree = "<group>"; };
+		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
+		14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		14E6B84420C38EE60018D2F1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		14E6B84520C38EE60018D2F1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		14E6B84620C38EE60018D2F1 /* Default-Portrait-2436h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-2436h@3x.png"; sourceTree = "<group>"; };
+		14E6B84720C38EE60018D2F1 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		14F6A07020C2375500CC4284 /* UIImage+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EVA.h"; sourceTree = "<group>"; };
 		14F6A07120C2375500CC4284 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
 		14F6A07220C2375500CC4284 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
@@ -358,6 +373,7 @@
 		14046F9D20C02183000615D4 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				14E6B83920C387250018D2F1 /* AD(广告) */,
 				14046F9E20C02183000615D4 /* Controller */,
 				14046F9F20C02183000615D4 /* Model */,
 				14046FA020C02183000615D4 /* View */,
@@ -390,6 +406,53 @@
 				147563A620C13D51002E72D6 /* EVARootTabBar.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		14E6B83920C387250018D2F1 /* AD(广告) */ = {
+			isa = PBXGroup;
+			children = (
+				14E6B84220C38EE60018D2F1 /* LaunchImage */,
+				14E6B83A20C387250018D2F1 /* Controller */,
+				14E6B83B20C387250018D2F1 /* Model */,
+				14E6B83C20C387250018D2F1 /* View */,
+			);
+			path = "AD(广告)";
+			sourceTree = "<group>";
+		};
+		14E6B83A20C387250018D2F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14E6B83D20C387390018D2F1 /* EVAADViewController.h */,
+				14E6B83E20C387390018D2F1 /* EVAADViewController.m */,
+				14E6B83F20C387390018D2F1 /* EVAADViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14E6B83B20C387250018D2F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14E6B83C20C387250018D2F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14E6B84220C38EE60018D2F1 /* LaunchImage */ = {
+			isa = PBXGroup;
+			children = (
+				14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */,
+				14E6B84420C38EE60018D2F1 /* Default@2x.png */,
+				14E6B84520C38EE60018D2F1 /* Default-568h@2x.png */,
+				14E6B84620C38EE60018D2F1 /* Default-Portrait-2436h@3x.png */,
+				14E6B84720C38EE60018D2F1 /* Default-667h@2x.png */,
+			);
+			path = LaunchImage;
 			sourceTree = "<group>";
 		};
 		14F6A06F20C2375500CC4284 /* Category */ = {
@@ -552,7 +615,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14046F4E20BFEF11000615D4 /* LaunchScreen.storyboard in Resources */,
+				14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */,
+				14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */,
+				14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */,
+				14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */,
+				14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */,
 				14046F4B20BFEF11000615D4 /* Assets.xcassets in Resources */,
+				14E6B84B20C38EE60018D2F1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */,

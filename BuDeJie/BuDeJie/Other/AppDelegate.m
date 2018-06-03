@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EVARootTabBarController.h"
+#import "EVAADViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
+    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[EVARootTabBarController alloc] init];
+    self.window.rootViewController = [[EVAADViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }
