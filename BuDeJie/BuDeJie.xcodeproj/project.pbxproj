@@ -33,6 +33,9 @@
 		14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */; };
 		14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08120C2707000CC4284 /* EVARootNavigationController.m */; };
 		14F6A08920C2845900CC4284 /* EVASettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */; };
+		1F228168EFA78390D679C166 /* libPods-BuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6679D8E8BDF10F00954B912C /* libPods-BuDeJie.a */; };
+		24EB96A047DFE51D22B9EB07 /* libPods-BuDeJieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C443C46748B5945FE2783E2E /* libPods-BuDeJieTests.a */; };
+		6857B4CB9BD2600AEF611EBE /* libPods-BuDeJieUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A36FE43612167BD1E0D5C13B /* libPods-BuDeJieUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0672DFECF2015B6BA8DA14AB /* Pods-BuDeJieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJieUITests/Pods-BuDeJieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		14046F3E20BFEF10000615D4 /* BuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14046F4A20BFEF11000615D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14046F4D20BFEF11000615D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,14 @@
 		14F6A08120C2707000CC4284 /* EVARootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootNavigationController.m; sourceTree = "<group>"; };
 		14F6A08720C2845900CC4284 /* EVASettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVASettingTableViewController.h; sourceTree = "<group>"; };
 		14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVASettingTableViewController.m; sourceTree = "<group>"; };
+		5DC2CB9965B06B05201112B4 /* Pods-BuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJie/Pods-BuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
+		6679D8E8BDF10F00954B912C /* libPods-BuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36FE43612167BD1E0D5C13B /* libPods-BuDeJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB15E40256638037719102B3 /* Pods-BuDeJieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJieUITests/Pods-BuDeJieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C443C46748B5945FE2783E2E /* libPods-BuDeJieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B3D173F5615DDE8750A694 /* Pods-BuDeJieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJieTests/Pods-BuDeJieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D31DACB77674061E85EE4D12 /* Pods-BuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJie/Pods-BuDeJie.release.xcconfig"; sourceTree = "<group>"; };
+		D558B18CF4DF47E2600A431C /* Pods-BuDeJieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJieTests/Pods-BuDeJieTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F228168EFA78390D679C166 /* libPods-BuDeJie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24EB96A047DFE51D22B9EB07 /* libPods-BuDeJieTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6857B4CB9BD2600AEF611EBE /* libPods-BuDeJieUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +150,8 @@
 				14046F5920BFEF11000615D4 /* BuDeJieTests */,
 				14046F6420BFEF11000615D4 /* BuDeJieUITests */,
 				14046F3F20BFEF10000615D4 /* Products */,
+				FEFA1DFE918E2D589B0D480C /* Pods */,
+				90FAD2F772951A59722B6AF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -510,6 +527,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		90FAD2F772951A59722B6AF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6679D8E8BDF10F00954B912C /* libPods-BuDeJie.a */,
+				C443C46748B5945FE2783E2E /* libPods-BuDeJieTests.a */,
+				A36FE43612167BD1E0D5C13B /* libPods-BuDeJieUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEFA1DFE918E2D589B0D480C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DC2CB9965B06B05201112B4 /* Pods-BuDeJie.debug.xcconfig */,
+				D31DACB77674061E85EE4D12 /* Pods-BuDeJie.release.xcconfig */,
+				D2B3D173F5615DDE8750A694 /* Pods-BuDeJieTests.debug.xcconfig */,
+				D558B18CF4DF47E2600A431C /* Pods-BuDeJieTests.release.xcconfig */,
+				0672DFECF2015B6BA8DA14AB /* Pods-BuDeJieUITests.debug.xcconfig */,
+				BB15E40256638037719102B3 /* Pods-BuDeJieUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -517,6 +557,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14046F6A20BFEF11000615D4 /* Build configuration list for PBXNativeTarget "BuDeJie" */;
 			buildPhases = (
+				918378F23552E73C547B7E17 /* [CP] Check Pods Manifest.lock */,
 				14046F3A20BFEF10000615D4 /* Sources */,
 				14046F3B20BFEF10000615D4 /* Frameworks */,
 				14046F3C20BFEF10000615D4 /* Resources */,
@@ -534,6 +575,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14046F6D20BFEF11000615D4 /* Build configuration list for PBXNativeTarget "BuDeJieTests" */;
 			buildPhases = (
+				B22B01B743E9869BB33E8C98 /* [CP] Check Pods Manifest.lock */,
 				14046F5220BFEF11000615D4 /* Sources */,
 				14046F5320BFEF11000615D4 /* Frameworks */,
 				14046F5420BFEF11000615D4 /* Resources */,
@@ -552,6 +594,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14046F7020BFEF11000615D4 /* Build configuration list for PBXNativeTarget "BuDeJieUITests" */;
 			buildPhases = (
+				157C7737B0E85E428883DEDD /* [CP] Check Pods Manifest.lock */,
 				14046F5D20BFEF11000615D4 /* Sources */,
 				14046F5E20BFEF11000615D4 /* Frameworks */,
 				14046F5F20BFEF11000615D4 /* Resources */,
@@ -640,6 +683,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		157C7737B0E85E428883DEDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuDeJieUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		918378F23552E73C547B7E17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuDeJie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B22B01B743E9869BB33E8C98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuDeJieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14046F3A20BFEF10000615D4 /* Sources */ = {
@@ -820,6 +920,7 @@
 		};
 		14046F6B20BFEF11000615D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC2CB9965B06B05201112B4 /* Pods-BuDeJie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -827,10 +928,7 @@
 				GCC_PREFIX_HEADER = BuDeJie/Other/BuDeJie_Prefix.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -839,6 +937,7 @@
 		};
 		14046F6C20BFEF11000615D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D31DACB77674061E85EE4D12 /* Pods-BuDeJie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -846,10 +945,7 @@
 				GCC_PREFIX_HEADER = BuDeJie/Other/BuDeJie_Prefix.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -858,16 +954,13 @@
 		};
 		14046F6E20BFEF11000615D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2B3D173F5615DDE8750A694 /* Pods-BuDeJieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -877,16 +970,13 @@
 		};
 		14046F6F20BFEF11000615D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D558B18CF4DF47E2600A431C /* Pods-BuDeJieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -896,15 +986,12 @@
 		};
 		14046F7120BFEF11000615D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0672DFECF2015B6BA8DA14AB /* Pods-BuDeJieUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -914,15 +1001,12 @@
 		};
 		14046F7220BFEF11000615D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB15E40256638037719102B3 /* Pods-BuDeJieUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
