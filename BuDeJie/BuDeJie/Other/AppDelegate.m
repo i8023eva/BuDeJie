@@ -22,7 +22,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
+//    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[EVAADViewController alloc] init];
     [self.window makeKeyAndVisible];
