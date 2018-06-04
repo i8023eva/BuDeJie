@@ -12,6 +12,6 @@
 @implementation EVAADInfoModel
 
 //+ (NSDictionary *)mj_objectClassInArray {
-//    return @{@"ads" : [EVAADModel class]};
+//    return @{@"ad" : [EVAADModel class]};
 //}
 @end

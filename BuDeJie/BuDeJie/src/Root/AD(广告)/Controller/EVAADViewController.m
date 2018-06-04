@@ -16,6 +16,7 @@
 
 #import "EVAADInfoModel.h"
 
+#define code2 @"phcqnauGuHYkFMRquANhmgN_IauBThfqmgKsUARhIWdGULPxnz3vndtkQW08nau_I1Y1P1Rhmhwz5Hb8nBuL5HDknWRhTA_qmvqVQhGGUhI_py4MQhF1TvChmgKY5H6hmyPW5RFRHzuET1dGULnhuAN85HchUy7s5HDhIywGujY3P1n3mWb1PvDLnvF-Pyf4mHR4nyRvmWPBmhwBPjcLPyfsPHT3uWm4FMPLpHYkFh7sTA-b5yRzPj6sPvRdFhPdTWYsFMKzuykEmyfqnauGuAu95Rnsnbfknbm1QHnkwW6VPjujnBdKfWD1QHnsnbRsnHwKfYwAwiu9mLfqHbD_H70hTv6qnHn1PauVmynqnjclnj0lnj0lnj0lnj0lnj0hThYqniuVujYkFhkC5HRvnB3dFh7spyfqnW0srj64nBu9TjYsFMub5HDhTZFEujdzTLK_mgPCFMP85Rnsnbfknbm1QHnkwW6VPjujnBdKfWD1QHnsnbRsnHwKfYwAwiuBnHfdnjD4rjnvPWYkFh7sTZu-TWY1QW68nBuWUHYdnHchIAYqPHDzFhqsmyPGIZbqniuYThuYTjd1uAVxnz3vnzu9IjYzFh6qP1RsFMws5y-fpAq8uHT_nBuYmycqnau1IjYkPjRsnHb3n1mvnHDkQWD4niuVmybqniu1uy3qwD-HQDFKHakHHNn_HR7fQ7uDQ7PcHzkHiR3_RYqNQD7jfzkPiRn_wdKHQDP5HikPfRb_fNc_NbwPQDdRHzkDiNchTvwW5HnvPj0zQWndnHRvnBsdPWb4ri3kPW0kPHmhmLnqPH6LP1ndm1-WPyDvnHKBrAw9nju9PHIhmH9WmH6zrjRhTv7_5iu85HDhTvd15HDhTLTqP1RsFh4ETjYYPW0sPzuVuyYqn1mYnjc8nWbvrjTdQjRvrHb4QWDvnjDdPBuk5yRzPj6sPvRdgvPsTBu_my4bTvP9TARqnam"
 
 @interface EVAADViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *launchImage;
@@ -24,7 +25,7 @@
 
 @property (nonatomic, weak) UIImageView *ADImage;
 @property (nonatomic, weak) NSTimer *timer;
-@property (nonatomic, strong) EVAADInfoModel *model;
+@property (nonatomic, strong) EVAADModel *model;
 
 @end
 
@@ -33,8 +34,12 @@
 - (UIImageView *)ADImage {
     if (_ADImage == nil) {
         UIImageView *imageView = [[UIImageView alloc] init];
-//       接口没有图片尺寸
-        imageView.bounds = CGRectMake(0, 0, eva_screenW, 200);
+        //       不设图片尺寸也能显示图片,宽高设置其一,内容模式必须设置如下;
+//        > UIViewContentModeScaleAspectFit - 需要明确的视图大小 X
+//        > UIViewContentModeScaleAspectFill - 根据宽度(高度)自动填充 V - 多余部分 clipsToBounds
+//        因为图片需要点击,视图高度还是要设置一下
+        CGFloat imageH = eva_screenW / self.model.w * self.model.h;
+        imageView.bounds = CGRectMake(0, 0, eva_screenW, imageH);
         imageView.center = self.view.center;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.ADContainView addSubview:imageView];
@@ -51,7 +56,7 @@
  点击图片跳转网址safari   self.model.ads[0].backgroud_pic
  */
 - (void)tapImage {
-    NSURL *URL = [NSURL URLWithString:self.model.ads[0].backgroud_pic];
+    NSURL *URL = [NSURL URLWithString:self.model.ori_curl];
     UIApplication *app = [UIApplication sharedApplication];
     if ([app canOpenURL:URL]) {
         [app openURL:URL options:@{UIApplicationOpenURLOptionUniversalLinksOnly : @NO} completionHandler:nil];
@@ -86,18 +91,29 @@
 - (void)setupAD {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:@"http://s.budejie.com/op/adplace2/budejie-android-7.0.0/360zhushou/0/0-100.json"
-      parameters:nil
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    NSDictionary *parameters = @{
+                                 @"code2" : code2
+                                 };
+    [manager GET:@"http://mobads.baidu.com/cpro/ui/mads.php"
+      parameters:parameters
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              [EVAADInfoModel mj_setupObjectClassInArray:^NSDictionary *{
-                 return @{@"ads" : [EVAADModel class]};
+                 return @{@"ad" : [EVAADModel class]};
              }];
-             self.model = [EVAADInfoModel mj_objectWithKeyValues:responseObject];
-             [self.ADImage sd_setImageWithURL:[NSURL URLWithString:self.model.ads[0].backgroud_pic]];
+             EVAADInfoModel *infoModel = [EVAADInfoModel mj_objectWithKeyValues:responseObject];
+             self.model = infoModel.ad[0];
+             [self.ADImage sd_setImageWithURL:[NSURL URLWithString:self.model.w_picurl]];
+//             [responseObject writeToFile:@"/Users/lyh/Desktop/from/ad2.plist" atomically:YES];
+//             如果有值为 null,writeToFile 不行
              //             BOOL isFile = [NSKeyedArchiver archiveRootObject:responseObject toFile:@"/Users/lyh/Desktop/from/ad.plist"];
              //             NSLog(@"%d", isFile);
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             /*
+              error.serialization.response content-type: text/html
+              */
 //             NSLog(@"%@", error);
          }];
 }

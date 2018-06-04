@@ -11,5 +11,5 @@
 
 @interface EVAADInfoModel : NSObject
 
-@property (nonatomic, strong) NSArray<EVAADModel *> *ads;
+@property (nonatomic, strong) NSArray<EVAADModel *> *ad;
 @end

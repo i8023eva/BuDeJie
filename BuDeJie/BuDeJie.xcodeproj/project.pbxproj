@@ -20,7 +20,7 @@
 		14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9B20C00998000615D4 /* EVAPublishViewController.m */; };
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
 		140C831D20C3E86D003D266D /* EVAADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140C831C20C3E86D003D266D /* EVAADModel.m */; };
-		140C832020C3F710003D266D /* EVAADInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140C831F20C3F710003D266D /* EVAADInfoModel.m */; };
+		14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C2920C542EF00370019 /* EVAADInfoModel.m */; };
 		147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147563A620C13D51002E72D6 /* EVARootTabBar.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
@@ -86,8 +86,8 @@
 		14046FA220C021A8000615D4 /* EVARootTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBarController.m; sourceTree = "<group>"; };
 		140C831B20C3E86D003D266D /* EVAADModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADModel.h; sourceTree = "<group>"; };
 		140C831C20C3E86D003D266D /* EVAADModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADModel.m; sourceTree = "<group>"; };
-		140C831E20C3F710003D266D /* EVAADInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADInfoModel.h; sourceTree = "<group>"; };
-		140C831F20C3F710003D266D /* EVAADInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADInfoModel.m; sourceTree = "<group>"; };
+		14619C2820C542EF00370019 /* EVAADInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAADInfoModel.h; sourceTree = "<group>"; };
+		14619C2920C542EF00370019 /* EVAADInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAADInfoModel.m; sourceTree = "<group>"; };
 		147563A520C13D51002E72D6 /* EVARootTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBar.h; sourceTree = "<group>"; };
 		147563A620C13D51002E72D6 /* EVARootTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBar.m; sourceTree = "<group>"; };
 		147563A820C14F9F002E72D6 /* BuDeJie_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie_Prefix.pch; sourceTree = "<group>"; };
@@ -457,8 +457,8 @@
 			children = (
 				140C831B20C3E86D003D266D /* EVAADModel.h */,
 				140C831C20C3E86D003D266D /* EVAADModel.m */,
-				140C831E20C3F710003D266D /* EVAADInfoModel.h */,
-				140C831F20C3F710003D266D /* EVAADInfoModel.m */,
+				14619C2820C542EF00370019 /* EVAADInfoModel.h */,
+				14619C2920C542EF00370019 /* EVAADInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -761,7 +761,6 @@
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
-				140C832020C3F710003D266D /* EVAADInfoModel.m in Sources */,
 				140C831D20C3E86D003D266D /* EVAADModel.m in Sources */,
 				14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */,
 				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,
@@ -770,6 +769,7 @@
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
 				14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
+				14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
 				14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */,
