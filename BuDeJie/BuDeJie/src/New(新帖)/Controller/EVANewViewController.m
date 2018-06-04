@@ -7,6 +7,8 @@
 //
 
 #import "EVANewViewController.h"
+#import "EVAMainTagTableViewController.h"
+
 #import "UIBarButtonItem+EVA.h"
 
 @interface EVANewViewController ()
@@ -22,7 +24,8 @@
 }
 
 - (void)mainTagClick:(UIButton *)button {
-    NSLog(@"%s", __func__);
+    EVAMainTagTableViewController *vc = [[EVAMainTagTableViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)setupNavigationItem {

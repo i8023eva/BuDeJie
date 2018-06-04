@@ -108,8 +108,8 @@
              [self.ADImage sd_setImageWithURL:[NSURL URLWithString:self.model.w_picurl]];
 //             [responseObject writeToFile:@"/Users/lyh/Desktop/from/ad2.plist" atomically:YES];
 //             如果有值为 null,writeToFile 不行
-             //             BOOL isFile = [NSKeyedArchiver archiveRootObject:responseObject toFile:@"/Users/lyh/Desktop/from/ad.plist"];
-             //             NSLog(@"%d", isFile);
+//             BOOL isFile = [NSKeyedArchiver archiveRootObject:responseObject toFile:@"/Users/lyh/Desktop/from/ad.plist"];
+//             NSLog(@"%d", isFile);
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              /*
               error.serialization.response content-type: text/html

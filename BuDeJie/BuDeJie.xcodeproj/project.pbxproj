@@ -21,6 +21,10 @@
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
 		140C831D20C3E86D003D266D /* EVAADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140C831C20C3E86D003D266D /* EVAADModel.m */; };
 		14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C2920C542EF00370019 /* EVAADInfoModel.m */; };
+		14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3020C55FAF00370019 /* EVAMainTagTableViewController.m */; };
+		14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3320C561EC00370019 /* EVAMainTagModel.m */; };
+		14619C3820C568E000370019 /* EVAMainTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3620C568E000370019 /* EVAMainTagTableViewCell.m */; };
+		14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14619C3720C568E000370019 /* EVAMainTagTableViewCell.xib */; };
 		147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147563A620C13D51002E72D6 /* EVARootTabBar.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
@@ -88,6 +92,13 @@
 		140C831C20C3E86D003D266D /* EVAADModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADModel.m; sourceTree = "<group>"; };
 		14619C2820C542EF00370019 /* EVAADInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAADInfoModel.h; sourceTree = "<group>"; };
 		14619C2920C542EF00370019 /* EVAADInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAADInfoModel.m; sourceTree = "<group>"; };
+		14619C2F20C55FAF00370019 /* EVAMainTagTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMainTagTableViewController.h; sourceTree = "<group>"; };
+		14619C3020C55FAF00370019 /* EVAMainTagTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMainTagTableViewController.m; sourceTree = "<group>"; };
+		14619C3220C561EC00370019 /* EVAMainTagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMainTagModel.h; sourceTree = "<group>"; };
+		14619C3320C561EC00370019 /* EVAMainTagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMainTagModel.m; sourceTree = "<group>"; };
+		14619C3520C568E000370019 /* EVAMainTagTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMainTagTableViewCell.h; sourceTree = "<group>"; };
+		14619C3620C568E000370019 /* EVAMainTagTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMainTagTableViewCell.m; sourceTree = "<group>"; };
+		14619C3720C568E000370019 /* EVAMainTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAMainTagTableViewCell.xib; sourceTree = "<group>"; };
 		147563A520C13D51002E72D6 /* EVARootTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBar.h; sourceTree = "<group>"; };
 		147563A620C13D51002E72D6 /* EVARootTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBar.m; sourceTree = "<group>"; };
 		147563A820C14F9F002E72D6 /* BuDeJie_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie_Prefix.pch; sourceTree = "<group>"; };
@@ -252,6 +263,7 @@
 		14046F7820C00501000615D4 /* New(新帖) */ = {
 			isa = PBXGroup;
 			children = (
+				14619C2B20C55F9200370019 /* MainTag(推荐订阅) */,
 				14046F7920C00501000615D4 /* Controller */,
 				14046F7A20C00501000615D4 /* Model */,
 				14046F7B20C00501000615D4 /* View */,
@@ -427,6 +439,44 @@
 			children = (
 				147563A520C13D51002E72D6 /* EVARootTabBar.h */,
 				147563A620C13D51002E72D6 /* EVARootTabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14619C2B20C55F9200370019 /* MainTag(推荐订阅) */ = {
+			isa = PBXGroup;
+			children = (
+				14619C2C20C55F9200370019 /* Controller */,
+				14619C2D20C55F9200370019 /* Model */,
+				14619C2E20C55F9200370019 /* View */,
+			);
+			path = "MainTag(推荐订阅)";
+			sourceTree = "<group>";
+		};
+		14619C2C20C55F9200370019 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14619C2F20C55FAF00370019 /* EVAMainTagTableViewController.h */,
+				14619C3020C55FAF00370019 /* EVAMainTagTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14619C2D20C55F9200370019 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14619C3220C561EC00370019 /* EVAMainTagModel.h */,
+				14619C3320C561EC00370019 /* EVAMainTagModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14619C2E20C55F9200370019 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14619C3520C568E000370019 /* EVAMainTagTableViewCell.h */,
+				14619C3620C568E000370019 /* EVAMainTagTableViewCell.m */,
+				14619C3720C568E000370019 /* EVAMainTagTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -671,6 +721,7 @@
 				14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */,
 				14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */,
 				14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */,
+				14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */,
 				14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */,
 				14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */,
 				14046F4B20BFEF11000615D4 /* Assets.xcassets in Resources */,
@@ -756,6 +807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14619C3820C568E000370019 /* EVAMainTagTableViewCell.m in Sources */,
 				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
@@ -769,6 +821,8 @@
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
 				14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
+				14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */,
+				14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */,
 				14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
