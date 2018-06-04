@@ -38,7 +38,10 @@
                                  @"action" : @"sub",
                                  @"c" : @"topic"
                                  };
-    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+        
+        [responseObject writeToFile:@"/Users/lyh/Desktop/from/tag.plist" atomically:YES];
+        
         self.model_Arr = [EVAMainTagModel mj_objectArrayWithKeyValuesArray:responseObject];
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
