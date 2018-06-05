@@ -37,7 +37,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithDisplayP3Red:220/255.0 green:220/255.0 blue:221/255.0 alpha:1.0];
     
-//    如果网络出错 会一直显示 - viewWillDisappear
+#warning 如果网络出错 会一直显示 - viewWillDisappear
     [SVProgressHUD show];
 }
 

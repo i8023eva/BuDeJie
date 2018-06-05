@@ -39,6 +39,11 @@
 		14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */; };
 		14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08120C2707000CC4284 /* EVARootNavigationController.m */; };
 		14F6A08920C2845900CC4284 /* EVASettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */; };
+		14F6DF1E20C66C7500DA8537 /* EVAFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F6DF1D20C66C7500DA8537 /* EVAFriendTrendViewController.xib */; };
+		14F6DF2620C6709500DA8537 /* EVALoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6DF2420C6709500DA8537 /* EVALoginRegisterViewController.m */; };
+		14F6DF2720C6709500DA8537 /* EVALoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F6DF2520C6709500DA8537 /* EVALoginRegisterViewController.xib */; };
+		14F6DF2A20C675D100DA8537 /* EVALoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6DF2920C675D100DA8537 /* EVALoginRegisterView.m */; };
+		14F6DF2C20C675E000DA8537 /* EVALoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F6DF2B20C675E000DA8537 /* EVALoginRegisterView.xib */; };
 		1F228168EFA78390D679C166 /* libPods-BuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6679D8E8BDF10F00954B912C /* libPods-BuDeJie.a */; };
 		24EB96A047DFE51D22B9EB07 /* libPods-BuDeJieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C443C46748B5945FE2783E2E /* libPods-BuDeJieTests.a */; };
 		6857B4CB9BD2600AEF611EBE /* libPods-BuDeJieUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A36FE43612167BD1E0D5C13B /* libPods-BuDeJieUITests.a */; };
@@ -122,6 +127,13 @@
 		14F6A08120C2707000CC4284 /* EVARootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootNavigationController.m; sourceTree = "<group>"; };
 		14F6A08720C2845900CC4284 /* EVASettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVASettingTableViewController.h; sourceTree = "<group>"; };
 		14F6A08820C2845900CC4284 /* EVASettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVASettingTableViewController.m; sourceTree = "<group>"; };
+		14F6DF1D20C66C7500DA8537 /* EVAFriendTrendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAFriendTrendViewController.xib; sourceTree = "<group>"; };
+		14F6DF2320C6709500DA8537 /* EVALoginRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVALoginRegisterViewController.h; sourceTree = "<group>"; };
+		14F6DF2420C6709500DA8537 /* EVALoginRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVALoginRegisterViewController.m; sourceTree = "<group>"; };
+		14F6DF2520C6709500DA8537 /* EVALoginRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVALoginRegisterViewController.xib; sourceTree = "<group>"; };
+		14F6DF2820C675D100DA8537 /* EVALoginRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVALoginRegisterView.h; sourceTree = "<group>"; };
+		14F6DF2920C675D100DA8537 /* EVALoginRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVALoginRegisterView.m; sourceTree = "<group>"; };
+		14F6DF2B20C675E000DA8537 /* EVALoginRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVALoginRegisterView.xib; sourceTree = "<group>"; };
 		5DC2CB9965B06B05201112B4 /* Pods-BuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuDeJie/Pods-BuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 		6679D8E8BDF10F00954B912C /* libPods-BuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36FE43612167BD1E0D5C13B /* libPods-BuDeJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,6 +309,7 @@
 		14046F7C20C00501000615D4 /* FriendTrend(关注) */ = {
 			isa = PBXGroup;
 			children = (
+				14F6DF1F20C6705C00DA8537 /* LoginAndRegist(登录注册) */,
 				14046F7D20C00501000615D4 /* Controller */,
 				14046F7E20C00501000615D4 /* Model */,
 				14046F7F20C00501000615D4 /* View */,
@@ -309,6 +322,7 @@
 			children = (
 				14046F9420C00975000615D4 /* EVAFriendTrendViewController.h */,
 				14046F9520C00975000615D4 /* EVAFriendTrendViewController.m */,
+				14F6DF1D20C66C7500DA8537 /* EVAFriendTrendViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -587,6 +601,43 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		14F6DF1F20C6705C00DA8537 /* LoginAndRegist(登录注册) */ = {
+			isa = PBXGroup;
+			children = (
+				14F6DF2020C6705C00DA8537 /* Controller */,
+				14F6DF2120C6705C00DA8537 /* Model */,
+				14F6DF2220C6705C00DA8537 /* View */,
+			);
+			path = "LoginAndRegist(登录注册)";
+			sourceTree = "<group>";
+		};
+		14F6DF2020C6705C00DA8537 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14F6DF2320C6709500DA8537 /* EVALoginRegisterViewController.h */,
+				14F6DF2420C6709500DA8537 /* EVALoginRegisterViewController.m */,
+				14F6DF2520C6709500DA8537 /* EVALoginRegisterViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14F6DF2120C6705C00DA8537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14F6DF2220C6705C00DA8537 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14F6DF2820C675D100DA8537 /* EVALoginRegisterView.h */,
+				14F6DF2920C675D100DA8537 /* EVALoginRegisterView.m */,
+				14F6DF2B20C675E000DA8537 /* EVALoginRegisterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		90FAD2F772951A59722B6AF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,8 +771,11 @@
 			files = (
 				14046F4E20BFEF11000615D4 /* LaunchScreen.storyboard in Resources */,
 				14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */,
+				14F6DF2C20C675E000DA8537 /* EVALoginRegisterView.xib in Resources */,
 				14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */,
+				14F6DF2720C6709500DA8537 /* EVALoginRegisterViewController.xib in Resources */,
 				14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */,
+				14F6DF1E20C66C7500DA8537 /* EVAFriendTrendViewController.xib in Resources */,
 				14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */,
 				14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */,
 				14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */,
@@ -826,9 +880,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F6DF2620C6709500DA8537 /* EVALoginRegisterViewController.m in Sources */,
 				14619C3820C568E000370019 /* EVAMainTagTableViewCell.m in Sources */,
 				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
+				14F6DF2A20C675D100DA8537 /* EVALoginRegisterView.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
@@ -1013,7 +1069,10 @@
 				GCC_PREFIX_HEADER = BuDeJie/Other/BuDeJie_Prefix.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1030,7 +1089,10 @@
 				GCC_PREFIX_HEADER = BuDeJie/Other/BuDeJie_Prefix.pch;
 				INFOPLIST_FILE = BuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1045,7 +1107,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1061,7 +1127,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1076,7 +1146,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1091,7 +1165,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = BuDeJieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.BuDeJieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

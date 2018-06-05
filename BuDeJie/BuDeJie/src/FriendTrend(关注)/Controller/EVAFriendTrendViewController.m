@@ -7,6 +7,7 @@
 //
 
 #import "EVAFriendTrendViewController.h"
+#import "EVALoginRegisterViewController.h"
 #import "UIBarButtonItem+EVA.h"
 
 @interface EVAFriendTrendViewController ()
@@ -17,8 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = eva_RandomColor;
     [self setupNavigationItem];
+}
+
+- (IBAction)loginAndRegister:(UIButton *)sender {
+    EVALoginRegisterViewController *vc = [[EVALoginRegisterViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)friendsRecommentClick:(UIButton *)button {

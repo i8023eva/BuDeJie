@@ -40,6 +40,7 @@
 //        因为图片需要点击,视图高度还是要设置一下
 #warning 广告接口没数据
         if (self.model) {
+//            NSLog(@"w - %F,h - %F", self.model.w, self.model.h);
             CGFloat imageH = eva_screenW / self.model.w * self.model.h;
             imageView.bounds = CGRectMake(0, 0, eva_screenW, imageH);
             imageView.center = self.view.center;
