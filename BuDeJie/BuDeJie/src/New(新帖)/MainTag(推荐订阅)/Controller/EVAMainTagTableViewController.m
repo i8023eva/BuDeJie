@@ -28,6 +28,12 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([EVAMainTagTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([self class])];
     
     self.title = @"推荐标签";
+    
+    // 第一种 : 清空tableView分割线内边距 清空cell的约束边缘  一句就够了, 不需要 cell 中的self.layoutMargins
+//    self.tableView.separatorInset = UIEdgeInsetsZero;
+    //    第二种 : 使分割线占据整个屏幕 - 设置 cell 的setFrame()
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithDisplayP3Red:220/255.0 green:220/255.0 blue:221/255.0 alpha:1.0];
 }
 
 - (void)loadData {
@@ -39,11 +45,11 @@
                                  @"c" : @"topic"
                                  };
     [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
-        
-        [responseObject writeToFile:@"/Users/lyh/Desktop/from/tag.plist" atomically:YES];
-        
-        self.model_Arr = [EVAMainTagModel mj_objectArrayWithKeyValuesArray:responseObject];
-        [self.tableView reloadData];
+        if (responseObject) {
+//            [responseObject writeToFile:@"/Users/lyh/Desktop/from/tag.plist" atomically:YES];
+            self.model_Arr = [EVAMainTagModel mj_objectArrayWithKeyValuesArray:responseObject];
+            [self.tableView reloadData];
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        NSLog(@"%@", error);
     }];

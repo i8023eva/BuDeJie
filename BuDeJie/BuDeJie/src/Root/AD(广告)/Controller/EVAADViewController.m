@@ -38,10 +38,13 @@
 //        > UIViewContentModeScaleAspectFit - 需要明确的视图大小 X
 //        > UIViewContentModeScaleAspectFill - 根据宽度(高度)自动填充 V - 多余部分 clipsToBounds
 //        因为图片需要点击,视图高度还是要设置一下
-        CGFloat imageH = eva_screenW / self.model.w * self.model.h;
-        imageView.bounds = CGRectMake(0, 0, eva_screenW, imageH);
-        imageView.center = self.view.center;
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
+#warning 广告接口没数据
+        if (self.model) {
+            CGFloat imageH = eva_screenW / self.model.w * self.model.h;
+            imageView.bounds = CGRectMake(0, 0, eva_screenW, imageH);
+            imageView.center = self.view.center;
+            imageView.contentMode = UIViewContentModeScaleAspectFill;            
+        }
         [self.ADContainView addSubview:imageView];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage)];
@@ -103,9 +106,14 @@
              [EVAADInfoModel mj_setupObjectClassInArray:^NSDictionary *{
                  return @{@"ad" : [EVAADModel class]};
              }];
-             EVAADInfoModel *infoModel = [EVAADInfoModel mj_objectWithKeyValues:responseObject];
-             self.model = infoModel.ad[0];
-             [self.ADImage sd_setImageWithURL:[NSURL URLWithString:self.model.w_picurl]];
+             if (responseObject) {
+                 EVAADInfoModel *infoModel = [EVAADInfoModel mj_objectWithKeyValues:responseObject];
+//                 广告数组可能为空
+                 if (infoModel.ad.count > 0) {
+                     self.model = infoModel.ad[0];
+                 }
+                 [self.ADImage sd_setImageWithURL:[NSURL URLWithString:self.model.w_picurl]];
+             }
 //             [responseObject writeToFile:@"/Users/lyh/Desktop/from/ad2.plist" atomically:YES];
 //             如果有值为 null,writeToFile 不行
 //             BOOL isFile = [NSKeyedArchiver archiveRootObject:responseObject toFile:@"/Users/lyh/Desktop/from/ad.plist"];

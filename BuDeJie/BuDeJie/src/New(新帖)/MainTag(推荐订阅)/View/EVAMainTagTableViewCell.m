@@ -20,6 +20,20 @@
 
 @implementation EVAMainTagTableViewCell
 
+//- (void)setFrame:(CGRect)frame {
+////    NSLog(@"%@", NSStringFromCGRect(frame));之前就有值
+//    frame.size.height -= 1;
+//    
+//    [super setFrame:frame];
+//}
+
+#warning 不行了--
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    self.layer.cornerRadius = 30;
+    self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width-20, self.bounds.size.height - 5);
+}
+
 - (void)setModel:(EVAMainTagModel *)model {
     _model = model;
     
@@ -56,10 +70,12 @@
 //    头像圆角 iOS9之前会降帧
 //    self.iconView.layer.cornerRadius = 30.f;
 //    self.iconView.layer.masksToBounds = YES;
-
     /*
      也可以通过 xib - runtime attributes - 设置属性[不推荐,别人找不到]
      */
+    
+    
+//    self.layoutMargins = UIEdgeInsetsZero; //On iOS 11.0 and later, 先设置这个directionalLayoutMargins
 }
 
 - (void)circleWithImageContext {
