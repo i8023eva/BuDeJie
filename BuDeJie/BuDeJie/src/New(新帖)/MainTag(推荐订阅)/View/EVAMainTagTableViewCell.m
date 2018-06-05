@@ -20,19 +20,20 @@
 
 @implementation EVAMainTagTableViewCell
 
-//- (void)setFrame:(CGRect)frame {
-////    NSLog(@"%@", NSStringFromCGRect(frame));之前就有值
-//    frame.size.height -= 1;
-//    
-//    [super setFrame:frame];
-//}
-
-#warning 不行了--
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    self.layer.cornerRadius = 30;
-    self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width-20, self.bounds.size.height - 5);
+- (void)setFrame:(CGRect)frame {
+//    NSLog(@"%@", NSStringFromCGRect(frame));之前就有值
+    frame.size.height -= 1;
+//    self.layer.cornerRadius = 20;
+    [super setFrame:frame];
 }
+
+#warning setFrame
+//- (void)drawRect:(CGRect)rect {
+//    [super drawRect:rect];
+//
+//    self.layer.cornerRadius = 30;
+//    self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width-20, self.bounds.size.height - 5);
+//}
 
 - (void)setModel:(EVAMainTagModel *)model {
     _model = model;
@@ -57,7 +58,6 @@
         CGFloat newNum = num / 10000.0;
         numString = [[NSString stringWithFormat:@"%.1f万人订阅", newNum]
                      stringByReplacingOccurrencesOfString:@".0" withString:@""];
-        
     }
     return numString;
 }
@@ -74,8 +74,9 @@
      也可以通过 xib - runtime attributes - 设置属性[不推荐,别人找不到]
      */
     
-    
 //    self.layoutMargins = UIEdgeInsetsZero; //On iOS 11.0 and later, 先设置这个directionalLayoutMargins
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)circleWithImageContext {

@@ -12,10 +12,12 @@
 
 #import <AFNetworking.h>
 #import <MJExtension.h>
+#import <SVProgressHUD.h>
 
 @interface EVAMainTagTableViewController ()
 
 @property (nonatomic, strong) NSArray<EVAMainTagModel *> *model_Arr;
+@property (nonatomic, weak) AFHTTPSessionManager *manager;
 @end
 
 @implementation EVAMainTagTableViewController
@@ -34,10 +36,27 @@
     //    第二种 : 使分割线占据整个屏幕 - 设置 cell 的setFrame()
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithDisplayP3Red:220/255.0 green:220/255.0 blue:221/255.0 alpha:1.0];
+    
+//    如果网络出错 会一直显示 - viewWillDisappear
+    [SVProgressHUD show];
+}
+
+/**
+ 即将消失
+
+ @param animated <#animated description#>
+ */
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [SVProgressHUD dismiss];
+//    取消所有任务
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
 }
 
 - (void)loadData {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    self.manager = manager;
     
     NSDictionary *parameters = @{
                                  @"a" : @"tag_recommend",
@@ -45,12 +64,14 @@
                                  @"c" : @"topic"
                                  };
     [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+        [SVProgressHUD dismiss];
         if (responseObject) {
 //            [responseObject writeToFile:@"/Users/lyh/Desktop/from/tag.plist" atomically:YES];
             self.model_Arr = [EVAMainTagModel mj_objectArrayWithKeyValuesArray:responseObject];
             [self.tableView reloadData];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
 //        NSLog(@"%@", error);
     }];
 }
