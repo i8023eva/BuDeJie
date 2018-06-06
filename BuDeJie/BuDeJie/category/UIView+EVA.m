@@ -57,7 +57,7 @@
     self.center = center;
 }
 
-- (CGFloat)Eva_centerX
+- (CGFloat)eva_centerX
 {
     return self.center.x;
 }
@@ -69,7 +69,7 @@
     self.center = center;
 }
 
-- (CGFloat)Eva_centerY
+- (CGFloat)eva_centerY
 {
     return self.center.y;
 }

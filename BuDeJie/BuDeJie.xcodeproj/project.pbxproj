@@ -16,7 +16,6 @@
 		14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F8F20C00958000615D4 /* EVAEssenceViewController.m */; };
 		14046F9320C00965000615D4 /* EVANewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9220C00965000615D4 /* EVANewViewController.m */; };
 		14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9520C00975000615D4 /* EVAFriendTrendViewController.m */; };
-		14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9820C00985000615D4 /* EVAMeViewController.m */; };
 		14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9B20C00998000615D4 /* EVAPublishViewController.m */; };
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
 		140C831D20C3E86D003D266D /* EVAADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140C831C20C3E86D003D266D /* EVAADModel.m */; };
@@ -31,6 +30,11 @@
 		1483BE6220C770EF0074DC29 /* EVAFastLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6120C770EF0074DC29 /* EVAFastLoginButton.m */; };
 		1483BE6520C7841B0074DC29 /* EVALoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6420C7841B0074DC29 /* EVALoginTextField.m */; };
 		1483BE6820C78A2D0074DC29 /* UITextField+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6720C78A2D0074DC29 /* UITextField+EVA.m */; };
+		1483BE6D20C7D8BB0074DC29 /* EVAMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6C20C7D8BB0074DC29 /* EVAMeTableViewController.m */; };
+		1483BE6F20C7D9670074DC29 /* EVAMeTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1483BE6E20C7D9670074DC29 /* EVAMeTableViewController.storyboard */; };
+		1483BE7320C7DC040074DC29 /* EVAMeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE7120C7DC040074DC29 /* EVAMeCollectionViewCell.m */; };
+		1483BE7420C7DC040074DC29 /* EVAMeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1483BE7220C7DC040074DC29 /* EVAMeCollectionViewCell.xib */; };
+		1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE7620C7E0D70074DC29 /* EVAMeModel.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
 		14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */; };
@@ -92,8 +96,6 @@
 		14046F9220C00965000615D4 /* EVANewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVANewViewController.m; sourceTree = "<group>"; };
 		14046F9420C00975000615D4 /* EVAFriendTrendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAFriendTrendViewController.h; sourceTree = "<group>"; };
 		14046F9520C00975000615D4 /* EVAFriendTrendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAFriendTrendViewController.m; sourceTree = "<group>"; };
-		14046F9720C00985000615D4 /* EVAMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMeViewController.h; sourceTree = "<group>"; };
-		14046F9820C00985000615D4 /* EVAMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMeViewController.m; sourceTree = "<group>"; };
 		14046F9A20C00998000615D4 /* EVAPublishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAPublishViewController.h; sourceTree = "<group>"; };
 		14046F9B20C00998000615D4 /* EVAPublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAPublishViewController.m; sourceTree = "<group>"; };
 		14046FA120C021A8000615D4 /* EVARootTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBarController.h; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 		1483BE6420C7841B0074DC29 /* EVALoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVALoginTextField.m; sourceTree = "<group>"; };
 		1483BE6620C78A2D0074DC29 /* UITextField+EVA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+EVA.h"; sourceTree = "<group>"; };
 		1483BE6720C78A2D0074DC29 /* UITextField+EVA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+EVA.m"; sourceTree = "<group>"; };
+		1483BE6B20C7D8BB0074DC29 /* EVAMeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMeTableViewController.h; sourceTree = "<group>"; };
+		1483BE6C20C7D8BB0074DC29 /* EVAMeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMeTableViewController.m; sourceTree = "<group>"; };
+		1483BE6E20C7D9670074DC29 /* EVAMeTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EVAMeTableViewController.storyboard; sourceTree = "<group>"; };
+		1483BE7020C7DC040074DC29 /* EVAMeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMeCollectionViewCell.h; sourceTree = "<group>"; };
+		1483BE7120C7DC040074DC29 /* EVAMeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMeCollectionViewCell.m; sourceTree = "<group>"; };
+		1483BE7220C7DC040074DC29 /* EVAMeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAMeCollectionViewCell.xib; sourceTree = "<group>"; };
+		1483BE7520C7E0D70074DC29 /* EVAMeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMeModel.h; sourceTree = "<group>"; };
+		1483BE7620C7E0D70074DC29 /* EVAMeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMeModel.m; sourceTree = "<group>"; };
 		14E6B83D20C387390018D2F1 /* EVAADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADViewController.h; sourceTree = "<group>"; };
 		14E6B83E20C387390018D2F1 /* EVAADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADViewController.m; sourceTree = "<group>"; };
 		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
@@ -369,8 +379,9 @@
 		14046F8120C00501000615D4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				14046F9720C00985000615D4 /* EVAMeViewController.h */,
-				14046F9820C00985000615D4 /* EVAMeViewController.m */,
+				1483BE6B20C7D8BB0074DC29 /* EVAMeTableViewController.h */,
+				1483BE6C20C7D8BB0074DC29 /* EVAMeTableViewController.m */,
+				1483BE6E20C7D9670074DC29 /* EVAMeTableViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -378,6 +389,8 @@
 		14046F8220C00501000615D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1483BE7520C7E0D70074DC29 /* EVAMeModel.h */,
+				1483BE7620C7E0D70074DC29 /* EVAMeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,6 +398,9 @@
 		14046F8320C00501000615D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1483BE7020C7DC040074DC29 /* EVAMeCollectionViewCell.h */,
+				1483BE7120C7DC040074DC29 /* EVAMeCollectionViewCell.m */,
+				1483BE7220C7DC040074DC29 /* EVAMeCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -797,10 +813,12 @@
 				14F6DF2C20C675E000DA8537 /* EVALoginRegisterView.xib in Resources */,
 				14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */,
 				14F6DF2720C6709500DA8537 /* EVALoginRegisterViewController.xib in Resources */,
+				1483BE7420C7DC040074DC29 /* EVAMeCollectionViewCell.xib in Resources */,
 				14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */,
 				14F6DF1E20C66C7500DA8537 /* EVAFriendTrendViewController.xib in Resources */,
 				14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */,
 				1483BE5F20C76D140074DC29 /* EVAFastLoginView.xib in Resources */,
+				1483BE6F20C7D9670074DC29 /* EVAMeTableViewController.storyboard in Resources */,
 				14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */,
 				14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */,
 				14046F4B20BFEF11000615D4 /* Assets.xcassets in Resources */,
@@ -906,6 +924,7 @@
 			files = (
 				14F6DF2620C6709500DA8537 /* EVALoginRegisterViewController.m in Sources */,
 				14619C3820C568E000370019 /* EVAMainTagTableViewCell.m in Sources */,
+				1483BE6D20C7D8BB0074DC29 /* EVAMeTableViewController.m in Sources */,
 				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14F6DF2A20C675D100DA8537 /* EVALoginRegisterView.m in Sources */,
@@ -921,14 +940,15 @@
 				14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */,
 				1483BE6520C7841B0074DC29 /* EVALoginTextField.m in Sources */,
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
-				14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
 				14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */,
 				14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */,
 				14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */,
 				1483BE5D20C76D080074DC29 /* EVAFastLoginView.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
+				1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
+				1483BE7320C7DC040074DC29 /* EVAMeCollectionViewCell.m in Sources */,
 				14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */,
 				14F6A08920C2845900CC4284 /* EVASettingTableViewController.m in Sources */,
 			);

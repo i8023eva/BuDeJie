@@ -11,7 +11,7 @@
 #import "EVAEssenceViewController.h"
 #import "EVANewViewController.h"
 #import "EVAFriendTrendViewController.h"
-#import "EVAMeViewController.h"
+#import "EVAMeTableViewController.h"
 #import "EVAPublishViewController.h"
 #import "EVARootNavigationController.h"
 
@@ -108,7 +108,8 @@
     EVANewViewController *NewVC = [[EVANewViewController alloc] init];
     //    UIViewController *PublishVC = [[UIViewController alloc] init];
     EVAFriendTrendViewController *FriendTrendVC = [[EVAFriendTrendViewController alloc] init];
-    EVAMeViewController *MeVC = [[EVAMeViewController alloc] init];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([EVAMeTableViewController class]) bundle:nil];
+    EVAMeTableViewController *MeVC = [storyboard instantiateInitialViewController];
     
     NSArray<UIViewController *> *controller_Arr = @[EssenceVC, NewVC, FriendTrendVC, MeVC];
     NSArray<NSString *> *image_Arr = @[@"tabBar_essence_icon",
