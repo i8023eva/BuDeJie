@@ -19,4 +19,14 @@
  StatusBar 高44pt，NavigationBar 高44pt，底部TabBar高83pt
  */
 #define eva_TabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+#define eva_StatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?44:20)
 
+/***********屏幕适配*************/
+#define eva_screenH [UIScreen mainScreen].bounds.size.height
+#define eva_screenW [UIScreen mainScreen].bounds.size.width
+#define eva_iPhone4 (eva_screenH == 480)
+#define eva_iPhone5 (eva_screenH == 568)
+#define eva_iPhone6 (eva_screenH == 667)
+#define eva_iPhone6P (eva_screenH == 736)
+#define eva_iPhoneX (eva_screenH == 812)
+/***********屏幕适配*************/

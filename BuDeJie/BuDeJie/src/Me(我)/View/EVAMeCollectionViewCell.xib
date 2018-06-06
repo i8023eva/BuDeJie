@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImD-kL-caR">
-                        <rect key="frame" x="21.5" y="62" width="37.5" height="18"/>
+                        <rect key="frame" x="21.5" y="60" width="37.5" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,10 +36,11 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ImD-kL-caR" secondAttribute="bottom" id="SOF-Wv-RXi"/>
+                <constraint firstItem="ImD-kL-caR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="6DY-XM-ItV"/>
+                <constraint firstItem="ImD-kL-caR" firstAttribute="top" secondItem="qMb-yT-kBW" secondAttribute="bottom" constant="5" id="9my-A3-tRM"/>
                 <constraint firstItem="qMb-yT-kBW" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="SPF-jv-7O3"/>
                 <constraint firstItem="qMb-yT-kBW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Xte-Tp-1FA"/>
-                <constraint firstItem="ImD-kL-caR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="o4c-t3-3fL"/>
+                <constraint firstAttribute="bottom" secondItem="ImD-kL-caR" secondAttribute="bottom" id="eLa-yo-n6L"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <connections>
