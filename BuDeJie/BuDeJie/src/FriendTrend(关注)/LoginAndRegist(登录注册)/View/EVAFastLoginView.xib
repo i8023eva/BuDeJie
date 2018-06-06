@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EVAFastLoginView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="995-l9-Eq1">
+                    <rect key="frame" x="0.0" y="18" width="375" height="102"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-9R-IU0" customClass="EVAFastLoginButton">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="102"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="QQ登录" image="login_QQ_icon"/>
+                            <state key="highlighted" image="login_QQ_icon_click"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-sg-1ED" customClass="EVAFastLoginButton">
+                            <rect key="frame" x="125" y="0.0" width="125" height="102"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="新浪微博" image="login_sina_icon"/>
+                            <state key="highlighted" image="login_sina_icon_click"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJO-b4-H6F" customClass="EVAFastLoginButton">
+                            <rect key="frame" x="250" y="0.0" width="125" height="102"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="腾讯微博" image="login_tecent_icon"/>
+                            <state key="highlighted" image="login_tecent_icon_click"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速登录" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGq-K8-9oD">
+                    <rect key="frame" x="156.5" y="0.0" width="62" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="VBr-NL-Gc1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_right_line" translatesAutoresizingMaskIntoConstraints="NO" id="bIH-ah-6Tq">
+                    <rect key="frame" x="218.5" y="0.0" width="156.5" height="18"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_left_line" translatesAutoresizingMaskIntoConstraints="NO" id="J9l-4w-xJL">
+                    <rect key="frame" x="0.0" y="0.0" width="156.5" height="18"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="995-l9-Eq1" firstAttribute="top" secondItem="bIH-ah-6Tq" secondAttribute="bottom" id="3Cg-kZ-hAk"/>
+                <constraint firstItem="995-l9-Eq1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Dfg-NN-a3C"/>
+                <constraint firstItem="995-l9-Eq1" firstAttribute="top" secondItem="J9l-4w-xJL" secondAttribute="bottom" id="EBK-oU-APX"/>
+                <constraint firstAttribute="bottom" secondItem="995-l9-Eq1" secondAttribute="bottom" id="EVh-Ek-Tkz"/>
+                <constraint firstItem="bIH-ah-6Tq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EsL-aA-MYq"/>
+                <constraint firstItem="J9l-4w-xJL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MhB-w5-BYO"/>
+                <constraint firstItem="VGq-K8-9oD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Th9-08-KZO"/>
+                <constraint firstItem="995-l9-Eq1" firstAttribute="top" secondItem="VGq-K8-9oD" secondAttribute="bottom" id="Xcx-gb-Rop"/>
+                <constraint firstItem="VGq-K8-9oD" firstAttribute="leading" secondItem="J9l-4w-xJL" secondAttribute="trailing" id="YNu-yY-U7q"/>
+                <constraint firstItem="J9l-4w-xJL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YbA-vo-w47"/>
+                <constraint firstItem="bIH-ah-6Tq" firstAttribute="leading" secondItem="VGq-K8-9oD" secondAttribute="trailing" id="d3d-NQ-LwB"/>
+                <constraint firstAttribute="trailing" secondItem="995-l9-Eq1" secondAttribute="trailing" id="jdF-eI-W5S"/>
+                <constraint firstItem="VGq-K8-9oD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jmS-ir-Mtj"/>
+                <constraint firstAttribute="trailing" secondItem="bIH-ah-6Tq" secondAttribute="trailing" id="jpM-bS-XK2"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="15.5" y="-674"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_QQ_icon" width="70" height="70"/>
+        <image name="login_QQ_icon_click" width="70" height="70"/>
+        <image name="login_register_left_line" width="1" height="1"/>
+        <image name="login_register_right_line" width="1" height="1"/>
+        <image name="login_sina_icon" width="70" height="70"/>
+        <image name="login_sina_icon_click" width="70" height="70"/>
+        <image name="login_tecent_icon" width="70" height="70"/>
+        <image name="login_tecent_icon_click" width="70" height="70"/>
+    </resources>
+</document>

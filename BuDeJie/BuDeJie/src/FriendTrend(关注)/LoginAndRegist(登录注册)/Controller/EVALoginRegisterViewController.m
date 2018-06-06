@@ -8,10 +8,12 @@
 
 #import "EVALoginRegisterViewController.h"
 #import "EVALoginRegisterView.h"
+#import "EVAFastLoginView.h"
 
 @interface EVALoginRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 
 @end
@@ -20,12 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%s", __func__);
     EVALoginRegisterView *loginView = [EVALoginRegisterView loginView];
     [self.middleView addSubview:loginView];
     
     EVALoginRegisterView *registerView = [EVALoginRegisterView registerView];
     [self.middleView addSubview:registerView];
+    
+    EVAFastLoginView *fastLoginView = [EVAFastLoginView fastLoginView];
+    [self.bottomView addSubview:fastLoginView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -37,13 +41,12 @@
  */
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    NSLog(@"%s", __func__);
     
     /*
      屏幕适配 - view 通过 xib 加载,一定要设置尺寸, 本身并没有约束
      */
     EVALoginRegisterView *loginView = self.middleView.subviews.firstObject;
-    NSLog(@"%@", NSStringFromCGRect(loginView.frame));
+//    NSLog(@"%@", NSStringFromCGRect(loginView.frame));
     loginView.frame = CGRectMake(0, 0, self.middleView.eva_width * 0.5, self.middleView.eva_height);
     
     EVALoginRegisterView *registerView = self.middleView.subviews.lastObject;

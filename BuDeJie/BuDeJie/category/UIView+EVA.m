@@ -49,4 +49,28 @@
     rect.size.height = eva_height;
     self.frame = rect;
 }
+
+- (void)setEva_centerX:(CGFloat)eva_centerX
+{
+    CGPoint center = self.center;
+    center.x = eva_centerX;
+    self.center = center;
+}
+
+- (CGFloat)Eva_centerX
+{
+    return self.center.x;
+}
+
+- (void)setEva_centerY:(CGFloat)eva_centerY
+{
+    CGPoint center = self.center;
+    center.y = eva_centerY;
+    self.center = center;
+}
+
+- (CGFloat)Eva_centerY
+{
+    return self.center.y;
+}
 @end

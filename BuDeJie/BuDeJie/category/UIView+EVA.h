@@ -15,5 +15,6 @@
 @property (nonatomic, assign) CGFloat eva_y;
 @property (nonatomic, assign) CGFloat eva_width;
 @property (nonatomic, assign) CGFloat eva_height;
-
+@property CGFloat eva_centerX;
+@property CGFloat eva_centerY;
 @end
