@@ -51,6 +51,9 @@
     
     EVALoginRegisterView *registerView = self.middleView.subviews.lastObject;
     registerView.frame = CGRectMake(self.middleView.eva_width * 0.5, 0, self.middleView.eva_width * 0.5, self.middleView.eva_height);
+    
+    EVAFastLoginView *fastLoginView = self.bottomView.subviews.firstObject;
+    fastLoginView.frame = self.bottomView.bounds;
 }
 
 - (IBAction)closeClick:(UIButton *)sender {

@@ -29,6 +29,8 @@
 		1483BE5D20C76D080074DC29 /* EVAFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE5C20C76D080074DC29 /* EVAFastLoginView.m */; };
 		1483BE5F20C76D140074DC29 /* EVAFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1483BE5E20C76D140074DC29 /* EVAFastLoginView.xib */; };
 		1483BE6220C770EF0074DC29 /* EVAFastLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6120C770EF0074DC29 /* EVAFastLoginButton.m */; };
+		1483BE6520C7841B0074DC29 /* EVALoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6420C7841B0074DC29 /* EVALoginTextField.m */; };
+		1483BE6820C78A2D0074DC29 /* UITextField+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE6720C78A2D0074DC29 /* UITextField+EVA.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
 		14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */; };
@@ -115,6 +117,10 @@
 		1483BE5E20C76D140074DC29 /* EVAFastLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAFastLoginView.xib; sourceTree = "<group>"; };
 		1483BE6020C770EF0074DC29 /* EVAFastLoginButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAFastLoginButton.h; sourceTree = "<group>"; };
 		1483BE6120C770EF0074DC29 /* EVAFastLoginButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAFastLoginButton.m; sourceTree = "<group>"; };
+		1483BE6320C7841B0074DC29 /* EVALoginTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVALoginTextField.h; sourceTree = "<group>"; };
+		1483BE6420C7841B0074DC29 /* EVALoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVALoginTextField.m; sourceTree = "<group>"; };
+		1483BE6620C78A2D0074DC29 /* UITextField+EVA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+EVA.h"; sourceTree = "<group>"; };
+		1483BE6720C78A2D0074DC29 /* UITextField+EVA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+EVA.m"; sourceTree = "<group>"; };
 		14E6B83D20C387390018D2F1 /* EVAADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADViewController.h; sourceTree = "<group>"; };
 		14E6B83E20C387390018D2F1 /* EVAADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADViewController.m; sourceTree = "<group>"; };
 		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
@@ -563,6 +569,8 @@
 				14F6A07120C2375500CC4284 /* UIView+EVA.m */,
 				14F6A07D20C268AF00CC4284 /* UIBarButtonItem+EVA.h */,
 				14F6A07E20C268AF00CC4284 /* UIBarButtonItem+EVA.m */,
+				1483BE6620C78A2D0074DC29 /* UITextField+EVA.h */,
+				1483BE6720C78A2D0074DC29 /* UITextField+EVA.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -647,6 +655,8 @@
 				1483BE5E20C76D140074DC29 /* EVAFastLoginView.xib */,
 				1483BE6020C770EF0074DC29 /* EVAFastLoginButton.h */,
 				1483BE6120C770EF0074DC29 /* EVAFastLoginButton.m */,
+				1483BE6320C7841B0074DC29 /* EVALoginTextField.h */,
+				1483BE6420C7841B0074DC29 /* EVALoginTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -899,6 +909,7 @@
 				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14F6DF2A20C675D100DA8537 /* EVALoginRegisterView.m in Sources */,
+				1483BE6820C78A2D0074DC29 /* UITextField+EVA.m in Sources */,
 				1483BE6220C770EF0074DC29 /* EVAFastLoginButton.m in Sources */,
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */,
@@ -908,6 +919,7 @@
 				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,
 				14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */,
 				14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */,
+				1483BE6520C7841B0074DC29 /* EVALoginTextField.m in Sources */,
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
 				14046F9920C00985000615D4 /* EVAMeViewController.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
