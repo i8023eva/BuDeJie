@@ -15,11 +15,13 @@
 #import <AFNetworking.h>
 #import <MJExtension.h>
 
+#import <SafariServices/SafariServices.h>
+
 
 static NSInteger const cols = 4;
 static CGFloat const margin = 1;
 #define itemWH (eva_screenW - (cols - 1) * margin) / cols
-@interface EVAMeTableViewController () <UICollectionViewDataSource>
+@interface EVAMeTableViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SFSafariViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *model_Arr;
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -135,8 +137,34 @@ static CGFloat const margin = 1;
     collectionView.scrollEnabled = NO;
     self.tableView.tableFooterView = collectionView;
     self.collectionView = collectionView;
+    
     collectionView.dataSource = self;
+    collectionView.delegate = self;
+    
     [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([EVAMeCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([self class])];
+}
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EVAMeModel *model = self.model_Arr[indexPath.item];
+    if (![model.url containsString:@"http"]) {
+        return;
+    }
+    //处理带空格的 URL
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:[model.url stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+    [self presentViewController:safariVC animated:YES completion:nil];
+//    [self.navigationController pushViewController:safariVC animated:YES];
+//    safariVC.navigationItem.leftBarButtonItem 不行
+    safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+    safariVC.preferredBarTintColor = [UIColor whiteColor];
+    safariVC.preferredControlTintColor = [UIColor blackColor];
+    safariVC.delegate = self;
+}
+
+#pragma mark - SFSafariViewControllerDelegate
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+//    系统推荐 modal
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDataSource
