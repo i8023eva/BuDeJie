@@ -11,6 +11,7 @@
 #import "UIBarButtonItem+EVA.h"
 #import "EVAMeCollectionViewCell.h"
 #import "EVAMeModel.h"
+#import "EVAWKWebViewController.h"
 
 #import <AFNetworking.h>
 #import <MJExtension.h>
@@ -151,14 +152,18 @@ static CGFloat const margin = 1;
         return;
     }
     //处理带空格的 URL
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:[model.url stringByReplacingOccurrencesOfString:@" " withString:@""]]];
-    [self presentViewController:safariVC animated:YES completion:nil];
-//    [self.navigationController pushViewController:safariVC animated:YES];
-//    safariVC.navigationItem.leftBarButtonItem 不行
-    safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
-    safariVC.preferredBarTintColor = [UIColor whiteColor];
-    safariVC.preferredControlTintColor = [UIColor blackColor];
-    safariVC.delegate = self;
+//    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:[model.url stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+//    [self presentViewController:safariVC animated:YES completion:nil];
+////    [self.navigationController pushViewController:safariVC animated:YES];
+////    safariVC.navigationItem.leftBarButtonItem 不行
+//    safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+//    safariVC.preferredBarTintColor = [UIColor whiteColor];
+//    safariVC.preferredControlTintColor = [UIColor blackColor];
+//    safariVC.delegate = self;
+    
+    EVAWKWebViewController *webVC = [[EVAWKWebViewController alloc] init];
+    webVC.URL = [NSURL URLWithString:[model.url stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 #pragma mark - SFSafariViewControllerDelegate

@@ -19,6 +19,9 @@
 		14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046F9B20C00998000615D4 /* EVAPublishViewController.m */; };
 		14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14046FA220C021A8000615D4 /* EVARootTabBarController.m */; };
 		140C831D20C3E86D003D266D /* EVAADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140C831C20C3E86D003D266D /* EVAADModel.m */; };
+		142A4C8720C8C3370058343C /* EVAWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142A4C8520C8C3370058343C /* EVAWKWebViewController.m */; };
+		142A4C8820C8C3370058343C /* EVAWKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A4C8620C8C3370058343C /* EVAWKWebViewController.xib */; };
+		142A4C8A20C8C59E0058343C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142A4C8920C8C59E0058343C /* WebKit.framework */; };
 		14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C2920C542EF00370019 /* EVAADInfoModel.m */; };
 		14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3020C55FAF00370019 /* EVAMainTagTableViewController.m */; };
 		14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3320C561EC00370019 /* EVAMainTagModel.m */; };
@@ -102,6 +105,10 @@
 		14046FA220C021A8000615D4 /* EVARootTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBarController.m; sourceTree = "<group>"; };
 		140C831B20C3E86D003D266D /* EVAADModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADModel.h; sourceTree = "<group>"; };
 		140C831C20C3E86D003D266D /* EVAADModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADModel.m; sourceTree = "<group>"; };
+		142A4C8420C8C3370058343C /* EVAWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAWKWebViewController.h; sourceTree = "<group>"; };
+		142A4C8520C8C3370058343C /* EVAWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAWKWebViewController.m; sourceTree = "<group>"; };
+		142A4C8620C8C3370058343C /* EVAWKWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAWKWebViewController.xib; sourceTree = "<group>"; };
+		142A4C8920C8C59E0058343C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		14619C2820C542EF00370019 /* EVAADInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAADInfoModel.h; sourceTree = "<group>"; };
 		14619C2920C542EF00370019 /* EVAADInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAADInfoModel.m; sourceTree = "<group>"; };
 		14619C2F20C55FAF00370019 /* EVAMainTagTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMainTagTableViewController.h; sourceTree = "<group>"; };
@@ -173,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142A4C8A20C8C59E0058343C /* WebKit.framework in Frameworks */,
 				1F228168EFA78390D679C166 /* libPods-BuDeJie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +390,9 @@
 				1483BE6B20C7D8BB0074DC29 /* EVAMeTableViewController.h */,
 				1483BE6C20C7D8BB0074DC29 /* EVAMeTableViewController.m */,
 				1483BE6E20C7D9670074DC29 /* EVAMeTableViewController.storyboard */,
+				142A4C8420C8C3370058343C /* EVAWKWebViewController.h */,
+				142A4C8520C8C3370058343C /* EVAWKWebViewController.m */,
+				142A4C8620C8C3370058343C /* EVAWKWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -680,6 +691,7 @@
 		90FAD2F772951A59722B6AF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				142A4C8920C8C59E0058343C /* WebKit.framework */,
 				6679D8E8BDF10F00954B912C /* libPods-BuDeJie.a */,
 				C443C46748B5945FE2783E2E /* libPods-BuDeJieTests.a */,
 				A36FE43612167BD1E0D5C13B /* libPods-BuDeJieUITests.a */,
@@ -814,6 +826,7 @@
 				14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */,
 				14F6DF2720C6709500DA8537 /* EVALoginRegisterViewController.xib in Resources */,
 				1483BE7420C7DC040074DC29 /* EVAMeCollectionViewCell.xib in Resources */,
+				142A4C8820C8C3370058343C /* EVAWKWebViewController.xib in Resources */,
 				14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */,
 				14F6DF1E20C66C7500DA8537 /* EVAFriendTrendViewController.xib in Resources */,
 				14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */,
@@ -948,6 +961,7 @@
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
+				142A4C8720C8C3370058343C /* EVAWKWebViewController.m in Sources */,
 				1483BE7320C7DC040074DC29 /* EVAMeCollectionViewCell.m in Sources */,
 				14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */,
 				14F6A08920C2845900CC4284 /* EVASettingTableViewController.m in Sources */,
