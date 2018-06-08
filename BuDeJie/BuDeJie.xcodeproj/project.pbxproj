@@ -44,6 +44,12 @@
 		14BB4A7720C9FC8B000A5B74 /* EVABaseSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A7620C9FC8B000A5B74 /* EVABaseSettingTableViewController.m */; };
 		14BB4A7A20CA0C92000A5B74 /* EVAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A7920CA0C92000A5B74 /* EVAFileManager.m */; };
 		14BB4A7D20CA1062000A5B74 /* EVASettingCacheCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A7C20CA1062000A5B74 /* EVASettingCacheCellModel.m */; };
+		14BB4A8120CAAE66000A5B74 /* EVAEssenceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8020CAAE66000A5B74 /* EVAEssenceButton.m */; };
+		14BB4A8420CABC46000A5B74 /* EVAAllTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8320CABC46000A5B74 /* EVAAllTableViewController.m */; };
+		14BB4A8720CABC51000A5B74 /* EVAVideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8620CABC51000A5B74 /* EVAVideoTableViewController.m */; };
+		14BB4A8A20CABC5A000A5B74 /* EVAVoiceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8920CABC5A000A5B74 /* EVAVoiceTableViewController.m */; };
+		14BB4A8D20CABC69000A5B74 /* EVAPictureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8C20CABC69000A5B74 /* EVAPictureTableViewController.m */; };
+		14BB4A9020CABC7B000A5B74 /* EVAWordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
 		14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */; };
@@ -156,6 +162,18 @@
 		14BB4A7920CA0C92000A5B74 /* EVAFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAFileManager.m; sourceTree = "<group>"; };
 		14BB4A7B20CA1062000A5B74 /* EVASettingCacheCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVASettingCacheCellModel.h; sourceTree = "<group>"; };
 		14BB4A7C20CA1062000A5B74 /* EVASettingCacheCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVASettingCacheCellModel.m; sourceTree = "<group>"; };
+		14BB4A7F20CAAE66000A5B74 /* EVAEssenceButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAEssenceButton.h; sourceTree = "<group>"; };
+		14BB4A8020CAAE66000A5B74 /* EVAEssenceButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAEssenceButton.m; sourceTree = "<group>"; };
+		14BB4A8220CABC46000A5B74 /* EVAAllTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAAllTableViewController.h; sourceTree = "<group>"; };
+		14BB4A8320CABC46000A5B74 /* EVAAllTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAAllTableViewController.m; sourceTree = "<group>"; };
+		14BB4A8520CABC51000A5B74 /* EVAVideoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAVideoTableViewController.h; sourceTree = "<group>"; };
+		14BB4A8620CABC51000A5B74 /* EVAVideoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAVideoTableViewController.m; sourceTree = "<group>"; };
+		14BB4A8820CABC5A000A5B74 /* EVAVoiceTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAVoiceTableViewController.h; sourceTree = "<group>"; };
+		14BB4A8920CABC5A000A5B74 /* EVAVoiceTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAVoiceTableViewController.m; sourceTree = "<group>"; };
+		14BB4A8B20CABC69000A5B74 /* EVAPictureTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAPictureTableViewController.h; sourceTree = "<group>"; };
+		14BB4A8C20CABC69000A5B74 /* EVAPictureTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAPictureTableViewController.m; sourceTree = "<group>"; };
+		14BB4A8E20CABC7B000A5B74 /* EVAWordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAWordTableViewController.h; sourceTree = "<group>"; };
+		14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAWordTableViewController.m; sourceTree = "<group>"; };
 		14E6B83D20C387390018D2F1 /* EVAADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADViewController.h; sourceTree = "<group>"; };
 		14E6B83E20C387390018D2F1 /* EVAADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADViewController.m; sourceTree = "<group>"; };
 		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
@@ -304,6 +322,16 @@
 			children = (
 				14046F8E20C00958000615D4 /* EVAEssenceViewController.h */,
 				14046F8F20C00958000615D4 /* EVAEssenceViewController.m */,
+				14BB4A8220CABC46000A5B74 /* EVAAllTableViewController.h */,
+				14BB4A8320CABC46000A5B74 /* EVAAllTableViewController.m */,
+				14BB4A8520CABC51000A5B74 /* EVAVideoTableViewController.h */,
+				14BB4A8620CABC51000A5B74 /* EVAVideoTableViewController.m */,
+				14BB4A8820CABC5A000A5B74 /* EVAVoiceTableViewController.h */,
+				14BB4A8920CABC5A000A5B74 /* EVAVoiceTableViewController.m */,
+				14BB4A8B20CABC69000A5B74 /* EVAPictureTableViewController.h */,
+				14BB4A8C20CABC69000A5B74 /* EVAPictureTableViewController.m */,
+				14BB4A8E20CABC7B000A5B74 /* EVAWordTableViewController.h */,
+				14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,6 +346,8 @@
 		14046F7720C00501000615D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14BB4A7F20CAAE66000A5B74 /* EVAEssenceButton.h */,
+				14BB4A8020CAAE66000A5B74 /* EVAEssenceButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -967,11 +997,13 @@
 			files = (
 				14BB4A7420C9F813000A5B74 /* EVASettingGroupModel.m in Sources */,
 				14F6DF2620C6709500DA8537 /* EVALoginRegisterViewController.m in Sources */,
+				14BB4A8420CABC46000A5B74 /* EVAAllTableViewController.m in Sources */,
 				14BB4A7720C9FC8B000A5B74 /* EVABaseSettingTableViewController.m in Sources */,
 				14619C3820C568E000370019 /* EVAMainTagTableViewCell.m in Sources */,
 				1483BE6D20C7D8BB0074DC29 /* EVAMeTableViewController.m in Sources */,
 				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14BB4A6E20C9F7D5000A5B74 /* EVASettingTableViewCell.m in Sources */,
+				14BB4A9020CABC7B000A5B74 /* EVAWordTableViewController.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14F6DF2A20C675D100DA8537 /* EVALoginRegisterView.m in Sources */,
 				1483BE6820C78A2D0074DC29 /* UITextField+EVA.m in Sources */,
@@ -979,9 +1011,11 @@
 				14046F9620C00975000615D4 /* EVAFriendTrendViewController.m in Sources */,
 				14F6A08220C2707000CC4284 /* EVARootNavigationController.m in Sources */,
 				14046F9020C00958000615D4 /* EVAEssenceViewController.m in Sources */,
+				14BB4A8120CAAE66000A5B74 /* EVAEssenceButton.m in Sources */,
 				140C831D20C3E86D003D266D /* EVAADModel.m in Sources */,
 				14BB4A7A20CA0C92000A5B74 /* EVAFileManager.m in Sources */,
 				14BB4A7D20CA1062000A5B74 /* EVASettingCacheCellModel.m in Sources */,
+				14BB4A8720CABC51000A5B74 /* EVAVideoTableViewController.m in Sources */,
 				14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */,
 				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,
 				14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */,
@@ -989,12 +1023,14 @@
 				1483BE6520C7841B0074DC29 /* EVALoginTextField.m in Sources */,
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
+				14BB4A8D20CABC69000A5B74 /* EVAPictureTableViewController.m in Sources */,
 				14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */,
 				14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */,
 				14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */,
 				1483BE5D20C76D080074DC29 /* EVAFastLoginView.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */,
+				14BB4A8A20CABC5A000A5B74 /* EVAVoiceTableViewController.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
 				14BB4A7120C9F7FB000A5B74 /* EVASettingCellModel.m in Sources */,
 				142A4C8720C8C3370058343C /* EVAWKWebViewController.m in Sources */,

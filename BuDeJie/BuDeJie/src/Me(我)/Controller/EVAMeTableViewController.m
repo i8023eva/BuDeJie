@@ -38,6 +38,12 @@ static CGFloat const margin = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    NSLog(@"%@", NSStringFromCGRect([UIViewController new].view.frame));
+//    NSLog(@"%@", NSStringFromCGRect([UITableViewController new].view.frame));//{{0, eva_StatusBarHeight}, {375, 647}}
+//    NSLog(@"%@", NSStringFromCGRect(self.tableView.frame));//storyboard
+//    NSLog(@"%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
+//    NSLog(@"%@", NSStringFromUIEdgeInsets(self.tableView.safeAreaInsets));
+    
     [self setupNavigationItem];
     
     [self setupFooterView];
@@ -47,7 +53,7 @@ static CGFloat const margin = 1;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 10;
     
-#warning scrollview pop回来会下移20
+#warning scrollview pop回来会下移 - 20
     self.tableView.contentInset = UIEdgeInsetsMake(eva_StatusBarHeight + 20, 0, eva_TabBarHeight, 0);
 //    滚动条的内边距
 //    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 49, 0);
@@ -57,6 +63,9 @@ static CGFloat const margin = 1;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+//    NSLog(@"%@", NSStringFromCGRect(self.tableView.frame));
+//    NSLog(@"%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));//X-64  P-40
+//    NSLog(@"%@", NSStringFromUIEdgeInsets(self.tableView.safeAreaInsets));
 }
 
 // 打印celly值

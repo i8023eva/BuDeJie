@@ -65,7 +65,7 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.view.bounds.size.height - eva_TabBarHeight, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
+//    self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.view.bounds.size.height - eva_TabBarHeight, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
 }
 
 - (void)viewDidLoad {
@@ -83,8 +83,8 @@
         > 注释 setValue:forKeyPath - 恢复系统默认
      */
     [self setValue:tabBar forKeyPath:@"tabBar"];
-    [self.tabBar setBackgroundColor:[UIColor whiteColor]];
-    [self.tabBar setBackgroundImage:[UIImage new]];
+//    [self.tabBar setBackgroundColor:[UIColor whiteColor]];
+//    [self.tabBar setBackgroundImage:[UIImage new]];
     
 //    NSLog(@"%@", self.tabBar.subviews); 空
     
