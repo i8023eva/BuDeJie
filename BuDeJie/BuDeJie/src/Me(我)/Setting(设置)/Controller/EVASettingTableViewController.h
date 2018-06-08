@@ -6,8 +6,8 @@
 //  Copyright © 2018年 李元华. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EVABaseSettingTableViewController.h"
 
-@interface EVASettingTableViewController : UITableViewController
+@interface EVASettingTableViewController : EVABaseSettingTableViewController
 
 @end

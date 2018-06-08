@@ -7,7 +7,9 @@
 //
 
 #import "EVASettingTableViewController.h"
-#import <objc/message.h>
+#import "EVAFileManager.h"
+
+#import <SDImageCache.h>
 
 @interface EVASettingTableViewController ()
 
@@ -17,84 +19,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.automaticallyAdjustsScrollViewInsets = false;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.title = @"设置";
     
+    [self setupGroup0];
+    [self setupGroup1];
 }
 
+- (void)setupGroup0 {
+    EVASettingCacheCellModel *cellModel = [EVASettingCacheCellModel settingCellModelWithtitle:@"清除缓存"];
+    
+    NSArray *cellModel_Arr = @[cellModel];
+    EVASettingGroupModel *groupModel = [EVASettingGroupModel settingGroupWithCellModelArr:cellModel_Arr];
+    groupModel.headTitle = @"清除缓存";
+    [self.groupModel_Arr addObject:groupModel];
+}
 
+- (void)setupGroup1 {
+    EVASettingCellModel *cellModel_0 = [EVASettingCellModel settingCellModelIcon:[UIImage imageNamed:@"mine-setting-icon"] title:@"设置"];
+    EVASettingCellModel *cellModel_1 = [EVASettingCellModel settingCellModelIcon:[UIImage imageNamed:@"mine-setting-icon"] title:@"设置"];
+    EVASettingCellModel *cellModel_2 = [EVASettingCellModel settingCellModelIcon:[UIImage imageNamed:@"mine-setting-icon"] title:@"设置"];
+    EVASettingCellModel *cellModel_3 = [EVASettingCellModel settingCellModelIcon:[UIImage imageNamed:@"mine-setting-icon"] title:@"设置"];
+    
+    NSArray *cellModel_Arr = @[cellModel_0, cellModel_1, cellModel_2, cellModel_3];
+    EVASettingGroupModel *groupModel = [EVASettingGroupModel settingGroupWithCellModelArr:cellModel_Arr];
+    [self.groupModel_Arr addObject:groupModel];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

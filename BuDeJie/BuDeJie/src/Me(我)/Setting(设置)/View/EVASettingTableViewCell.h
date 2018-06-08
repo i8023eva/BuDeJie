@@ -1,0 +1,19 @@
+//
+//  EVASettingTableViewCell.h
+//  BuDeJie
+//
+//  Created by 李元华 on 2018/6/8.
+//  Copyright © 2018年 李元华. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "EVASettingCellModel.h"
+#import "EVASettingCacheCellModel.h"
+#import "EVASettingGroupModel.h"
+
+@interface EVASettingTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) EVASettingCellModel *cellModel;
+
++ (instancetype)cellWithTableView:(UITableView *)tableView Identifier:(NSString *)identifier;
+@end
