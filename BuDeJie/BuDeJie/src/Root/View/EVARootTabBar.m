@@ -41,7 +41,7 @@
     int i = 0;
     for (UIControl *objc in self.subviews) {
         if ([objc isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-//            第一次显示赋值
+//            第一次显示赋值, 第一个按钮的重复点击
             if (i == 0 && self.selectedButton == nil) {
                 self.selectedButton = objc;
             }
@@ -63,9 +63,14 @@
 //    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - 10, self.frame.size.width, 49);
 }
 
+/**
+  tabbarButton 的重复点击
+
+ @param button <#button description#>
+ */
 - (void)tabBarClick:(UIControl *)button {
     if (self.selectedButton == button) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"EVATabBarButtonRepeatClick" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVATabBarButtonRepeatClickNotification object:nil];
     }
     self.selectedButton = button;
 }

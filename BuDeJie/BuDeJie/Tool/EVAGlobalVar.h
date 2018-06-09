@@ -30,3 +30,7 @@
 #define eva_iPhone6P (eva_screenH == 736)
 #define eva_iPhoneX (eva_screenH == 812)
 /***********屏幕适配*************/
+
+
+UIKIT_EXTERN NSString * const EVATabBarButtonRepeatClickNotification;
+UIKIT_EXTERN NSString * const EVAEssenceTitleButtonRepeatClickNotification;

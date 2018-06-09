@@ -49,7 +49,7 @@ static CGFloat const margin = 1;
     [self setupFooterView];
     
     [self loadDate];
-    
+
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 10;
     

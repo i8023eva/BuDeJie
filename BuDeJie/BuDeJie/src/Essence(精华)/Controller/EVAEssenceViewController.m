@@ -135,7 +135,10 @@
  @param button <#button description#>
  */
 - (void)titleButtonClick:(EVAEssenceButton *)button {
-    
+//    titleButton 的重复点击
+    if (self.selectedButton == button) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVAEssenceTitleButtonRepeatClickNotification object:nil];
+    }
     
     self.selectedButton.selected = NO;
     button.selected = YES;
@@ -164,6 +167,8 @@
         return;
     }
 
+    childView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
+    childView.scrollIndicatorInsets = childView.contentInset;
     childView.frame = CGRectMake(index * _scrollView.eva_width, 0, _scrollView.eva_width, _scrollView.eva_height);
     [self.scrollView addSubview:childView];
 }

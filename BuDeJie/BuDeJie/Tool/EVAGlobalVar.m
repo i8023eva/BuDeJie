@@ -8,6 +8,8 @@
 
 #import "EVAGlobalVar.h"
 
+/** TabBarButton被重复点击的通知 */
+NSString * const EVATabBarButtonRepeatClickNotification = @"EVATabBarButtonRepeatClickNotification";
 
-
-
+/** TitleButton被重复点击的通知 */
+NSString * const EVAEssenceTitleButtonRepeatClickNotification = @"EVAEssenceTitleButtonRepeatClickNotification";
