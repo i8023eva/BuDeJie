@@ -18,6 +18,24 @@
     [super viewDidLoad];
 
     self.tableView.backgroundColor = eva_RandomColor;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonRepeatClick) name:@"EVATabBarButtonRepeatClick" object:nil];
+}
+
+- (void)tabBarButtonRepeatClick {
+//    精华按钮才响应 -
+    if (self.view.window == nil) {
+        return;
+    }
+//    选中视频点精华也打印 - 控制在这个 tableview
+    if (self.tableView.scrollsToTop == NO) {
+        return;
+    }
+    NSLog(@"%s", __func__);
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - 数据源

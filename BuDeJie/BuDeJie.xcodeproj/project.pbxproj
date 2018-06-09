@@ -22,6 +22,7 @@
 		142A4C8720C8C3370058343C /* EVAWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142A4C8520C8C3370058343C /* EVAWKWebViewController.m */; };
 		142A4C8820C8C3370058343C /* EVAWKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A4C8620C8C3370058343C /* EVAWKWebViewController.xib */; };
 		142A4C8A20C8C59E0058343C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142A4C8920C8C59E0058343C /* WebKit.framework */; };
+		14466BE220CB56E300885B7B /* LaunchImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14466BE120CB56E300885B7B /* LaunchImage.bundle */; };
 		14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C2920C542EF00370019 /* EVAADInfoModel.m */; };
 		14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3020C55FAF00370019 /* EVAMainTagTableViewController.m */; };
 		14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3320C561EC00370019 /* EVAMainTagModel.m */; };
@@ -52,11 +53,6 @@
 		14BB4A9020CABC7B000A5B74 /* EVAWordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
-		14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */; };
-		14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84420C38EE60018D2F1 /* Default@2x.png */; };
-		14E6B84B20C38EE60018D2F1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84520C38EE60018D2F1 /* Default-568h@2x.png */; };
-		14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84620C38EE60018D2F1 /* Default-Portrait-2436h@3x.png */; };
-		14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B84720C38EE60018D2F1 /* Default-667h@2x.png */; };
 		14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07120C2375500CC4284 /* UIView+EVA.m */; };
 		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
@@ -121,6 +117,7 @@
 		142A4C8520C8C3370058343C /* EVAWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAWKWebViewController.m; sourceTree = "<group>"; };
 		142A4C8620C8C3370058343C /* EVAWKWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAWKWebViewController.xib; sourceTree = "<group>"; };
 		142A4C8920C8C59E0058343C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		14466BE120CB56E300885B7B /* LaunchImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LaunchImage.bundle; sourceTree = "<group>"; };
 		14619C2820C542EF00370019 /* EVAADInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAADInfoModel.h; sourceTree = "<group>"; };
 		14619C2920C542EF00370019 /* EVAADInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAADInfoModel.m; sourceTree = "<group>"; };
 		14619C2F20C55FAF00370019 /* EVAMainTagTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMainTagTableViewController.h; sourceTree = "<group>"; };
@@ -177,11 +174,6 @@
 		14E6B83D20C387390018D2F1 /* EVAADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADViewController.h; sourceTree = "<group>"; };
 		14E6B83E20C387390018D2F1 /* EVAADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADViewController.m; sourceTree = "<group>"; };
 		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
-		14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-736h@3x.png"; sourceTree = "<group>"; };
-		14E6B84420C38EE60018D2F1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		14E6B84520C38EE60018D2F1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		14E6B84620C38EE60018D2F1 /* Default-Portrait-2436h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-2436h@3x.png"; sourceTree = "<group>"; };
-		14E6B84720C38EE60018D2F1 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		14F6A07020C2375500CC4284 /* UIImage+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EVA.h"; sourceTree = "<group>"; };
 		14F6A07120C2375500CC4284 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
 		14F6A07220C2375500CC4284 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
@@ -587,7 +579,6 @@
 		14E6B83920C387250018D2F1 /* AD(广告) */ = {
 			isa = PBXGroup;
 			children = (
-				14E6B84220C38EE60018D2F1 /* LaunchImage */,
 				14E6B83A20C387250018D2F1 /* Controller */,
 				14E6B83B20C387250018D2F1 /* Model */,
 				14E6B83C20C387250018D2F1 /* View */,
@@ -623,21 +614,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		14E6B84220C38EE60018D2F1 /* LaunchImage */ = {
-			isa = PBXGroup;
-			children = (
-				14E6B84320C38EE60018D2F1 /* Default-Portrait-736h@3x.png */,
-				14E6B84420C38EE60018D2F1 /* Default@2x.png */,
-				14E6B84520C38EE60018D2F1 /* Default-568h@2x.png */,
-				14E6B84620C38EE60018D2F1 /* Default-Portrait-2436h@3x.png */,
-				14E6B84720C38EE60018D2F1 /* Default-667h@2x.png */,
-			);
-			path = LaunchImage;
-			sourceTree = "<group>";
-		};
 		14F6A06F20C2375500CC4284 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				14466BE120CB56E300885B7B /* LaunchImage.bundle */,
 				14F6A07020C2375500CC4284 /* UIImage+EVA.h */,
 				14F6A07220C2375500CC4284 /* UIImage+EVA.m */,
 				14F6A07320C2375500CC4284 /* UIView+EVA.h */,
@@ -883,19 +863,15 @@
 				14046F4E20BFEF11000615D4 /* LaunchScreen.storyboard in Resources */,
 				14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */,
 				14F6DF2C20C675E000DA8537 /* EVALoginRegisterView.xib in Resources */,
-				14E6B84C20C38EE60018D2F1 /* Default-Portrait-2436h@3x.png in Resources */,
 				14F6DF2720C6709500DA8537 /* EVALoginRegisterViewController.xib in Resources */,
 				1483BE7420C7DC040074DC29 /* EVAMeCollectionViewCell.xib in Resources */,
 				142A4C8820C8C3370058343C /* EVAWKWebViewController.xib in Resources */,
-				14E6B84A20C38EE60018D2F1 /* Default@2x.png in Resources */,
 				14F6DF1E20C66C7500DA8537 /* EVAFriendTrendViewController.xib in Resources */,
 				14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */,
+				14466BE220CB56E300885B7B /* LaunchImage.bundle in Resources */,
 				1483BE5F20C76D140074DC29 /* EVAFastLoginView.xib in Resources */,
 				1483BE6F20C7D9670074DC29 /* EVAMeTableViewController.storyboard in Resources */,
-				14E6B84920C38EE60018D2F1 /* Default-Portrait-736h@3x.png in Resources */,
-				14E6B84D20C38EE60018D2F1 /* Default-667h@2x.png in Resources */,
 				14046F4B20BFEF11000615D4 /* Assets.xcassets in Resources */,
-				14E6B84B20C38EE60018D2F1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

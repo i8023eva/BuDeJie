@@ -16,11 +16,15 @@
 #import "UIBarButtonItem+EVA.h"
 #import "EVAEssenceButton.h"
 
-@interface EVAEssenceViewController ()
+@interface EVAEssenceViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, weak) EVAEssenceButton *selectedButton;
 
 @property (nonatomic, weak) UIView *underView;
+
+@property (nonatomic, weak) UIScrollView *scrollView;
+
+@property (nonatomic, weak) UIView *titleView;
 @end
 
 @implementation EVAEssenceViewController
@@ -36,6 +40,7 @@
     
     [self setupTitleView];
     
+    [self addChildViewToScrollView:0];
 }
 
 - (void)setupChildVC {
@@ -49,28 +54,49 @@
 - (void)setupScrollView {
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
+    scrollView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
+    scrollView.bounces = NO;
+    scrollView.delegate = self;
     [self.view addSubview:scrollView];
+    self.scrollView = scrollView;
 //    不设置内边距,使 tableview 顶格 - navigation 的穿透效果
     scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     
     NSUInteger count = self.childViewControllers.count;
-    for (NSUInteger i = 0; i < count; i++) {
-        UITableView *view = (UITableView *)self.childViewControllers[i].view;
-        view.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
-        view.frame = CGRectMake(i * scrollView.eva_width, 0, scrollView.eva_width, scrollView.eva_height);
-        [scrollView addSubview:view];
-    }
+//    view 懒加载 -
+//    for (NSUInteger i = 0; i < count; i++) {
+//        UITableView *view = (UITableView *)self.childViewControllers[i].view;
+//        view.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
+//        view.frame = CGRectMake(i * scrollView.eva_width, 0, scrollView.eva_width, scrollView.eva_height);
+//        [scrollView addSubview:view];
+//    }
     scrollView.contentSize = CGSizeMake(count * scrollView.eva_width, 0);
 }
+
+#pragma mark - UIScrollViewDelegate
+
+/**
+ 滑动完 button 切换
+
+ @param scrollView <#scrollView description#>
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSUInteger index = scrollView.contentOffset.x / scrollView.eva_width;
+    EVAEssenceButton *button = self.titleView.subviews[index];
+    [self titleButtonClick:button];
+}
+
+#pragma mark -
 
 - (void)setupTitleView {
     UIView *titleView = [[UIView alloc] init];
     titleView.frame = CGRectMake(0, eva_StatusBarHeight + 44, eva_screenW, 35);
     titleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
     [self.view addSubview:titleView];
+    self.titleView = titleView;
     
     NSArray *title_Arr = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
     NSUInteger count = title_Arr.count;
@@ -83,6 +109,7 @@
         [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [titleView addSubview:button];
+        button.tag = i;
     }
     
     EVAEssenceButton * firstButton = titleView.subviews.firstObject;
@@ -93,7 +120,7 @@
     [titleView addSubview:underView];
     self.underView = underView;
     
-//    [self titleButtonClick:button]; 不行
+//    [self titleButtonClick:firstButton]; //sizeToFit
     firstButton.selected = YES;
     self.selectedButton = firstButton;
 //    NSLog(@"%f", button.titleLabel.eva_width); 0.000000 - sizetofit
@@ -102,15 +129,43 @@
     underView.eva_centerX = firstButton.eva_centerX;
 }
 
+/**
+ 点击切换tableview - 偏移量
+
+ @param button <#button description#>
+ */
 - (void)titleButtonClick:(EVAEssenceButton *)button {
+    
+    
     self.selectedButton.selected = NO;
     button.selected = YES;
     self.selectedButton = button;
-    
+
+    [self addChildViewToScrollView:button.tag];
     [UIView animateWithDuration:0.3 animations:^{
-       self.underView.eva_width = button.titleLabel.eva_width + 10;
-       self.underView.eva_centerX = button.eva_centerX;
+        self.underView.eva_width = button.titleLabel.eva_width + 10;
+        self.underView.eva_centerX = button.eva_centerX;
+        
+//        NSUInteger index = [titlesView.subviews indexOfObject:button];
+        CGFloat offsetX = self.scrollView.eva_width * button.tag;
+        self.scrollView.contentOffset = CGPointMake(offsetX, 0);
     }];
+#warning 模拟器scrollsToTop
+    for (NSUInteger i = 0; i < self.childViewControllers.count; i++) {
+        UITableView *childView = (UITableView *)self.childViewControllers[i].view;
+        childView.scrollsToTop = (i == button.tag);
+    }
+}
+
+- (void)addChildViewToScrollView:(NSUInteger)index {
+    UITableView *childView = (UITableView *)self.childViewControllers[index].view;
+//   如果 view 已被加载,返回
+    if (childView.superview) {
+        return;
+    }
+
+    childView.frame = CGRectMake(index * _scrollView.eva_width, 0, _scrollView.eva_width, _scrollView.eva_height);
+    [self.scrollView addSubview:childView];
 }
 
 - (void)setupNavigationItem {

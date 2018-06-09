@@ -91,8 +91,6 @@
 //    UISwitch *swic = [UISwitch new];
 //    swic.center = CGPointMake(self.tabBar.bounds.size.width * 0.5, self.tabBar.bounds.size.height * 0.5);
 //    [self.tabBar addSubview:swic];
-
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {

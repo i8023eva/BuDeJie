@@ -19,16 +19,27 @@
 }
 
 + (UIImage *)eva_launchImage {
+    /*
+     一次性的放在 bundle 中加载
+     */
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"LaunchImage" ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:path];
+    
     if (eva_iPhoneX) {
-        return [UIImage imageNamed:@"Default-Portrait-2436h@3x.png"];
+        NSString *file = [bundle pathForResource:@"Default-Portrait-2436h@3x" ofType:@"png"];
+        return [UIImage imageWithContentsOfFile:file];
     } else if (eva_iPhone6P) {
-        return [UIImage imageNamed:@"Default-Portrait-736h@3x.png"];
+        NSString *file = [bundle pathForResource:@"Default-Portrait-736h@3x" ofType:@"png"];
+        return [UIImage imageWithContentsOfFile:file];
     } else if (eva_iPhone6) {
-        return [UIImage imageNamed:@"Default-667h@2x.png"];
+        NSString *file = [bundle pathForResource:@"Default-667h@2x" ofType:@"png"];
+        return [UIImage imageWithContentsOfFile:file];
     } else if (eva_iPhone5) {
-        return [UIImage imageNamed:@"Default-568h@2x.png"];
+        NSString *file = [bundle pathForResource:@"Default-568h@2x" ofType:@"png"];
+        return [UIImage imageWithContentsOfFile:file];
     } else if (eva_iPhone4) {
-        return [UIImage imageNamed:@"Default@2x.png"];
+        NSString *file = [bundle pathForResource:@"Default@2x" ofType:@"png"];
+        return [UIImage imageWithContentsOfFile:file];
     }
     return nil;
 }
