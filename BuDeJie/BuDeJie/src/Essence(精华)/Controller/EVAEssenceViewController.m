@@ -166,9 +166,10 @@
     if (childView.superview) {
         return;
     }
-
-    childView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
-    childView.scrollIndicatorInsets = childView.contentInset;
+#warning 不能在这设置 offset不对
+//    childView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    childView.contentInset = UIEdgeInsetsMake(64 + 35, 0, 49, 0);
+//    childView.scrollIndicatorInsets = childView.contentInset;
     childView.frame = CGRectMake(index * _scrollView.eva_width, 0, _scrollView.eva_width, _scrollView.eva_height);
     [self.scrollView addSubview:childView];
 }

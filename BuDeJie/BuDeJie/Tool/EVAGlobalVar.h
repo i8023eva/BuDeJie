@@ -20,6 +20,7 @@
  */
 #define eva_TabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
 #define eva_StatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?44:20)
+#define eva_NavigationBarHeight 44
 
 /***********屏幕适配*************/
 #define eva_screenH [UIScreen mainScreen].bounds.size.height

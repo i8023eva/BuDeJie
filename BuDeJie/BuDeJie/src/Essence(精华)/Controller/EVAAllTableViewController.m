@@ -19,7 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.valueCount = 10;
+    self.valueCount = 20;
+    self.tableView.backgroundColor = eva_RandomColor;
+    
     self.tableView.estimatedRowHeight = 0;
     if (@available(iOS 11.0, *)) {
         //当有heightForHeader delegate时设置
@@ -27,12 +29,20 @@
         //当有heightForFooter delegate时设置
         self.tableView.estimatedSectionFooterHeight = 0;
     }
-    self.tableView.backgroundColor = eva_RandomColor;
+    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    self.tableView.contentInset = UIEdgeInsetsMake(eva_StatusBarHeight + eva_NavigationBarHeight + 35, 0, eva_TabBarHeight, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+//    在 footerView 之前
     
     [self setupNotification];
     
     [self setupFooterView];
+    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -70, 100, 35)];
+//    view.backgroundColor = [UIColor greenColor];
+//    [self.tableView addSubview:view];
 }
+
 
 /**
  上拉刷新 - 数据为0还显示 - numberOfRowsInSection
@@ -40,7 +50,7 @@
 - (void)setupFooterView {
     UIView *footerView = [[UIView alloc] init];
     footerView.frame = CGRectMake(0, 0, self.tableView.eva_width, 35);
-    self.tableView.tableFooterView = footerView;
+    
     UILabel *footerLabel = ({
         footerLabel = [[UILabel alloc] init];
         footerLabel.frame = footerView.bounds;
@@ -52,6 +62,21 @@
         self.footerLabel = footerLabel;
         footerLabel;
     });
+    self.tableView.tableFooterView = footerView;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    if (self.tableView.contentOffset.y ) {
+//        <#statements#>
+//    }
+    
+    NSLog(@"%f", self.tableView.contentSize.height);
+    NSLog(@"%f",self.tableView.contentOffset.y);
+        NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.adjustedContentInset));
+        NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.contentInset));
+    NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.safeAreaInsets));
 }
 
 #pragma mark - scrollViewDelegate
@@ -60,37 +85,37 @@
  加载中就会调用3次 - 就算 footerView 隐藏了 高度也算在self.tableView.contentSize.height里 - 内容为空时 H = 35
  > IOS11 TableView contentSize异常 - 预估值
  */
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"%f", self.tableView.contentSize.height);
-//    if (self.tableView.contentSize.height <= (eva_screenH - 123 - 83)) return;
-    
-//    如果正在刷新，直接返回
-    if (self.isFooterRefreshing) return;
-    
-//    NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.adjustedContentInset));
-//    NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.contentInset));
-    
-//    footerView已经完全出现
-    CGFloat offsetY = self.tableView.contentSize.height + self.tableView.adjustedContentInset.bottom - self.tableView.eva_height;
-    NSLog(@"%f - %f", offsetY, self.tableView.contentOffset.y);
-    
-    if (self.tableView.contentOffset.y >= offsetY) {
-        self.footerRefreshing = YES;
-        self.footerLabel.text = @"正在加载更多数据...";
-        self.footerLabel.backgroundColor = [UIColor blueColor];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 加载数据
-            self.valueCount += 5;
-            [self.tableView reloadData];
-            
-            // 结束刷新
-            self.footerRefreshing = NO;
-            self.footerLabel.text = @"上拉可以加载更多";
-            self.footerLabel.backgroundColor = [UIColor redColor];
-        });
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+////    NSLog(@"%f", self.tableView.contentSize.height);//
+////    if (self.tableView.contentSize.height <= (eva_screenH - 123 - 83)) return;不满屏幕自动刷新
+//
+////    如果正在刷新，直接返回
+//    if (self.isFooterRefreshing) return;
+//
+////    NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.adjustedContentInset));
+////    NSLog(@"%@", NSStringFromUIEdgeInsets (self.tableView.contentInset));
+//
+////    footerView已经完全出现
+//    CGFloat offsetY = self.tableView.contentSize.height + self.tableView.adjustedContentInset.bottom - self.tableView.eva_height;
+//    NSLog(@"%f - %f", offsetY, self.tableView.contentOffset.y);
+//
+//    if (self.tableView.contentOffset.y >= offsetY) {
+//        self.footerRefreshing = YES;
+//        self.footerLabel.text = @"正在加载更多数据...";
+//        self.footerLabel.backgroundColor = [UIColor blueColor];
+//
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            // 加载数据
+//            self.valueCount += 5;
+//            [self.tableView reloadData];//
+//
+//            // 结束刷新
+//            self.footerRefreshing = NO;
+//            self.footerLabel.text = @"上拉可以加载更多";
+//            self.footerLabel.backgroundColor = [UIColor redColor];
+//        });
+//    }
+//}
 
 #pragma mark - setupNotification
 - (void)setupNotification {

@@ -18,6 +18,25 @@
     [super viewDidLoad];
     
     self.tableView.backgroundColor = eva_RandomColor;
+    
+    [self setupFooterView];
+}
+
+- (void)setupFooterView {
+    UIView *footerView = [[UIView alloc] init];
+    footerView.frame = CGRectMake(0, 0, self.tableView.eva_width, 35);
+    
+    UILabel *footerLabel = ({
+        footerLabel = [[UILabel alloc] init];
+        footerLabel.frame = footerView.bounds;
+        footerLabel.backgroundColor = [UIColor lightGrayColor];
+        footerLabel.text = @"上拉可以加载更多";
+        footerLabel.textColor = [UIColor whiteColor];
+        footerLabel.textAlignment = NSTextAlignmentCenter;
+        [footerView addSubview:footerLabel];
+        footerLabel;
+    });
+    self.tableView.tableFooterView = footerView;
 }
 
 #pragma mark - 数据源
