@@ -22,7 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.valueCount = 10;
     self.tableView.backgroundColor = eva_RandomColor;
     
     [self setupInitContent];
@@ -35,6 +34,8 @@
     [self setupHeadViewToAD];
     
     [self setupFooterViewToRefresh];
+//    一加载就要进行下拉刷新
+    [self headerRefreshBegin];
 }
 
 - (void)setupTopViewToRefresh {
@@ -148,6 +149,9 @@
         UIEdgeInsets inset = self.tableView.contentInset;
         inset.top += self.topView.eva_height;
         self.tableView.contentInset = inset;
+        
+//        设置偏移量使 view 移动
+        self.tableView.contentOffset = CGPointMake(0, -inset.top);
     }];
     [self loadNewData];
 }
@@ -231,7 +235,8 @@
     if (self.tableView.scrollsToTop == NO) {
         return;
     }
-    NSLog(@"%s", __func__);
+//    不会下移, 也不会自动回到顶部 -
+    [self headerRefreshBegin];
 }
 
 - (void)dealloc {
