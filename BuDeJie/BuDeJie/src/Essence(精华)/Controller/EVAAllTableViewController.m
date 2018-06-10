@@ -100,37 +100,6 @@
 }
 
 #pragma mark - scrollViewDelegate
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    //    headView 完全显示
-    CGFloat offsetY = - (self.tableView.contentInset.top + self.headerLabel.eva_height);
-    if (self.tableView.contentOffset.y <= offsetY) {
-        // 进入下拉刷新状态
-        self.headerLabel.text = @"正在刷新...";
-        self.headerLabel.backgroundColor = [UIColor blueColor];
-        self.headerRefreshing = YES;
-        
-        // 增加内边距
-        [UIView animateWithDuration:0.25 animations:^{
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top += self.topView.eva_height;
-            self.tableView.contentInset = inset;
-        }];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 刷新数据
-            self.valueCount = 20;
-            [self.tableView reloadData];
-            // 结束刷新
-            self.headerRefreshing = NO;
-            // 减小内边距
-            [UIView animateWithDuration:0.25 animations:^{
-                UIEdgeInsets inset = self.tableView.contentInset;
-                inset.top -= self.topView.eva_height;
-                self.tableView.contentInset = inset;
-            }];
-        });
-    }
-}
-
 /**
  加载中就会调用 - 初次 contentSize.height = 0
  > IOS11 TableView contentSize异常 - 预估值
@@ -144,6 +113,15 @@
     [self footerRefresh];
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    //    headView 完全显示
+    CGFloat offsetY = - (self.tableView.contentInset.top + self.headerLabel.eva_height);
+    if (self.tableView.contentOffset.y <= offsetY) {
+        [self headerRefreshBegin];
+    }
+}
+
+#pragma mark -
 - (void)headerRefresh {
     if (self.isHeaderRefreshing) return;
 //    headView 完全显示
@@ -157,7 +135,45 @@
     }
 }
 
+- (void)headerRefreshBegin {
+    if (self.isHeaderRefreshing) return;
+    
+    // 进入下拉刷新状态
+    self.headerLabel.text = @"正在刷新...";
+    self.headerLabel.backgroundColor = [UIColor blueColor];
+    self.headerRefreshing = YES;
+    
+    // 增加内边距
+    [UIView animateWithDuration:0.25 animations:^{
+        UIEdgeInsets inset = self.tableView.contentInset;
+        inset.top += self.topView.eva_height;
+        self.tableView.contentInset = inset;
+    }];
+    [self loadNewData];
+}
 
+- (void)loadNewData {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新数据
+        self.valueCount = 20;
+        [self.tableView reloadData];
+
+        [self headerRefreshEnd];
+    });
+}
+
+- (void)headerRefreshEnd {
+    // 结束刷新
+    self.headerRefreshing = NO;
+    // 减小内边距
+    [UIView animateWithDuration:0.25 animations:^{
+        UIEdgeInsets inset = self.tableView.contentInset;
+        inset.top -= self.topView.eva_height;
+        self.tableView.contentInset = inset;
+    }];
+}
+
+#pragma mark -
 - (void)footerRefresh {
     //    如果正在刷新，直接返回
     if (self.isFooterRefreshing) return;
@@ -167,21 +183,33 @@
     //    NSLog(@"%f - %f", offsetY, self.tableView.contentOffset.y);
 //    数据不满屏下拉也刷新 - 下拉时偏移量会越来越小 - 反之,上划就是大于
     if (self.tableView.contentOffset.y >= offsetY && self.tableView.contentOffset.y > - (self.tableView.contentInset.top)) {
-        self.footerRefreshing = YES;
-        self.footerLabel.text = @"正在加载更多数据...";
-        self.footerLabel.backgroundColor = [UIColor blueColor];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 加载数据
-            self.valueCount += 5;
-            [self.tableView reloadData];//
-            
-            // 结束刷新
-            self.footerRefreshing = NO;
-            self.footerLabel.text = @"上拉加载";
-            self.footerLabel.backgroundColor = [UIColor redColor];
-        });
+        [self footerRefreshBegin];
     }
+}
+
+- (void)footerRefreshBegin {
+    self.footerRefreshing = YES;
+    self.footerLabel.text = @"正在加载更多数据...";
+    self.footerLabel.backgroundColor = [UIColor blueColor];
+
+    [self loadMoreData];
+}
+
+- (void)loadMoreData {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 加载数据
+        self.valueCount += 5;
+        [self.tableView reloadData];//
+
+        [self footerRefreshEnd];
+    });
+}
+
+- (void)footerRefreshEnd {
+    // 结束刷新
+    self.footerRefreshing = NO;
+    self.footerLabel.text = @"上拉加载";
+    self.footerLabel.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - Notification

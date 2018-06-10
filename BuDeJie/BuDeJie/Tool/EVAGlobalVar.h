@@ -32,6 +32,6 @@
 #define eva_iPhoneX (eva_screenH == 812)
 /***********屏幕适配*************/
 
-
+/***********连续点击刷新数据通知*************/
 UIKIT_EXTERN NSString * const EVATabBarButtonRepeatClickNotification;
 UIKIT_EXTERN NSString * const EVAEssenceTitleButtonRepeatClickNotification;
