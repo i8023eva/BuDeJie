@@ -80,13 +80,16 @@
 
 /**
  滑动完 button 切换
-
- @param scrollView <#scrollView description#>
+    > pagingEnabled 有问题,不到一半就偏移
+    > scrollView 稍微一动titleButtonClick 就会触发连续点击通知 - 改回只改变 button 状态()
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSUInteger index = scrollView.contentOffset.x / scrollView.eva_width;
+    NSLog(@"%ld", index);
     EVAEssenceButton *button = self.titleView.subviews[index];
-    [self titleButtonClick:button];
+//    [self titleButtonClick:button];
+    [self addChildViewToScrollView:index];
+    [self changeTitleButtonStatus:button];
 }
 
 #pragma mark -
@@ -140,24 +143,29 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:EVAEssenceTitleButtonRepeatClickNotification object:nil];
     }
     
-    self.selectedButton.selected = NO;
-    button.selected = YES;
-    self.selectedButton = button;
-
     [self addChildViewToScrollView:button.tag];
-    [UIView animateWithDuration:0.3 animations:^{
-        self.underView.eva_width = button.titleLabel.eva_width + 10;
-        self.underView.eva_centerX = button.eva_centerX;
-        
-//        NSUInteger index = [titlesView.subviews indexOfObject:button];
-        CGFloat offsetX = self.scrollView.eva_width * button.tag;
-        self.scrollView.contentOffset = CGPointMake(offsetX, 0);
-    }];
+    [self changeTitleButtonStatus:button];
+
 #warning 模拟器scrollsToTop
     for (NSUInteger i = 0; i < self.childViewControllers.count; i++) {
         UITableView *childView = (UITableView *)self.childViewControllers[i].view;
         childView.scrollsToTop = (i == button.tag);
     }
+}
+
+- (void)changeTitleButtonStatus:(EVAEssenceButton *)button {
+    self.selectedButton.selected = NO;
+    button.selected = YES;
+    self.selectedButton = button;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.underView.eva_width = button.titleLabel.eva_width + 10;
+        self.underView.eva_centerX = button.eva_centerX;
+        
+        //        NSUInteger index = [titlesView.subviews indexOfObject:button];
+        CGFloat offsetX = self.scrollView.eva_width * button.tag;
+        self.scrollView.contentOffset = CGPointMake(offsetX, 0);
+    }];
 }
 
 - (void)addChildViewToScrollView:(NSUInteger)index {
