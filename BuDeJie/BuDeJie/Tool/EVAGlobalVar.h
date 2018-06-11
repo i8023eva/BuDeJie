@@ -5,6 +5,11 @@
 //  Created by 李元华 on 2018/6/2.
 //  Copyright © 2018年 李元华. All rights reserved.
 //
+/*
+ @#name 一个#是给 name 加双引号
+ EVA##name 是拼接
+ */
+
 
 #import <Foundation/Foundation.h>
 
@@ -19,7 +24,7 @@
  StatusBar 高44pt，NavigationBar 高44pt，底部TabBar高83pt
  */
 #define eva_TabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
-#define eva_StatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?44:20)
+#define eva_StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 #define eva_NavigationBarHeight 44
 
 /***********屏幕适配*************/
@@ -35,3 +40,7 @@
 /***********连续点击刷新数据通知*************/
 UIKIT_EXTERN NSString * const EVATabBarButtonRepeatClickNotification;
 UIKIT_EXTERN NSString * const EVAEssenceTitleButtonRepeatClickNotification;
+
+
+
+

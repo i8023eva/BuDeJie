@@ -7,6 +7,12 @@
 //
 
 #import "EVAAllTableViewController.h"
+#import "EVAEssenceModel.h"
+
+#import <AFNetworking.h>
+#import <MJExtension.h>
+#import <SVProgressHUD.h>
+
 
 @interface EVAAllTableViewController ()
 
@@ -16,9 +22,22 @@
 @property (nonatomic, weak) UIView *topView;
 @property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
 @property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+
+@property (nonatomic, strong) NSMutableArray<EVAEssenceModel *> *essenceModel_Arr;
+//第一次加载帖子时候不需要传入此关键字，当需要加载下一页时：需要传入加载上一页时返回值字段“maxtime”中的内容。
+@property (nonatomic, copy) NSString *maxtime;
+
 @end
 
 @implementation EVAAllTableViewController
+
+- (AFHTTPSessionManager *)manager {
+    if (_manager == nil) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -104,6 +123,7 @@
 /**
  加载中就会调用 - 初次 contentSize.height = 0
  > IOS11 TableView contentSize异常 - 预估值
+ > 上拉和下拉同时存在时,不知道谁会先返回 - [1]开始刷新()判断另一种是否正在刷新 &[2]直接取消之前的任务
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //    NSLog(@"%f", self.tableView.contentSize.height);//
@@ -137,6 +157,8 @@
 }
 
 - (void)headerRefreshBegin {
+//  上拉加载,返回
+//    if (self.isFooterRefreshing) return;
     if (self.isHeaderRefreshing) return;
     
     // 进入下拉刷新状态
@@ -145,7 +167,7 @@
     self.headerRefreshing = YES;
     
     // 增加内边距
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         UIEdgeInsets inset = self.tableView.contentInset;
         inset.top += self.topView.eva_height;
         self.tableView.contentInset = inset;
@@ -157,20 +179,48 @@
 }
 
 - (void)loadNewData {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新数据
-        self.valueCount = 20;
-        [self.tableView reloadData];
+//    return;
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
 
+    NSDictionary *parameters = @{
+                                 @"a" : @"list",
+                                 @"c" : @"data",
+                                 @"type" : @"1"
+                                 };
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (responseObject) {
+//            保存这个值
+            self.maxtime = responseObject[@"info"][@"maxtime"];
+            self.essenceModel_Arr = [EVAEssenceModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            //          每次固定最上面的20条  覆盖之前的数据,   服务器没有 mintime 参数, 请求之后返回最新的几条
+            
+            //        NSMutableArray *newTopics = [EVAEssenceModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            //        if (self.essenceModel_Arr) {   没有用户数据
+            //            [self.topics insertObjects:newTopics atIndexes:[NSIndexSet indexSetWithIndex:0]];
+            //        } else {
+            //            self.essenceModel_Arr = newTopics;
+            //        }
+            
+            [self.tableView reloadData];
+            [self headerRefreshEnd];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+            [self headerRefreshEnd];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code != NSURLErrorCancelled) {//并不是所有都是网络问题,cancel时也会进入 block, 需要判断
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙!"];
+        }
         [self headerRefreshEnd];
-    });
+    }];
 }
 
 - (void)headerRefreshEnd {
     // 结束刷新
     self.headerRefreshing = NO;
     // 减小内边距
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         UIEdgeInsets inset = self.tableView.contentInset;
         inset.top -= self.topView.eva_height;
         self.tableView.contentInset = inset;
@@ -179,6 +229,8 @@
 
 #pragma mark -
 - (void)footerRefresh {
+//    同时保证只有一个任务
+//    if (self.isHeaderRefreshing) return;
     //    如果正在刷新，直接返回
     if (self.isFooterRefreshing) return;
     
@@ -199,14 +251,41 @@
     [self loadMoreData];
 }
 
+/**
+ 请求旧数据 - 数组不要覆盖
+ */
 - (void)loadMoreData {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 加载数据
-        self.valueCount += 5;
-        [self.tableView reloadData];//
+//    return;
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
 
+    NSDictionary *parameters = @{
+                                 @"a" : @"list",
+                                 @"c" : @"data",
+                                 @"type" : @"1",
+                                 @"maxtime" : self.maxtime
+                                 };
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (responseObject) {
+//            保证下下次请求的数据
+            self.maxtime = responseObject[@"info"][@"maxtime"];
+            
+             NSArray *moreData_Arr = [EVAEssenceModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            
+            [self.essenceModel_Arr addObjectsFromArray:moreData_Arr];
+            
+            [self.tableView reloadData];
+            [self footerRefreshEnd];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+            [self footerRefreshEnd];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code != NSURLErrorCancelled) {//并不是所有都是网络问题,cancel时也会进入 block, 需要判断
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙!"];
+        }
         [self footerRefreshEnd];
-    });
+    }];
 }
 
 - (void)footerRefreshEnd {
@@ -246,8 +325,8 @@
 #pragma mark - 数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    self.tableView.tableFooterView.hidden = (self.valueCount == 0);
-    return self.valueCount;
+    self.tableView.tableFooterView.hidden = (self.essenceModel_Arr.count == 0);
+    return self.essenceModel_Arr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -255,10 +334,12 @@
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
         cell.backgroundColor = [UIColor clearColor];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@-%zd", self.class, indexPath.row];
+    EVAEssenceModel *model = self.essenceModel_Arr[indexPath.row];
+    cell.textLabel.text = model.name;
+    cell.detailTextLabel.text =  model.text;
     return cell;
 }
 

@@ -53,6 +53,7 @@
 		14BB4A9020CABC7B000A5B74 /* EVAWordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */; };
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
+		14E98C4F20CD2F2D0008A97E /* EVAEssenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E98C4E20CD2F2D0008A97E /* EVAEssenceModel.m */; };
 		14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07120C2375500CC4284 /* UIView+EVA.m */; };
 		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
@@ -174,6 +175,8 @@
 		14E6B83D20C387390018D2F1 /* EVAADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAADViewController.h; sourceTree = "<group>"; };
 		14E6B83E20C387390018D2F1 /* EVAADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAADViewController.m; sourceTree = "<group>"; };
 		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
+		14E98C4D20CD2F2D0008A97E /* EVAEssenceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAEssenceModel.h; sourceTree = "<group>"; };
+		14E98C4E20CD2F2D0008A97E /* EVAEssenceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAEssenceModel.m; sourceTree = "<group>"; };
 		14F6A07020C2375500CC4284 /* UIImage+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EVA.h"; sourceTree = "<group>"; };
 		14F6A07120C2375500CC4284 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
 		14F6A07220C2375500CC4284 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 		14046F7620C00501000615D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14E98C4D20CD2F2D0008A97E /* EVAEssenceModel.h */,
+				14E98C4E20CD2F2D0008A97E /* EVAEssenceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1006,6 +1011,7 @@
 				1483BE5D20C76D080074DC29 /* EVAFastLoginView.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */,
+				14E98C4F20CD2F2D0008A97E /* EVAEssenceModel.m in Sources */,
 				14BB4A8A20CABC5A000A5B74 /* EVAVoiceTableViewController.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
 				14BB4A7120C9F7FB000A5B74 /* EVASettingCellModel.m in Sources */,
