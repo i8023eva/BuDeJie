@@ -7,7 +7,7 @@
 //
 
 #import "EVAAllTableViewController.h"
-#import "EVAEssenceModel.h"
+#import "EVAEssenceTableViewCell.h"
 
 #import <AFNetworking.h>
 #import <MJExtension.h>
@@ -41,7 +41,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = eva_RandomColor;
+    self.tableView.rowHeight = 200;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([EVAEssenceTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([EVAEssenceTableViewCell class])];
     
     [self setupInitContent];
 //    在 subView 之前
@@ -80,7 +82,7 @@
     UILabel *label = ({
         label = [[UILabel alloc] init];
         label.frame = CGRectMake(0, 0, 0, 44);
-        label.backgroundColor = [UIColor whiteColor];
+        label.backgroundColor = eva_RandomColor;
         label.text = @"广告";
         label.textAlignment = NSTextAlignmentCenter;
         self.tableView.tableHeaderView = label;
@@ -331,15 +333,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor clearColor];
-    }
+    EVAEssenceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EVAEssenceTableViewCell class]) forIndexPath:indexPath];
     EVAEssenceModel *model = self.essenceModel_Arr[indexPath.row];
-    cell.textLabel.text = model.name;
-    cell.detailTextLabel.text =  model.text;
+    cell.essenceModel = model;
+    
     return cell;
 }
 
@@ -355,6 +352,7 @@
     self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     self.tableView.contentInset = UIEdgeInsetsMake(eva_StatusBarHeight + eva_NavigationBarHeight + 35, 0, eva_TabBarHeight, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.backgroundColor = [UIColor grayColor];
 }
 
 - (void)didReceiveMemoryWarning {

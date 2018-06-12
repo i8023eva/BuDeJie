@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, EVAEssenceType) {
+    /** 全部 */
+    EVAEssenceTypeAll = 1,
+    /** 图片 */
+    EVAEssenceTypePicture = 10,
+    /** 段子 */
+    EVAEssenceTypeWord = 29,
+    /** 声音 */
+    EVAEssenceTypeVoice = 31,
+    /** 视频 */
+    EVAEssenceTypeVideo = 41
+};
+
 @interface EVAEssenceModel : NSObject
 /** 用户的名字 */
 @property (nonatomic, copy) NSString *name;
@@ -26,4 +39,7 @@
 @property (nonatomic, assign) NSInteger repost;
 /** 评论数量 */
 @property (nonatomic, assign) NSInteger comment;
+
+/** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
+@property (nonatomic, assign) EVAEssenceType type;
 @end

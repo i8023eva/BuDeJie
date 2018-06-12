@@ -85,7 +85,6 @@
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSUInteger index = scrollView.contentOffset.x / scrollView.eva_width;
-    NSLog(@"%ld", index);
     EVAEssenceButton *button = self.titleView.subviews[index];
 //    [self titleButtonClick:button];
     [self addChildViewToScrollView:index];
