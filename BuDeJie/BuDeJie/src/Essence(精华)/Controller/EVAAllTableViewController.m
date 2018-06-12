@@ -324,7 +324,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - 数据源
+#pragma mark - tableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     self.tableView.tableFooterView.hidden = (self.essenceModel_Arr.count == 0);
@@ -340,6 +340,19 @@
     return cell;
 }
 
+/**
+ 300 * 20 -> contentSize.height -> 滚动条长度 - 预估的长度不准确,滚动条会卡顿
+ 可以降低tableView:heightForRowAtIndexPath:方法的调用频率, 延迟执行
+ 
+ */
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 300;
+//}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.essenceModel_Arr[indexPath.row].cellHeight;
+}
+
 #pragma mark - iOS 11
 - (void)setupInitContent {
     self.tableView.estimatedRowHeight = 0;
@@ -353,6 +366,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(eva_StatusBarHeight + eva_NavigationBarHeight + 35, 0, eva_TabBarHeight, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     self.tableView.backgroundColor = [UIColor grayColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {

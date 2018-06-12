@@ -42,4 +42,7 @@ typedef NS_ENUM(NSUInteger, EVAEssenceType) {
 
 /** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) EVAEssenceType type;
+
+/** 根据当前模型计算出来的cell高度 */
+@property (nonatomic, assign) CGFloat cellHeight;
 @end
