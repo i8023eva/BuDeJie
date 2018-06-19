@@ -56,6 +56,12 @@
 		14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E6B83E20C387390018D2F1 /* EVAADViewController.m */; };
 		14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E6B83F20C387390018D2F1 /* EVAADViewController.xib */; };
 		14E98C4F20CD2F2D0008A97E /* EVAEssenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E98C4E20CD2F2D0008A97E /* EVAEssenceModel.m */; };
+		14EC625820D21B95004498CE /* EVAEssenceVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC625720D21B95004498CE /* EVAEssenceVideoView.m */; };
+		14EC625B20D21BAA004498CE /* EVAEssenceVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC625A20D21BAA004498CE /* EVAEssenceVoiceView.m */; };
+		14EC625E20D21BB9004498CE /* EVAEssencePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC625D20D21BB9004498CE /* EVAEssencePictureView.m */; };
+		14EC626020D21BCD004498CE /* EVAEssenceVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EC625F20D21BCD004498CE /* EVAEssenceVideoView.xib */; };
+		14EC626220D21C10004498CE /* EVAEssenceVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EC626120D21C10004498CE /* EVAEssenceVoiceView.xib */; };
+		14EC626420D21C19004498CE /* EVAEssencePictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EC626320D21C19004498CE /* EVAEssencePictureView.xib */; };
 		14F6A07520C2375500CC4284 /* UIView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07120C2375500CC4284 /* UIView+EVA.m */; };
 		14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07220C2375500CC4284 /* UIImage+EVA.m */; };
 		14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A07820C237D000CC4284 /* EVAGlobalVar.m */; };
@@ -182,6 +188,15 @@
 		14E6B83F20C387390018D2F1 /* EVAADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAADViewController.xib; sourceTree = "<group>"; };
 		14E98C4D20CD2F2D0008A97E /* EVAEssenceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAEssenceModel.h; sourceTree = "<group>"; };
 		14E98C4E20CD2F2D0008A97E /* EVAEssenceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAEssenceModel.m; sourceTree = "<group>"; };
+		14EC625620D21B95004498CE /* EVAEssenceVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAEssenceVideoView.h; sourceTree = "<group>"; };
+		14EC625720D21B95004498CE /* EVAEssenceVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAEssenceVideoView.m; sourceTree = "<group>"; };
+		14EC625920D21BAA004498CE /* EVAEssenceVoiceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAEssenceVoiceView.h; sourceTree = "<group>"; };
+		14EC625A20D21BAA004498CE /* EVAEssenceVoiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAEssenceVoiceView.m; sourceTree = "<group>"; };
+		14EC625C20D21BB9004498CE /* EVAEssencePictureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAEssencePictureView.h; sourceTree = "<group>"; };
+		14EC625D20D21BB9004498CE /* EVAEssencePictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAEssencePictureView.m; sourceTree = "<group>"; };
+		14EC625F20D21BCD004498CE /* EVAEssenceVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAEssenceVideoView.xib; sourceTree = "<group>"; };
+		14EC626120D21C10004498CE /* EVAEssenceVoiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAEssenceVoiceView.xib; sourceTree = "<group>"; };
+		14EC626320D21C19004498CE /* EVAEssencePictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAEssencePictureView.xib; sourceTree = "<group>"; };
 		14F6A07020C2375500CC4284 /* UIImage+EVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EVA.h"; sourceTree = "<group>"; };
 		14F6A07120C2375500CC4284 /* UIView+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EVA.m"; sourceTree = "<group>"; };
 		14F6A07220C2375500CC4284 /* UIImage+EVA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EVA.m"; sourceTree = "<group>"; };
@@ -353,6 +368,15 @@
 				14074E2420CEAA7500B7DEA3 /* EVAEssenceTableViewCell.h */,
 				14074E2520CEAA7500B7DEA3 /* EVAEssenceTableViewCell.m */,
 				14074E2620CEAA7500B7DEA3 /* EVAEssenceTableViewCell.xib */,
+				14EC625620D21B95004498CE /* EVAEssenceVideoView.h */,
+				14EC625720D21B95004498CE /* EVAEssenceVideoView.m */,
+				14EC625F20D21BCD004498CE /* EVAEssenceVideoView.xib */,
+				14EC625920D21BAA004498CE /* EVAEssenceVoiceView.h */,
+				14EC625A20D21BAA004498CE /* EVAEssenceVoiceView.m */,
+				14EC626120D21C10004498CE /* EVAEssenceVoiceView.xib */,
+				14EC625C20D21BB9004498CE /* EVAEssencePictureView.h */,
+				14EC625D20D21BB9004498CE /* EVAEssencePictureView.m */,
+				14EC626320D21C19004498CE /* EVAEssencePictureView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -876,15 +900,18 @@
 				14046F4E20BFEF11000615D4 /* LaunchScreen.storyboard in Resources */,
 				14E6B84120C387390018D2F1 /* EVAADViewController.xib in Resources */,
 				14074E2820CEAA7500B7DEA3 /* EVAEssenceTableViewCell.xib in Resources */,
+				14EC626420D21C19004498CE /* EVAEssencePictureView.xib in Resources */,
 				14F6DF2C20C675E000DA8537 /* EVALoginRegisterView.xib in Resources */,
 				14F6DF2720C6709500DA8537 /* EVALoginRegisterViewController.xib in Resources */,
 				1483BE7420C7DC040074DC29 /* EVAMeCollectionViewCell.xib in Resources */,
 				142A4C8820C8C3370058343C /* EVAWKWebViewController.xib in Resources */,
 				14F6DF1E20C66C7500DA8537 /* EVAFriendTrendViewController.xib in Resources */,
+				14EC626220D21C10004498CE /* EVAEssenceVoiceView.xib in Resources */,
 				14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */,
 				14466BE220CB56E300885B7B /* LaunchImage.bundle in Resources */,
 				1483BE5F20C76D140074DC29 /* EVAFastLoginView.xib in Resources */,
 				1483BE6F20C7D9670074DC29 /* EVAMeTableViewController.storyboard in Resources */,
+				14EC626020D21BCD004498CE /* EVAEssenceVideoView.xib in Resources */,
 				14046F4B20BFEF11000615D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -994,6 +1021,7 @@
 				14E6B84020C387390018D2F1 /* EVAADViewController.m in Sources */,
 				14BB4A6E20C9F7D5000A5B74 /* EVASettingTableViewCell.m in Sources */,
 				14BB4A9020CABC7B000A5B74 /* EVAWordTableViewController.m in Sources */,
+				14EC625E20D21BB9004498CE /* EVAEssencePictureView.m in Sources */,
 				14046F9C20C00998000615D4 /* EVAPublishViewController.m in Sources */,
 				14F6DF2A20C675D100DA8537 /* EVALoginRegisterView.m in Sources */,
 				1483BE6820C78A2D0074DC29 /* UITextField+EVA.m in Sources */,
@@ -1008,11 +1036,13 @@
 				14BB4A8720CABC51000A5B74 /* EVAVideoTableViewController.m in Sources */,
 				14F6A07F20C268AF00CC4284 /* UIBarButtonItem+EVA.m in Sources */,
 				14F6A07920C237D000CC4284 /* EVAGlobalVar.m in Sources */,
+				14EC625820D21B95004498CE /* EVAEssenceVideoView.m in Sources */,
 				14046FA320C021A8000615D4 /* EVARootTabBarController.m in Sources */,
 				14F6A07620C2375500CC4284 /* UIImage+EVA.m in Sources */,
 				14074E2720CEAA7500B7DEA3 /* EVAEssenceTableViewCell.m in Sources */,
 				1483BE6520C7841B0074DC29 /* EVALoginTextField.m in Sources */,
 				14046F9320C00965000615D4 /* EVANewViewController.m in Sources */,
+				14EC625B20D21BAA004498CE /* EVAEssenceVoiceView.m in Sources */,
 				147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */,
 				14BB4A8D20CABC69000A5B74 /* EVAPictureTableViewController.m in Sources */,
 				14619C3120C55FAF00370019 /* EVAMainTagTableViewController.m in Sources */,

@@ -52,6 +52,31 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zun-ek-3sc">
+                        <rect key="frame" x="10" y="218" width="300" height="72"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdC-Nn-za1">
+                                <rect key="frame" x="0.0" y="0.0" width="62" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论最热评论" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94n-Kw-umv">
+                                <rect key="frame" x="0.0" y="18" width="300" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="94n-Kw-umv" firstAttribute="top" secondItem="UdC-Nn-za1" secondAttribute="bottom" id="3Cy-OF-BLl"/>
+                            <constraint firstAttribute="bottom" secondItem="94n-Kw-umv" secondAttribute="bottom" id="AZA-73-yQx"/>
+                            <constraint firstAttribute="trailing" secondItem="94n-Kw-umv" secondAttribute="trailing" id="VXX-AS-mPI"/>
+                            <constraint firstItem="UdC-Nn-za1" firstAttribute="top" secondItem="zun-ek-3sc" secondAttribute="top" id="bVL-N4-8bX"/>
+                            <constraint firstItem="94n-Kw-umv" firstAttribute="leading" secondItem="zun-ek-3sc" secondAttribute="leading" id="cto-Bv-LBN"/>
+                            <constraint firstItem="UdC-Nn-za1" firstAttribute="leading" secondItem="zun-ek-3sc" secondAttribute="leading" id="eDX-Ob-1Kc"/>
+                        </constraints>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-content-line" translatesAutoresizingMaskIntoConstraints="NO" id="hZY-Tw-7D1">
                         <rect key="frame" x="0.0" y="300" width="320" height="1"/>
                         <constraints>
@@ -141,17 +166,20 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="9Ge-Eb-MmN" firstAttribute="leading" secondItem="Pc3-hs-Pll" secondAttribute="leading" id="8pg-V0-i2a"/>
+                    <constraint firstItem="zun-ek-3sc" firstAttribute="trailing" secondItem="9Ge-Eb-MmN" secondAttribute="trailing" id="9Jc-ty-10C"/>
                     <constraint firstItem="9Ge-Eb-MmN" firstAttribute="trailing" secondItem="ogO-w5-vbD" secondAttribute="trailing" id="9UY-jS-sfn"/>
                     <constraint firstItem="Sdu-8k-WpS" firstAttribute="top" secondItem="hZY-Tw-7D1" secondAttribute="bottom" id="DGw-F7-GbZ"/>
                     <constraint firstItem="9Ge-Eb-MmN" firstAttribute="top" secondItem="Pc3-hs-Pll" secondAttribute="bottom" constant="10" id="Ise-nm-CSX"/>
                     <constraint firstAttribute="bottom" secondItem="Sdu-8k-WpS" secondAttribute="bottom" id="JpU-en-oP9"/>
                     <constraint firstItem="Sdu-8k-WpS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="L0y-52-JMU"/>
                     <constraint firstItem="yHr-Jy-vc8" firstAttribute="bottom" secondItem="Pc3-hs-Pll" secondAttribute="bottom" id="Rst-P3-Jr2"/>
+                    <constraint firstItem="hZY-Tw-7D1" firstAttribute="top" secondItem="zun-ek-3sc" secondAttribute="bottom" constant="10" id="T53-5Z-hsr"/>
                     <constraint firstItem="Pc3-hs-Pll" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="W9s-qM-Aa9"/>
                     <constraint firstItem="zVc-ft-I9G" firstAttribute="leading" secondItem="Pc3-hs-Pll" secondAttribute="trailing" constant="10" id="Yh0-sq-8rm"/>
                     <constraint firstItem="Pc3-hs-Pll" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b4w-TG-t6v"/>
                     <constraint firstAttribute="trailing" secondItem="Sdu-8k-WpS" secondAttribute="trailing" id="bWq-u1-Z9H"/>
                     <constraint firstItem="zVc-ft-I9G" firstAttribute="top" secondItem="Pc3-hs-Pll" secondAttribute="top" id="esq-fW-M6f"/>
+                    <constraint firstItem="zun-ek-3sc" firstAttribute="leading" secondItem="9Ge-Eb-MmN" secondAttribute="leading" id="g1K-Cx-6l5"/>
                     <constraint firstAttribute="trailing" secondItem="ogO-w5-vbD" secondAttribute="trailing" constant="10" id="lvH-P9-cDR"/>
                     <constraint firstItem="hZY-Tw-7D1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="osf-zQ-lcM"/>
                     <constraint firstAttribute="trailing" secondItem="hZY-Tw-7D1" secondAttribute="trailing" id="sEl-fD-FIJ"/>
@@ -169,6 +197,8 @@
                 <outlet property="profileImageView" destination="Pc3-hs-Pll" id="0kf-Nl-GUv"/>
                 <outlet property="repostButton" destination="AZl-0Z-dGZ" id="trm-gM-P0b"/>
                 <outlet property="text_label" destination="9Ge-Eb-MmN" id="uPe-2C-C2p"/>
+                <outlet property="topCmtLabel" destination="94n-Kw-umv" id="xTT-CE-Z73"/>
+                <outlet property="topCmtView" destination="zun-ek-3sc" id="1cp-aa-dx4"/>
             </connections>
             <point key="canvasLocation" x="25" y="-28.5"/>
         </tableViewCell>

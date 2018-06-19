@@ -5,7 +5,7 @@
 //  Created by 李元华 on 2018/6/11.
 //  Copyright © 2018年 李元华. All rights reserved.
 //
-
+#warning xib的 autoresizing
 #import <UIKit/UIKit.h>
 #import "EVAEssenceModel.h"
 

@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, EVAEssenceType) {
     /** 全部 */
-    EVAEssenceTypeAll = 1,
+//    EVAEssenceTypeAll = 1,
     /** 图片 */
     EVAEssenceTypePicture = 10,
     /** 段子 */
@@ -39,10 +39,18 @@ typedef NS_ENUM(NSUInteger, EVAEssenceType) {
 @property (nonatomic, assign) NSInteger repost;
 /** 评论数量 */
 @property (nonatomic, assign) NSInteger comment;
+/** 最热评论 - 接口失效 - 模拟数据 */
+@property (nonatomic, strong) NSArray *top_cmt;
 
 /** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) EVAEssenceType type;
 
+/** 宽度(像素) */
+@property (nonatomic, assign) NSInteger width;
+/** 高度(像素) */
+@property (nonatomic, assign) NSInteger height;
+
 /** 根据当前模型计算出来的cell高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, assign) CGRect typeFrame;
 @end
