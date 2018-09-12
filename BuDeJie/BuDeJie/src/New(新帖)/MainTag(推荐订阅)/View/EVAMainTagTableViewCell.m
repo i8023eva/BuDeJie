@@ -8,6 +8,7 @@
 
 #import "EVAMainTagTableViewCell.h"
 #import "EVAMainTagModel.h"
+#import "UIImageView+EVA.h"
 
 #import <UIImageView+WebCache.h>
 
@@ -40,8 +41,10 @@
     
     self.nameLabel.text = model.theme_name;
     self.numLabel.text = [self resolveNumStringWithModel:model];
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:model.image_list]
-                     placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:model.image_list]
+//                     placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.iconView eva_setHeaderView:model.image_list];
 }
 
 

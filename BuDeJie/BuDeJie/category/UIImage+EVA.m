@@ -44,7 +44,7 @@
     return nil;
 }
 
-- (UIImage *)circleImageWithContext {
+- (UIImage *)eva_circleImageWithContext {
     // 1.开启图形上下文
     // 比例因素:当前点与像素比例
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0);

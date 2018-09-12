@@ -10,6 +10,8 @@
 #import "EVARootTabBarController.h"
 #import "EVAADViewController.h"
 
+#import <AFNetworking.h>
+
 @interface AppDelegate ()
 
 @end
@@ -26,6 +28,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[EVAADViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
     return YES;
 }
 

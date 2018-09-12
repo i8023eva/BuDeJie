@@ -14,7 +14,7 @@
 /**返回拉伸图片*/
 - (UIImage *)eva_stretchableImage;
 
-- (UIImage *)circleImageWithContext;
+- (UIImage *)eva_circleImageWithContext;
 
 + (UIImage *)eva_launchImage;
 

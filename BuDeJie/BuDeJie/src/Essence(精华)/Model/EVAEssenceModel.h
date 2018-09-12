@@ -50,6 +50,20 @@ typedef NS_ENUM(NSUInteger, EVAEssenceType) {
 /** 高度(像素) */
 @property (nonatomic, assign) NSInteger height;
 
+/** 小图 */
+@property (nonatomic, copy) NSString *image0;
+/** 中图 */
+@property (nonatomic, copy) NSString *image2;
+/** 大图 */
+@property (nonatomic, copy) NSString *image1;
+
+/** 音频时长 */
+@property (nonatomic, assign) NSInteger voicetime;
+/** 视频时长 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 音频\视频的播放次数 */
+@property (nonatomic, assign) NSInteger playcount;
+
 /** 根据当前模型计算出来的cell高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
 @property (nonatomic, assign) CGRect typeFrame;

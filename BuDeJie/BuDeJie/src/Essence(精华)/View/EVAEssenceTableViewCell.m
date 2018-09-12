@@ -12,6 +12,7 @@
 #import "EVAEssencePictureView.h"
 
 #import "UIImage+EVA.h"
+#import "UIImageView+EVA.h"
 
 #import <UIImageView+WebCache.h>
 
@@ -87,12 +88,13 @@
 - (void)setEssenceModel:(EVAEssenceModel *)essenceModel {
     _essenceModel = essenceModel;
     
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:essenceModel.profile_image]
-                             placeholderImage:[UIImage imageNamed:@"defaultUserIcon"].circleImageWithContext
-                                    completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                                        if (!image) return;
-                                        self.profileImageView.image = image.circleImageWithContext;
-    }];
+    [self.profileImageView eva_setHeaderView:essenceModel.profile_image];
+//     sd_setImageWithURL:[NSURL URLWithString:essenceModel.profile_image]
+//                             placeholderImage:[UIImage imageNamed:@"defaultUserIcon"].eva_circleImageWithContext
+//                                    completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//                                        if (!image) return;
+//                                        self.profileImageView.image = image.eva_circleImageWithContext;
+//    }];
     
     self.nameLabel.text = essenceModel.name;
     self.passtimeLabel.text = essenceModel.passtime;
@@ -107,6 +109,7 @@
         self.videoView.hidden = NO;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
+        self.videoView.model = essenceModel;
     } else if (essenceModel.type == EVAEssenceTypeVoice) {
         self.voiceView.hidden = NO;
         self.pictureView.hidden = YES;
