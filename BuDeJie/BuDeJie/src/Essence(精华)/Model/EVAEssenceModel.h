@@ -56,6 +56,8 @@ typedef NS_ENUM(NSUInteger, EVAEssenceType) {
 @property (nonatomic, copy) NSString *image2;
 /** 大图 */
 @property (nonatomic, copy) NSString *image1;
+/** 是否为动图 */
+@property (nonatomic, assign) BOOL is_gif;
 
 /** 音频时长 */
 @property (nonatomic, assign) NSInteger voicetime;
@@ -67,4 +69,6 @@ typedef NS_ENUM(NSUInteger, EVAEssenceType) {
 /** 根据当前模型计算出来的cell高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
 @property (nonatomic, assign) CGRect typeFrame;
+/** 是否为超长图片 */
+@property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
 @end

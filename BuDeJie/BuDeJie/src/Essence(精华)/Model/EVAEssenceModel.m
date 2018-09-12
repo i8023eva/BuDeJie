@@ -24,6 +24,11 @@
         CGFloat typeY = _cellHeight;
         CGFloat typeW = textMaxSize.width;
         CGFloat typeH = typeW * self.height / self.width;
+        
+        if (typeH >= eva_screenH) {
+            typeH = 200;
+            self.bigPicture = YES;
+        }
         self.typeFrame = CGRectMake(typeX, typeY, typeW, typeH);
         _cellHeight += typeH + 10;
     }

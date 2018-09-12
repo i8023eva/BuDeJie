@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class EVAEssenceModel;
 @interface EVAEssencePictureView : UIView
 
+@property (nonatomic, strong) EVAEssenceModel *model;
 @end

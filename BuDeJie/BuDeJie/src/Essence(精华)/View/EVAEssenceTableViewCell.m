@@ -105,6 +105,7 @@
         self.pictureView.hidden = NO;
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;
+        self.pictureView.model = essenceModel;
     } else if (essenceModel.type == EVAEssenceTypeVideo) {
         self.videoView.hidden = NO;
         self.voiceView.hidden = YES;
