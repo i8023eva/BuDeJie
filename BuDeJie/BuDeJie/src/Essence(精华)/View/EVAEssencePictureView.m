@@ -11,11 +11,14 @@
 
 #import "UIImageView+EVA.h"
 
+#import <FLAnimatedImageView+WebCache.h>
+
 @interface EVAEssencePictureView ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *gifView;
 @property (weak, nonatomic) IBOutlet UIButton *seeBigPictureButton;
 @property (weak, nonatomic) IBOutlet UIImageView *placeholderView;
+@property (nonatomic, weak) FLAnimatedImageView *flaImageView;
 
 @end
 
@@ -24,19 +27,35 @@
 - (void)setModel:(EVAEssenceModel *)model {
     _model = model;
     
-    self.placeholderView.hidden = NO;
-    [self.imageView eva_setOriginImage:model.image1 thumbnailImage:model.image0 placeholder:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        if (!image) return;
-        //控制占位图
-        self.placeholderView.hidden = YES;
-    }];
-    
-//    GIF -- imageView 不能播放 gif
+#warning
+    //    GIF -- imageView 不能播放 gif
     if ([model.image1.lowercaseString hasSuffix:@"gif"]) {
+        
+                        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 0, model.typeFrame.size.width, model.typeFrame.size.height)];
+                        [imageView sd_setImageWithURL:[NSURL URLWithString:model.image1]];
+                        [self addSubview:imageView];
+                        [self insertSubview:imageView belowSubview:self.gifView];
+                        self.flaImageView = imageView;
+        
+                        self.imageView.hidden = YES;
         self.gifView.hidden = NO;
+                self.flaImageView.hidden = NO;
     } else {
+                self.imageView.hidden = NO;
         self.gifView.hidden = YES;
+                self.flaImageView.hidden = YES;
+        
+        self.placeholderView.hidden = NO;
+        [self.imageView eva_setOriginImage:model.image1 thumbnailImage:model.image0 placeholder:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (!image) return;
+            //控制占位图
+            self.placeholderView.hidden = YES;
+        }];
     }
+    
+
+    
+
 //    长图
     if (model.isBigPicture) {
         self.seeBigPictureButton.hidden = NO;
