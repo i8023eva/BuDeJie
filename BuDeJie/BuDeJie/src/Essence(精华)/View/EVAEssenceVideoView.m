@@ -8,6 +8,7 @@
 
 #import "EVAEssenceVideoView.h"
 #import "EVAEssenceModel.h"
+#import "EVATapPictureViewController.h"
 
 #import "UIImageView+EVA.h"
 
@@ -20,6 +21,19 @@
 @end
 
 @implementation EVAEssenceVideoView
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPicture)]];
+}
+
+- (void)tapPicture {
+    EVATapPictureViewController *vc = [[EVATapPictureViewController alloc] init];
+    vc.model = self.model;
+    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
+}
 
 - (void)setModel:(EVAEssenceModel *)model {
     _model = model;

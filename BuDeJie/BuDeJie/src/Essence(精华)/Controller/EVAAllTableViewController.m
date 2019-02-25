@@ -12,6 +12,7 @@
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import <SVProgressHUD.h>
+#import <SDImageCache.h>
 
 
 @interface EVAAllTableViewController ()
@@ -134,6 +135,8 @@
     [self headerRefresh];
     
     [self footerRefresh];
+    //稳定内存
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {

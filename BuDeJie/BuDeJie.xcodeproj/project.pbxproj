@@ -42,6 +42,8 @@
 		1483BE7420C7DC040074DC29 /* EVAMeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1483BE7220C7DC040074DC29 /* EVAMeCollectionViewCell.xib */; };
 		1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE7620C7E0D70074DC29 /* EVAMeModel.m */; };
 		148ED07F2147EF50001BA3E0 /* UIImageView+EVA.m in Sources */ = {isa = PBXBuildFile; fileRef = 148ED07E2147EF50001BA3E0 /* UIImageView+EVA.m */; };
+		14BAF72E222395A3005FCE75 /* EVATapPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BAF72C222395A3005FCE75 /* EVATapPictureViewController.m */; };
+		14BAF72F222395A3005FCE75 /* EVATapPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BAF72D222395A3005FCE75 /* EVATapPictureViewController.xib */; };
 		14BB4A6E20C9F7D5000A5B74 /* EVASettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A6D20C9F7D5000A5B74 /* EVASettingTableViewCell.m */; };
 		14BB4A7120C9F7FB000A5B74 /* EVASettingCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A7020C9F7FB000A5B74 /* EVASettingCellModel.m */; };
 		14BB4A7420C9F813000A5B74 /* EVASettingGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4A7320C9F813000A5B74 /* EVASettingGroupModel.m */; };
@@ -162,6 +164,9 @@
 		1483BE7620C7E0D70074DC29 /* EVAMeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMeModel.m; sourceTree = "<group>"; };
 		148ED07D2147EF50001BA3E0 /* UIImageView+EVA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EVA.h"; sourceTree = "<group>"; };
 		148ED07E2147EF50001BA3E0 /* UIImageView+EVA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EVA.m"; sourceTree = "<group>"; };
+		14BAF72B222395A3005FCE75 /* EVATapPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVATapPictureViewController.h; sourceTree = "<group>"; };
+		14BAF72C222395A3005FCE75 /* EVATapPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVATapPictureViewController.m; sourceTree = "<group>"; };
+		14BAF72D222395A3005FCE75 /* EVATapPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVATapPictureViewController.xib; sourceTree = "<group>"; };
 		14BB4A6C20C9F7D5000A5B74 /* EVASettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVASettingTableViewCell.h; sourceTree = "<group>"; };
 		14BB4A6D20C9F7D5000A5B74 /* EVASettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVASettingTableViewCell.m; sourceTree = "<group>"; };
 		14BB4A6F20C9F7FB000A5B74 /* EVASettingCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVASettingCellModel.h; sourceTree = "<group>"; };
@@ -350,6 +355,9 @@
 				14BB4A8C20CABC69000A5B74 /* EVAPictureTableViewController.m */,
 				14BB4A8E20CABC7B000A5B74 /* EVAWordTableViewController.h */,
 				14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */,
+				14BAF72B222395A3005FCE75 /* EVATapPictureViewController.h */,
+				14BAF72C222395A3005FCE75 /* EVATapPictureViewController.m */,
+				14BAF72D222395A3005FCE75 /* EVATapPictureViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -917,6 +925,7 @@
 				1483BE5F20C76D140074DC29 /* EVAFastLoginView.xib in Resources */,
 				1483BE6F20C7D9670074DC29 /* EVAMeTableViewController.storyboard in Resources */,
 				14EC626020D21BCD004498CE /* EVAEssenceVideoView.xib in Resources */,
+				14BAF72F222395A3005FCE75 /* EVATapPictureViewController.xib in Resources */,
 				14046F4B20BFEF11000615D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1055,6 +1064,7 @@
 				14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */,
 				14619C2A20C542F000370019 /* EVAADInfoModel.m in Sources */,
 				1483BE5D20C76D080074DC29 /* EVAFastLoginView.m in Sources */,
+				14BAF72E222395A3005FCE75 /* EVATapPictureViewController.m in Sources */,
 				14046F8D20C00501000615D4 /* AppDelegate.m in Sources */,
 				1483BE7720C7E0D70074DC29 /* EVAMeModel.m in Sources */,
 				14E98C4F20CD2F2D0008A97E /* EVAEssenceModel.m in Sources */,
