@@ -40,7 +40,6 @@
 
 - (void)setModel:(EVAEssenceModel *)model {
     _model = model;
-    
 #warning
     
 /**
