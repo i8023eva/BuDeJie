@@ -8,13 +8,18 @@
 
 #import "EVATapPictureViewController.h"
 #import "EVAEssenceModel.h"
+#import <Photos/Photos.h>
 
 #import <UIImageView+WebCache.h>
+#import <SVProgressHUD.h>
 
 @interface EVATapPictureViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 @property (nonatomic, weak) UIScrollView *scrollView;
 @property (nonatomic, weak) UIImageView *imageView;
+
+- (PHAssetCollection *)createdCollection;
+- (PHFetchResult<PHAsset *> *)createdAsset;
 
 @end
 
@@ -67,6 +72,104 @@
 }
 
 - (IBAction)save:(id)sender {
+    PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
+    
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        //<NSThread: 0x600003651480>{number = 4, name = (null)}
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (status == PHAuthorizationStatusDenied) { //拒绝
+                if (oldStatus != PHAuthorizationStatusNotDetermined) {//第一次没有做出选择不提示
+                    [SVProgressHUD showInfoWithStatus:@"提示开启权限"];
+                }
+            } else if (status == PHAuthorizationStatusAuthorized) { //ok
+                [self asset2Collection];
+            } else if (status == PHAuthorizationStatusRestricted) { //无法访问
+                [SVProgressHUD showErrorWithStatus:@"系统错误"];
+            }
+        });
+    }];
+}
+
+/**
+ * @brief 第一次安装权限申请时后面提示失败
+ *
+ */
+- (void) asset2Collection {
+    PHFetchResult<PHAsset *> *asset = self.createdAsset;
+    if (asset == nil) {
+        [SVProgressHUD showErrorWithStatus:@"图片失败"];
+        return;
+    }
+    
+    PHAssetCollection *collection = self.createdCollection;
+    if (collection == nil) {
+        [SVProgressHUD showErrorWithStatus:@"相册失败"];
+        return;
+    }
+    
+    NSError *error = nil;
+    //插入自定义相册
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        PHAssetCollectionChangeRequest *request = [PHAssetCollectionChangeRequest
+                                                   changeRequestForAssetCollection:collection];
+        [request insertAssets:asset atIndexes:[NSIndexSet indexSetWithIndex:0]];
+    } error:&error];
+
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:@"error"];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:@"success"];
+    }
+}
+
+/**
+ * @brief 创建相册
+ * @return <#return#>
+ */
+- (PHAssetCollection *)createdCollection {
+    NSString *bundleName = [NSBundle mainBundle].infoDictionary[(NSString *)kCFBundleNameKey];
+    
+    //查
+    PHFetchResult<PHAssetCollection *> *collections = [PHAssetCollection
+                                                       fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum
+                                                       subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    for (PHAssetCollection *collection in collections) {
+        if ([collection.localizedTitle isEqualToString:bundleName]) {
+            return collection;
+        }
+    }
+    //增
+    __block NSString *collectionID = nil;
+    NSError *error = nil;
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        collectionID = [PHAssetCollectionChangeRequest
+                        creationRequestForAssetCollectionWithTitle:bundleName].placeholderForCreatedAssetCollection.localIdentifier;
+    } error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    return [PHAssetCollection
+            fetchAssetCollectionsWithLocalIdentifiers:@[collectionID] options:nil].firstObject;
+}
+/**
+ * @brief 获取保存的图片
+ *
+ * @return <#return#>
+ */
+- (PHFetchResult<PHAsset *> *)createdAsset {
+    __block NSString *assetID = nil;
+    NSError *error = nil;
+    //先保存得到相机胶卷
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        assetID = [PHAssetChangeRequest
+                   creationRequestForAssetFromImage:self.imageView.image].placeholderForCreatedAsset.localIdentifier;
+    } error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    return [PHAsset fetchAssetsWithLocalIdentifiers:@[assetID] options:nil];
 }
 
 @end
