@@ -6,8 +6,8 @@
 //  Copyright © 2018年 李元华. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EVATopicTableViewController.h"
 
-@interface EVAVideoTableViewController : UITableViewController
+@interface EVAVideoTableViewController : EVATopicTableViewController
 
 @end

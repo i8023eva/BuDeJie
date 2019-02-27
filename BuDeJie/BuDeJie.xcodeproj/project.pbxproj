@@ -30,6 +30,7 @@
 		14619C3420C561EC00370019 /* EVAMainTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3320C561EC00370019 /* EVAMainTagModel.m */; };
 		14619C3820C568E000370019 /* EVAMainTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14619C3620C568E000370019 /* EVAMainTagTableViewCell.m */; };
 		14619C3920C568E000370019 /* EVAMainTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14619C3720C568E000370019 /* EVAMainTagTableViewCell.xib */; };
+		146926D522267B4A00DAF207 /* EVATopicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146926D422267B4A00DAF207 /* EVATopicTableViewController.m */; };
 		147563A720C13D51002E72D6 /* EVARootTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147563A620C13D51002E72D6 /* EVARootTabBar.m */; };
 		1483BE5D20C76D080074DC29 /* EVAFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483BE5C20C76D080074DC29 /* EVAFastLoginView.m */; };
 		1483BE5F20C76D140074DC29 /* EVAFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1483BE5E20C76D140074DC29 /* EVAFastLoginView.xib */; };
@@ -142,6 +143,8 @@
 		14619C3520C568E000370019 /* EVAMainTagTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAMainTagTableViewCell.h; sourceTree = "<group>"; };
 		14619C3620C568E000370019 /* EVAMainTagTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAMainTagTableViewCell.m; sourceTree = "<group>"; };
 		14619C3720C568E000370019 /* EVAMainTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVAMainTagTableViewCell.xib; sourceTree = "<group>"; };
+		146926D322267B4A00DAF207 /* EVATopicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVATopicTableViewController.h; sourceTree = "<group>"; };
+		146926D422267B4A00DAF207 /* EVATopicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVATopicTableViewController.m; sourceTree = "<group>"; };
 		147563A520C13D51002E72D6 /* EVARootTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVARootTabBar.h; sourceTree = "<group>"; };
 		147563A620C13D51002E72D6 /* EVARootTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVARootTabBar.m; sourceTree = "<group>"; };
 		147563A820C14F9F002E72D6 /* BuDeJie_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie_Prefix.pch; sourceTree = "<group>"; };
@@ -345,19 +348,10 @@
 			children = (
 				14046F8E20C00958000615D4 /* EVAEssenceViewController.h */,
 				14046F8F20C00958000615D4 /* EVAEssenceViewController.m */,
-				14BB4A8220CABC46000A5B74 /* EVAAllTableViewController.h */,
-				14BB4A8320CABC46000A5B74 /* EVAAllTableViewController.m */,
-				14BB4A8520CABC51000A5B74 /* EVAVideoTableViewController.h */,
-				14BB4A8620CABC51000A5B74 /* EVAVideoTableViewController.m */,
-				14BB4A8820CABC5A000A5B74 /* EVAVoiceTableViewController.h */,
-				14BB4A8920CABC5A000A5B74 /* EVAVoiceTableViewController.m */,
-				14BB4A8B20CABC69000A5B74 /* EVAPictureTableViewController.h */,
-				14BB4A8C20CABC69000A5B74 /* EVAPictureTableViewController.m */,
-				14BB4A8E20CABC7B000A5B74 /* EVAWordTableViewController.h */,
-				14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */,
 				14BAF72B222395A3005FCE75 /* EVATapPictureViewController.h */,
 				14BAF72C222395A3005FCE75 /* EVATapPictureViewController.m */,
 				14BAF72D222395A3005FCE75 /* EVATapPictureViewController.xib */,
+				146926D222267A8E00DAF207 /* Topic */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -622,6 +616,25 @@
 				14619C3720C568E000370019 /* EVAMainTagTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		146926D222267A8E00DAF207 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				146926D322267B4A00DAF207 /* EVATopicTableViewController.h */,
+				146926D422267B4A00DAF207 /* EVATopicTableViewController.m */,
+				14BB4A8220CABC46000A5B74 /* EVAAllTableViewController.h */,
+				14BB4A8320CABC46000A5B74 /* EVAAllTableViewController.m */,
+				14BB4A8520CABC51000A5B74 /* EVAVideoTableViewController.h */,
+				14BB4A8620CABC51000A5B74 /* EVAVideoTableViewController.m */,
+				14BB4A8820CABC5A000A5B74 /* EVAVoiceTableViewController.h */,
+				14BB4A8920CABC5A000A5B74 /* EVAVoiceTableViewController.m */,
+				14BB4A8B20CABC69000A5B74 /* EVAPictureTableViewController.h */,
+				14BB4A8C20CABC69000A5B74 /* EVAPictureTableViewController.m */,
+				14BB4A8E20CABC7B000A5B74 /* EVAWordTableViewController.h */,
+				14BB4A8F20CABC7B000A5B74 /* EVAWordTableViewController.m */,
+			);
+			path = Topic;
 			sourceTree = "<group>";
 		};
 		14E6B83920C387250018D2F1 /* AD(广告) */ = {
@@ -1070,6 +1083,7 @@
 				14E98C4F20CD2F2D0008A97E /* EVAEssenceModel.m in Sources */,
 				14BB4A8A20CABC5A000A5B74 /* EVAVoiceTableViewController.m in Sources */,
 				14046F8C20C00501000615D4 /* main.m in Sources */,
+				146926D522267B4A00DAF207 /* EVATopicTableViewController.m in Sources */,
 				14BB4A7120C9F7FB000A5B74 /* EVASettingCellModel.m in Sources */,
 				142A4C8720C8C3370058343C /* EVAWKWebViewController.m in Sources */,
 				1483BE7320C7DC040074DC29 /* EVAMeCollectionViewCell.m in Sources */,

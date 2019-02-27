@@ -1,12 +1,12 @@
 //
-//  EVAVoiceTableViewController.m
+//  EVATopicTableViewController.m
 //  BuDeJie
 //
 //  Created by 李元华 on 2018/6/8.
 //  Copyright © 2018年 李元华. All rights reserved.
 //
 
-#import "EVAVoiceTableViewController.h"
+#import "EVATopicTableViewController.h"
 #import "EVAEssenceTableViewCell.h"
 
 #import <AFNetworking.h>
@@ -15,7 +15,7 @@
 #import <SDImageCache.h>
 
 
-@interface EVAVoiceTableViewController ()
+@interface EVATopicTableViewController ()
 
 @property (nonatomic, assign) NSInteger valueCount;
 @property (nonatomic, weak) UILabel *footerLabel;
@@ -31,7 +31,11 @@
 
 @end
 
-@implementation EVAVoiceTableViewController
+@implementation EVATopicTableViewController
+
+- (EVAEssenceType)type {
+    return 0;
+}
 
 - (AFHTTPSessionManager *)manager {
     if (_manager == nil) {
@@ -181,10 +185,6 @@
         self.tableView.contentOffset = CGPointMake(0, -inset.top);
     }];
     [self loadNewData];
-}
-
-- (EVAEssenceType)type {
-    return EVAEssenceTypeVoice;
 }
 
 - (void)loadNewData {
