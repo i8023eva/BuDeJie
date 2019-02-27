@@ -115,6 +115,7 @@
         self.voiceView.hidden = NO;
         self.pictureView.hidden = YES;
         self.videoView.hidden = YES;
+        self.voiceView.model = essenceModel;
     } else {
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;

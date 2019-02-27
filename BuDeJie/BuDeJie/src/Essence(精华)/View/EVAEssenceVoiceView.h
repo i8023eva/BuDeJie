@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class EVAEssenceModel;
 @interface EVAEssenceVoiceView : UIView
 
+@property (nonatomic, strong) EVAEssenceModel *model;
 @end

@@ -42,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.rowHeight = 200;
+//    self.tableView.rowHeight = 200;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([EVAEssenceTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([EVAEssenceTableViewCell class])];
     
@@ -183,6 +183,10 @@
     [self loadNewData];
 }
 
+- (EVAEssenceType)type {
+    return EVAEssenceTypeAll;
+}
+
 - (void)loadNewData {
 //    return;
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
@@ -190,7 +194,7 @@
     NSDictionary *parameters = @{
                                  @"a" : @"list",
                                  @"c" : @"data",
-                                 @"type" : @"1"
+                                 @"type" : @(self.type)
                                  };
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject) {
@@ -266,7 +270,7 @@
     NSDictionary *parameters = @{
                                  @"a" : @"list",
                                  @"c" : @"data",
-                                 @"type" : @"1",
+                                 @"type" : @(self.type),
                                  @"maxtime" : self.maxtime
                                  };
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

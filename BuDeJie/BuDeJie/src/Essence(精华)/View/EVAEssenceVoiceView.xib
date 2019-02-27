@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,12 +13,68 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="WYv-pH-t1R" customClass="EVAEssenceVoiceView">
-            <rect key="frame" x="0.0" y="0.0" width="363" height="188"/>
+            <rect key="frame" x="0.0" y="0.0" width="363" height="281"/>
             <autoresizingMask key="autoresizingMask"/>
-            <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="0O8-Ux-dbz">
+                    <rect key="frame" x="0.0" y="44" width="363" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="y3w-Pa-DaB"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-o9-zpM">
+                    <rect key="frame" x="0.0" y="0.0" width="363" height="281"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBb-dG-mzU">
+                    <rect key="frame" x="150" y="109" width="63" height="63"/>
+                    <state key="normal" image="playButtonPlay" backgroundImage="playButton"/>
+                    <state key="highlighted" backgroundImage="playButtonClick"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVW-Pz-xA6">
+                    <rect key="frame" x="287" y="0.0" width="76" height="21"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69964683220000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-od-1SZ">
+                    <rect key="frame" x="317" y="260" width="46" height="21"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69964683220000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="tes-CU-D9p" firstAttribute="trailing" secondItem="rx9-od-1SZ" secondAttribute="trailing" id="0Od-eb-G36"/>
+                <constraint firstItem="bBb-dG-mzU" firstAttribute="centerY" secondItem="WYv-pH-t1R" secondAttribute="centerY" id="73U-fO-AEz"/>
+                <constraint firstItem="0O8-Ux-dbz" firstAttribute="top" secondItem="tes-CU-D9p" secondAttribute="top" constant="44" id="AbK-8J-b0Z"/>
+                <constraint firstItem="bBb-dG-mzU" firstAttribute="centerX" secondItem="WYv-pH-t1R" secondAttribute="centerX" id="INF-Wl-VNv"/>
+                <constraint firstItem="Ezm-o9-zpM" firstAttribute="top" secondItem="tes-CU-D9p" secondAttribute="top" id="NT2-xe-X6e"/>
+                <constraint firstItem="Ezm-o9-zpM" firstAttribute="leading" secondItem="tes-CU-D9p" secondAttribute="leading" id="YNB-In-cAP"/>
+                <constraint firstItem="0O8-Ux-dbz" firstAttribute="trailing" secondItem="tes-CU-D9p" secondAttribute="trailing" id="YcV-nB-xtP"/>
+                <constraint firstItem="0O8-Ux-dbz" firstAttribute="leading" secondItem="tes-CU-D9p" secondAttribute="leading" id="ayD-v2-cOb"/>
+                <constraint firstItem="YVW-Pz-xA6" firstAttribute="top" secondItem="tes-CU-D9p" secondAttribute="top" id="b14-GT-4wA"/>
+                <constraint firstItem="tes-CU-D9p" firstAttribute="bottom" secondItem="rx9-od-1SZ" secondAttribute="bottom" id="klC-mE-Vcn"/>
+                <constraint firstItem="tes-CU-D9p" firstAttribute="trailing" secondItem="Ezm-o9-zpM" secondAttribute="trailing" id="n6R-I8-jkx"/>
+                <constraint firstItem="tes-CU-D9p" firstAttribute="bottom" secondItem="Ezm-o9-zpM" secondAttribute="bottom" id="oXK-mH-Z3x"/>
+                <constraint firstItem="YVW-Pz-xA6" firstAttribute="trailing" secondItem="tes-CU-D9p" secondAttribute="trailing" id="tk8-Ey-MDl"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="tes-CU-D9p"/>
-            <point key="canvasLocation" x="312" y="-465"/>
+            <connections>
+                <outlet property="imageView" destination="Ezm-o9-zpM" id="hi5-HZ-SGT"/>
+                <outlet property="placeholderView" destination="0O8-Ux-dbz" id="Vn0-P1-p4z"/>
+                <outlet property="playcountLabel" destination="YVW-Pz-xA6" id="lQt-lj-qxU"/>
+                <outlet property="voicetimeLabel" destination="rx9-od-1SZ" id="WKG-Po-0o6"/>
+            </connections>
+            <point key="canvasLocation" x="424.80000000000001" y="-514.99250374812596"/>
         </view>
     </objects>
+    <resources>
+        <image name="imageBackground" width="75" height="15"/>
+        <image name="playButton" width="63" height="63"/>
+        <image name="playButtonClick" width="63" height="63"/>
+        <image name="playButtonPlay" width="30" height="30"/>
+    </resources>
 </document>

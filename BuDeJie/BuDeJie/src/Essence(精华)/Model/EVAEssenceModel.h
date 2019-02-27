@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, EVAEssenceType) {
     /** 全部 */
-//    EVAEssenceTypeAll = 1,
+    EVAEssenceTypeAll = 1,
     /** 图片 */
     EVAEssenceTypePicture = 10,
     /** 段子 */
