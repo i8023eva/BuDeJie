@@ -12,6 +12,7 @@
 
 #import <UIImageView+WebCache.h>
 #import <SVProgressHUD.h>
+#import "FLAnimatedImageView+EVA.h"
 
 @interface EVATapPictureViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
@@ -37,7 +38,7 @@
     [self.view insertSubview:scrollView atIndex:0];
     self.scrollView = scrollView;
     
-    UIImageView *imageView = [[UIImageView alloc] init];
+    FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
     [imageView sd_setImageWithURL:[NSURL URLWithString:self.model.image1] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         if (!image) return;
         self.saveBtn.enabled = YES;
@@ -75,7 +76,7 @@
     PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
     
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        //<NSThread: 0x600003651480>{number = 4, name = (null)}
+        // <NSThread: 0x600003651480>{number = 4, name = (null)}
         dispatch_async(dispatch_get_main_queue(), ^{
             if (status == PHAuthorizationStatusDenied) { //拒绝
                 if (oldStatus != PHAuthorizationStatusNotDetermined) {//第一次没有做出选择不提示

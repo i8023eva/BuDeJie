@@ -15,7 +15,9 @@
 #import <FLAnimatedImageView+WebCache.h>
 
 @interface EVAEssencePictureView ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+#warning 循环利用又变成静态图
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *gifView;
 @property (weak, nonatomic) IBOutlet UIButton *seeBigPictureButton;
 @property (weak, nonatomic) IBOutlet UIImageView *placeholderView;
@@ -30,6 +32,7 @@
     
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPicture)]];
+    
 }
 
 - (void)tapPicture {
@@ -40,7 +43,6 @@
 
 - (void)setModel:(EVAEssenceModel *)model {
     _model = model;
-#warning
     
 /**
     //    GIF -- imageView 不能播放 gif
@@ -67,6 +69,7 @@
             //控制占位图
             self.placeholderView.hidden = YES;
             
+            
             //        图片比例
             if (model.isBigPicture) {
                 CGFloat imageW = model.typeFrame.size.width;
@@ -80,6 +83,8 @@
         }];
     //}
 
+    self.gifView.hidden = !model.is_gif;
+    
 //    长图
     if (model.isBigPicture) {
         self.seeBigPictureButton.hidden = NO;

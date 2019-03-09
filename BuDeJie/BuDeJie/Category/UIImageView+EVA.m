@@ -9,6 +9,7 @@
 #import "UIImageView+EVA.h"
 #import "UIImage+EVA.h"
 
+
 #import <AFNetworkReachabilityManager.h>
 
 @implementation UIImageView (EVA)
@@ -35,6 +36,8 @@
         return [url absoluteString];
      };
      */
+
+    
     UIImage *originImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originImageURL];
     
     if (originImage) { //原图已下载
@@ -43,18 +46,24 @@
         
         [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
     } else {
+        
         if (manager.isReachableViaWiFi) {
+            
             [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
         } else if(manager.isReachableViaWWAN) {
+            
             [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
         } else {
+            
             UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbnailImageURL];
             if (thumbnailImage) { //缩略图已下载
+                
 //                self.image = thumbnailImage;
 //                completedBlock(thumbnailImage, nil, 0, [NSURL URLWithString:thumbnailImageURL]);
                 
                 [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
             } else { //都没有，显示占位图
+                
 //                self.image = placeholder;
                 [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completedBlock];
             }

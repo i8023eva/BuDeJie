@@ -15,6 +15,7 @@
 
 #import "UIBarButtonItem+EVA.h"
 #import "EVAEssenceButton.h"
+#import <SDImageCache.h>
 
 @interface EVAEssenceViewController () <UIScrollViewDelegate>
 
@@ -89,6 +90,10 @@
 //    [self titleButtonClick:button];
     [self addChildViewToScrollView:index];
     [self changeTitleButtonStatus:button];
+    
+#warning 内存一直增大
+
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 #pragma mark -

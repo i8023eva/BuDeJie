@@ -10,6 +10,8 @@
 #import "EVAEssenceModel.h"
 #import "EVATapPictureViewController.h"
 
+#import "FLAnimatedImageView+EVA.h"
+
 #import "UIImageView+EVA.h"
 
 @interface EVAEssenceVideoView ()
