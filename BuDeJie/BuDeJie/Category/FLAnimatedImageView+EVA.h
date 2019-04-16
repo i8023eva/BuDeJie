@@ -14,9 +14,9 @@
 
 @interface FLAnimatedImageView (EVA)
 
-- (void)eva_setOriginImage:(NSString *)originImageURL
-            thumbnailImage:(NSString *)thumbnailImageURL
-               placeholder:(UIImage *)placeholder
+- (void)eva_setOriginImage:(NSString * _Nonnull)originImageURL
+            thumbnailImage:(NSString * _Nonnull)thumbnailImageURL
+               placeholder:(UIImage * _Nullable)placeholder
                  completed:(nullable SDExternalCompletionBlock)completedBlock;
 @end
 NS_ASSUME_NONNULL_BEGIN

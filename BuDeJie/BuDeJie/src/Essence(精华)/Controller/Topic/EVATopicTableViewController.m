@@ -369,7 +369,11 @@
         //当有heightForFooter delegate时设置
         self.tableView.estimatedSectionFooterHeight = 0;
     }
-    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    }
     self.tableView.contentInset = UIEdgeInsetsMake(eva_StatusBarHeight + eva_NavigationBarHeight + 35, 0, eva_TabBarHeight, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     self.tableView.backgroundColor = [UIColor grayColor];

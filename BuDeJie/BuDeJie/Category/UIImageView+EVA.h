@@ -12,8 +12,8 @@
 
 @interface UIImageView (EVA)
 
-- (void)eva_setHeaderView:(NSString *)url;
+- (void)eva_setHeaderView:(NSString * _Nonnull)url;
 
 
-- (void)eva_setOriginImage:(NSString *)originImageURL thumbnailImage:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder completed:(nullable SDExternalCompletionBlock)completedBlock;
+- (void)eva_setOriginImage:(NSString * _Nonnull)originImageURL thumbnailImage:(NSString * _Nonnull)thumbnailImageURL placeholder:(UIImage * _Nullable)placeholder completed:(nullable SDExternalCompletionBlock)completedBlock;
 @end
