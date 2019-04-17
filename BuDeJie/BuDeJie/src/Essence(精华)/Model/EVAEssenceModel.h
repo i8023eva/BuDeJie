@@ -63,6 +63,8 @@ typedef NS_ENUM(NSUInteger, EVAEssenceType) {
 @property (nonatomic, assign) NSInteger voicetime;
 /** 视频时长 */
 @property (nonatomic, assign) NSInteger videotime;
+/** 视频 URL */
+@property (nonatomic, copy) NSString *videouri;
 /** 音频\视频的播放次数 */
 @property (nonatomic, assign) NSInteger playcount;
 

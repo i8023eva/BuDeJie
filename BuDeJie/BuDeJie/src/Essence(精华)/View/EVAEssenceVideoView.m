@@ -56,6 +56,11 @@
     self.videotimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", model.videotime / 60, model.videotime % 60];
 }
 
+- (IBAction)playAV:(UIButton *)sender {
+    [NSNotificationCenter.defaultCenter postNotificationName:@"playAV" object:_model.videouri];
+}
+
+
 
 
 @end

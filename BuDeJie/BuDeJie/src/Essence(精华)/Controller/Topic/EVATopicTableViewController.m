@@ -8,7 +8,7 @@
 
 #import "EVATopicTableViewController.h"
 #import "EVAEssenceTableViewCell.h"
-
+#import <AVKit/AVKit.h>
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import <SVProgressHUD.h>
@@ -29,9 +29,19 @@
 //第一次加载帖子时候不需要传入此关键字，当需要加载下一页时：需要传入加载上一页时返回值字段“maxtime”中的内容。
 @property (nonatomic, copy) NSString *maxtime;
 
+@property (nonatomic, strong) AVPlayerViewController *playerVC;
 @end
 
 @implementation EVATopicTableViewController
+
+- (AVPlayerViewController *)playerVC {
+    if (!_playerVC) {
+        _playerVC = [[AVPlayerViewController alloc] init];
+        _playerVC.showsPlaybackControls = YES;
+        _playerVC.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    }
+    return _playerVC;
+}
 
 - (EVAEssenceType)type {
     return 0;
@@ -114,6 +124,11 @@
         self.footerLabel = footerLabel;
         footerLabel;
     });
+}
+
+// 没用   AVPlayerViewController还是横屏
+- (BOOL)shouldAutorotate {
+    return NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -308,6 +323,16 @@
 - (void)setupNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonRepeatClick) name:EVATabBarButtonRepeatClickNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(essenceTitleButtonRepeatClick) name:EVAEssenceTitleButtonRepeatClickNotification object:nil];
+     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(showPlayer:) name:@"playAV" object:nil];
+}
+
+- (void) showPlayer:(NSNotification *)note {
+    NSURL *url = [NSURL URLWithString:note.object];
+    self.playerVC.player = [AVPlayer playerWithURL:url];
+    
+    [self presentViewController:self.playerVC animated:true completion:^{
+        [self.playerVC.player play];
+    }];
 }
 
 - (void)essenceTitleButtonRepeatClick {
@@ -371,8 +396,6 @@
     }
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        // Fallback on earlier versions
     }
     self.tableView.contentInset = UIEdgeInsetsMake(eva_StatusBarHeight + eva_NavigationBarHeight + 35, 0, eva_TabBarHeight, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
