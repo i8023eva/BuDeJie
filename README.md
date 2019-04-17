@@ -5,4 +5,4 @@
 NSURLErrorCancelled，request未完成被取消的回调 
 
 
-![mainScreen](https://github.com/i8023eva/BuDeJie/mainScreen.png)
+![mainScreen](https://github.com/i8023eva/BuDeJie/blob/master/mainScreen.png)
